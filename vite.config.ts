@@ -4,6 +4,7 @@ import path from "path"
 
 export default defineConfig({
   plugins: [react()],
+  base: process.env.NODE_ENV === 'production' ? '/AOT01/' : '/',
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
