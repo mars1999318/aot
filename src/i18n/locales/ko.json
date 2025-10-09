@@ -1,0 +1,105 @@
+{
+  "common": {
+    "connect": "지갑 연결",
+    "disconnect": "연결 해제",
+    "loading": "로딩 중...",
+    "error": "오류",
+    "success": "성공",
+    "cancel": "취소",
+    "confirm": "확인",
+    "close": "닫기",
+    "save": "저장",
+    "edit": "편집",
+    "delete": "삭제",
+    "back": "뒤로",
+    "next": "다음",
+    "previous": "이전",
+    "search": "검색",
+    "filter": "필터",
+    "sort": "정렬",
+    "refresh": "새로고침",
+    "copy": "복사",
+    "copied": "복사됨!",
+    "language": "언어",
+    "theme": "테마"
+  },
+  "navigation": {
+    "home": "홈",
+    "staking": "스테이킹",
+    "referral": "추천",
+    "rewards": "보상",
+    "settings": "설정",
+    "help": "도움말"
+  },
+  "wallet": {
+    "connectWallet": "지갑 연결",
+    "walletConnected": "지갑 연결됨",
+    "walletDisconnected": "지갑 연결 해제됨",
+    "switchNetwork": "네트워크 전환",
+    "wrongNetwork": "잘못된 네트워크",
+    "pleaseConnectWallet": "계속하려면 지갑을 연결해주세요"
+  },
+  "staking": {
+    "title": "스테이킹",
+    "stakeAmount": "스테이킹 금액",
+    "referrer": "추천인 (선택사항)",
+    "stakeNow": "지금 스테이킹",
+    "totalStaked": "총 스테이킹",
+    "pendingRewards": "대기 중인 보상",
+    "claimRewards": "보상 받기",
+    "withdraw": "출금",
+    "stakeHistory": "스테이킹 기록",
+    "currentRate": "현재 비율",
+    "minimumStake": "최소 스테이킹: 100 AOT",
+    "stakeSuccess": "스테이킹 성공!",
+    "stakeError": "스테이킹 실패. 다시 시도해주세요.",
+    "withdrawSuccess": "출금 성공!",
+    "withdrawError": "출금 실패. 다시 시도해주세요.",
+    "claimSuccess": "보상 받기 성공!",
+    "claimError": "보상 받기 실패. 다시 시도해주세요."
+  },
+  "referral": {
+    "title": "추천 프로그램",
+    "referralLink": "추천 링크",
+    "copyLink": "링크 복사",
+    "totalReferrals": "총 추천 수",
+    "referralRate": "추천 비율",
+    "inviteFriends": "친구 초대",
+    "referralStats": "추천 통계",
+    "referralHistory": "추천 기록"
+  },
+  "rewards": {
+    "title": "보상 센터",
+    "totalRewards": "총 보상",
+    "stakingRewards": "스테이킹 보상",
+    "claimAll": "모두 받기",
+    "rewardHistory": "보상 기록",
+    "dailyReward": "일일 보상",
+    "totalEarned": "총 수익"
+  },
+  "dashboard": {
+    "welcome": "ArriveOnTime에 오신 것을 환영합니다",
+    "totalStaked": "총 스테이킹",
+    "totalRewards": "총 보상",
+    "referralCount": "추천 수",
+    "quickActions": "빠른 작업",
+    "recentActivity": "최근 활동",
+    "statistics": "통계"
+  },
+  "errors": {
+    "networkError": "네트워크 오류. 연결을 확인해주세요.",
+    "transactionFailed": "거래 실패. 다시 시도해주세요.",
+    "insufficientBalance": "잔액 부족.",
+    "invalidAmount": "유효하지 않은 금액.",
+    "userRejected": "사용자가 거래를 거부했습니다.",
+    "unknownError": "알 수 없는 오류가 발생했습니다."
+  },
+  "time": {
+    "days": "일",
+    "hours": "시간",
+    "minutes": "분",
+    "seconds": "초",
+    "ago": "전",
+    "remaining": "남음"
+  }
+}

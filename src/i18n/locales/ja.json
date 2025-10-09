@@ -1,0 +1,105 @@
+{
+  "common": {
+    "connect": "ウォレット接続",
+    "disconnect": "切断",
+    "loading": "読み込み中...",
+    "error": "エラー",
+    "success": "成功",
+    "cancel": "キャンセル",
+    "confirm": "確認",
+    "close": "閉じる",
+    "save": "保存",
+    "edit": "編集",
+    "delete": "削除",
+    "back": "戻る",
+    "next": "次へ",
+    "previous": "前へ",
+    "search": "検索",
+    "filter": "フィルター",
+    "sort": "並び替え",
+    "refresh": "更新",
+    "copy": "コピー",
+    "copied": "コピーしました！",
+    "language": "言語",
+    "theme": "テーマ"
+  },
+  "navigation": {
+    "home": "ホーム",
+    "staking": "ステーキング",
+    "referral": "紹介",
+    "rewards": "報酬",
+    "settings": "設定",
+    "help": "ヘルプ"
+  },
+  "wallet": {
+    "connectWallet": "ウォレット接続",
+    "walletConnected": "ウォレット接続済み",
+    "walletDisconnected": "ウォレット切断済み",
+    "switchNetwork": "ネットワーク切り替え",
+    "wrongNetwork": "間違ったネットワーク",
+    "pleaseConnectWallet": "続行するにはウォレットを接続してください"
+  },
+  "staking": {
+    "title": "ステーキング",
+    "stakeAmount": "ステーク金額",
+    "referrer": "紹介者（オプション）",
+    "stakeNow": "今すぐステーク",
+    "totalStaked": "総ステーク",
+    "pendingRewards": "未受取報酬",
+    "claimRewards": "報酬受取",
+    "withdraw": "引き出し",
+    "stakeHistory": "ステーク履歴",
+    "currentRate": "現在のレート",
+    "minimumStake": "最小ステーク: 100 AOT",
+    "stakeSuccess": "ステーク成功！",
+    "stakeError": "ステーク失敗。再試行してください。",
+    "withdrawSuccess": "引き出し成功！",
+    "withdrawError": "引き出し失敗。再試行してください。",
+    "claimSuccess": "報酬受取成功！",
+    "claimError": "報酬受取失敗。再試行してください。"
+  },
+  "referral": {
+    "title": "紹介プログラム",
+    "referralLink": "紹介リンク",
+    "copyLink": "リンクをコピー",
+    "totalReferrals": "総紹介数",
+    "referralRate": "紹介レート",
+    "inviteFriends": "友達を招待",
+    "referralStats": "紹介統計",
+    "referralHistory": "紹介履歴"
+  },
+  "rewards": {
+    "title": "報酬センター",
+    "totalRewards": "総報酬",
+    "stakingRewards": "ステーキング報酬",
+    "claimAll": "一括受取",
+    "rewardHistory": "報酬履歴",
+    "dailyReward": "日次報酬",
+    "totalEarned": "総収益"
+  },
+  "dashboard": {
+    "welcome": "ArriveOnTimeへようこそ",
+    "totalStaked": "総ステーク",
+    "totalRewards": "総報酬",
+    "referralCount": "紹介数",
+    "quickActions": "クイックアクション",
+    "recentActivity": "最近の活動",
+    "statistics": "統計"
+  },
+  "errors": {
+    "networkError": "ネットワークエラー。接続を確認してください。",
+    "transactionFailed": "取引失敗。再試行してください。",
+    "insufficientBalance": "残高不足。",
+    "invalidAmount": "無効な金額。",
+    "userRejected": "ユーザーが取引を拒否しました。",
+    "unknownError": "不明なエラーが発生しました。"
+  },
+  "time": {
+    "days": "日",
+    "hours": "時間",
+    "minutes": "分",
+    "seconds": "秒",
+    "ago": "前",
+    "remaining": "残り"
+  }
+}

@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* 引入设计系统 */
+@import './styles/design-system.css';
+
+/* 引入移动端样式 */
+@import './styles/mobile.css';
+
+/* 引入清新现代样式 */
+@import './styles/modern.css';
+
+/* 引入玻璃拟态样式 */
+@import './styles/glassmorphism.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+}
