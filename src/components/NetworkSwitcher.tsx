@@ -1,4 +1,3 @@
-import React from 'react'
 import { useAccount, useSwitchChain } from 'wagmi'
 import { useTranslation } from '../hooks/useTranslation'
 import { AlertCircle, ExternalLink } from 'lucide-react'

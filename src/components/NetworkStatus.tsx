@@ -1,7 +1,5 @@
-import React from 'react'
 import { useAccount, useChainId } from 'wagmi'
 import { useTranslation } from '../hooks/useTranslation'
-import { CURRENT_NETWORK } from '../constants/contracts'
 import { AlertCircle, CheckCircle, ExternalLink } from 'lucide-react'
 
 export function NetworkStatus() {
