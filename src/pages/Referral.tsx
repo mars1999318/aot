@@ -2,7 +2,6 @@ import React from 'react'
 import { useAccount } from 'wagmi'
 import { useTranslation } from '../hooks/useTranslation'
 import { useReferral } from '../hooks/useReferral'
-import { ReferralLink } from '../components/ReferralLink'
 import { ReferralStatsComponent } from '../components/ReferralStats'
 import { ReferralHistory } from '../components/ReferralHistory'
 import { WalletNotConnected } from '../components/WalletNotConnected'
@@ -31,33 +30,33 @@ export function Referral() {
     refreshData
   } = useReferral()
 
-  // 添加调试信息
+  // Add debug information
   console.log('Referral - isConnected:', isConnected)
   console.log('Referral - address:', address)
   console.log('Referral - isConnecting:', isConnecting)
 
-  // 如果正在连接钱包，显示加载状态
+  // If connecting wallet, show loading state
   if (isConnecting) {
     return (
       <PageTransition>
         <div className="min-h-screen flex items-center justify-center">
           <div className="text-center">
             <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500 mx-auto mb-4"></div>
-            <h2 className="text-xl font-semibold mb-2">连接钱包中...</h2>
-            <p className="text-gray-600">请稍候</p>
+            <h2 className="text-xl font-semibold mb-2">{t('wallet.connecting')}</h2>
+            <p className="text-gray-600">{t('common.pleaseWait')}</p>
           </div>
         </div>
       </PageTransition>
     )
   }
 
-  // 如果没有连接钱包，显示提示
+  // If wallet is not connected, show prompt
   if (!isConnected) {
     return <WalletNotConnected />
   }
 
 
-  // 如果正在加载，显示加载状态
+  // If loading, show loading state
   if (isLoading) {
     return (
       <PageTransition className="min-h-screen">
@@ -85,7 +84,7 @@ export function Referral() {
     )
   }
 
-  // 如果有错误，显示错误信息
+  // If there's an error, show error message
   if (error) {
     return (
       <PageTransition className="min-h-screen">
@@ -126,20 +125,14 @@ export function Referral() {
           </div>
         </FadeIn>
 
-        {/* 推荐统计 */}
+        {/* Referral Statistics */}
         <FadeIn delay={100}>
           {referralStats && <ReferralStatsComponent stats={referralStats as any} className="mb-8" />}
         </FadeIn>
 
         <div className="space-y-6">
-          {/* 推荐链接 */}
-          <FadeIn delay={200}>
-            <ReferralLink 
-              link={generateReferralLink()} 
-            />
-          </FadeIn>
           
-          {/* 推荐历史 */}
+          {/* Referral History */}
           <FadeIn delay={300}>
             <ReferralHistory 
               records={referralRecords} 

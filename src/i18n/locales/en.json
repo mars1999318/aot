@@ -12,7 +12,8 @@
     "refresh": "Refresh Data",
     "refreshing": "Refreshing...",
     "releaseToRefresh": "Release to Refresh",
-    "pullToRefresh": "Pull to Refresh"
+    "pullToRefresh": "Pull to Refresh",
+    "pleaseWait": "Please wait"
   },
   "dashboard": {
     "title": "Dashboard",

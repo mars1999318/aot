@@ -18,20 +18,20 @@ export function MobileNavbar({ className = '', activeTab, setActiveTab }: Mobile
 
   return (
     <div className={`lg:hidden ${className}`}>
-      {/* 移动端顶部导航栏 */}
+      {/* Mobile Top Navigation Bar */}
       <div className="fixed top-0 left-0 right-0 glass-navbar z-50 mobile-safe-area">
         <div className="flex items-center justify-between px-4 py-1.5">
-          {/* 左侧：Logo + 标题 */}
+          {/* Left: Logo + Title */}
           <div className="flex items-center space-x-3">
             <img 
-              src="/aot/logo.png" 
+              src="/aot/logo.png?v=1" 
               alt="ArriveOnTime Logo" 
               className="w-10 h-10 rounded-full flex-shrink-0 border-2 border-white/30"
             />
                 <span className="text-xl font-bold glass-text-blue">ArriveOnTime</span>
           </div>
 
-          {/* 右侧操作 */}
+          {/* Right Actions */}
           <div className="flex items-center space-x-1">
             <LanguageSwitcher />
             <WalletConnect />
@@ -40,7 +40,7 @@ export function MobileNavbar({ className = '', activeTab, setActiveTab }: Mobile
       </div>
 
 
-      {/* 移动端底部导航栏 */}
+      {/* Mobile Bottom Navigation Bar */}
       <div className="fixed bottom-0 left-0 right-0 glass-bottom-nav z-50 mobile-safe-area">
         <div className="flex items-center justify-around py-1">
           <button 

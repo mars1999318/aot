@@ -12,7 +12,8 @@
     "refresh": "刷新数据",
     "refreshing": "刷新中...",
     "releaseToRefresh": "松开刷新",
-    "pullToRefresh": "下拉刷新"
+    "pullToRefresh": "下拉刷新",
+    "pleaseWait": "请稍候"
   },
   "dashboard": {
     "title": "仪表板",
