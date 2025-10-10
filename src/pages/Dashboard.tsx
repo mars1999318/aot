@@ -13,6 +13,7 @@ import { MobileCard, MobileCardHeader, MobileCardBody } from '../components/Mobi
 import { ProfessionalCard, ProfessionalCardHeader, ProfessionalCardBody } from '../components/ProfessionalCard'
 import { ModernButton } from '../components/ModernButton'
 import { MobileButton } from '../components/MobileButton'
+import { WalletNotConnected } from '../components/WalletNotConnected'
 import { ProfessionalButton } from '../components/ProfessionalButton'
 import { SkeletonStatsCard, SkeletonCard } from '../components/SkeletonLoader'
 import { PageTransition, FadeIn } from '../components/PageTransition'
@@ -40,19 +41,7 @@ export function Dashboard() {
 
   // 如果钱包没有连接，显示连接提示
   if (!isConnected) {
-    return (
-      <PageTransition>
-        <div className="min-h-screen flex items-center justify-center">
-          <div className="text-center">
-            <h2 className="text-2xl font-bold mb-4">{t('wallet.connectWallet')}</h2>
-            <p className="text-gray-600 mb-6">{t('data.connectWalletToViewData')}</p>
-            <div className="text-sm text-gray-500">
-              {t('data.clickConnectWalletButton')}
-            </div>
-          </div>
-        </div>
-      </PageTransition>
-    )
+    return <WalletNotConnected />
   }
 
   // 添加数据加载状态检查
