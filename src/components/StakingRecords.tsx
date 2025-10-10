@@ -153,7 +153,7 @@ function ExpandableRecord({
               )}
             </div>
 
-            {/* 操作按钮 */}
+            {/* Action buttons */}
             {record.isActive && (
               <div className="flex space-x-2 pt-2">
                 <button
@@ -230,7 +230,7 @@ export function StakingRecords({ onWithdraw }: StakingRecordsProps) {
     return (num / 1e18).toFixed(6).replace(/\.?0+$/, '')
   }
 
-  // 格式化质押率
+  // Format staking rate
   const formatStakingRateLocal = (rate: number) => {
     return formatStakingRate(rate)
   }

@@ -75,6 +75,7 @@
     "feeReduction": "Fee Reduction",
     "referrer": "Referrer",
     "claim": "Claim",
+    "claimRewards": "Claim Rewards",
     "approveSuccess": "Approve Success",
     "approveSuccessMessage": "AOT token approved successfully, you can now stake.",
     "stakeSuccess": "Stake Success",

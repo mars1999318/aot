@@ -75,6 +75,7 @@
     "feeReduction": "手续费递减",
     "referrer": "推荐人",
     "claim": "领取",
+    "claimRewards": "领取奖励",
     "approveSuccess": "授权成功",
     "approveSuccessMessage": "AOT代币授权成功，您现在可以进行质押操作。",
     "stakeSuccess": "质押成功",

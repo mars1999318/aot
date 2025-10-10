@@ -25,7 +25,7 @@ export function useStake() {
         args: [amount, referrer as `0x${string}`],
       })
       
-      // 等待交易确认
+      // Wait for transaction confirmation
       if (hash && publicClient) {
         const receipt = await publicClient.waitForTransactionReceipt({ hash })
         if (receipt.status === 'success') {
@@ -68,7 +68,7 @@ export function useApprove() {
         args: [spender as `0x${string}`, amount],
       })
       
-      // 等待交易确认
+      // Wait for transaction confirmation
       if (hash && publicClient) {
         const receipt = await publicClient.waitForTransactionReceipt({ hash })
         if (receipt.status === 'success') {
@@ -106,7 +106,7 @@ export function useWithdraw() {
         args: [BigInt(stakeIndex)],
       })
       
-      // 等待交易确认
+      // Wait for transaction confirmation
       if (hash && publicClient) {
         const receipt = await publicClient.waitForTransactionReceipt({ hash })
         if (receipt.status === 'success') {

@@ -31,9 +31,9 @@ import {
   AlertCircle
 } from 'lucide-react'
 
-// 计算质押收益进度
+// Calculate staking progress
 function getStakingProgress(amount: number, stakingRate: number): number {
-  // 基于质押数量计算进度，最大100%
+  // Calculate progress based on staking amount, maximum 100%
   if (amount >= 10000) return 100
   if (amount >= 1000) return Math.min(100, ((amount - 1000) / 9000) * 50 + 50)
   if (amount >= 100) return Math.min(50, ((amount - 100) / 900) * 50)
@@ -50,7 +50,7 @@ export function Staking() {
   const publicClient = usePublicClient()
   const { t } = useTranslation()
 
-  // 添加调试信息
+  // Add debug information
   console.log('Staking - isConnected:', isConnected)
   console.log('Staking - address:', address)
 

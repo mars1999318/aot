@@ -25,7 +25,7 @@ export function SimpleWalletConnect() {
         const result = await connect({ connector: connectors[0] })
         console.log('Connection result:', result)
         
-        // 等待连接状态更新
+        // Wait for connection state update
         setTimeout(() => {
           console.log('Post-connection status:', { isConnected, address })
           setIsLoading(false)
