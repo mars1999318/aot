@@ -52,38 +52,10 @@ export function Referral() {
   }
 
   // 如果没有连接钱包，显示提示
-  if (!isConnected && !isLoading) {
+  if (!isConnected) {
     return <WalletNotConnected />
   }
 
-  return (
-      <PageTransition className="min-h-screen">
-        <div className="space-y-6">
-          <FadeIn delay={0}>
-            <div className="text-center">
-              <h1 className="text-3xl font-bold modern-text-primary mb-2">{t('referral.title')}</h1>
-              <p className="text-base modern-text-secondary max-w-xl mx-auto">{t('referral.subtitle')}</p>
-            </div>
-          </FadeIn>
-        
-          <FadeIn delay={100}>
-            <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
-              <div className="flex items-center">
-                <AlertCircle className="h-5 w-5 text-yellow-500 mr-3" />
-                <div>
-                  <h3 className="text-sm font-medium text-yellow-800">
-                    {t('data.walletNotConnected')}
-                  </h3>
-                  <p className="text-sm text-yellow-600 mt-1">
-                    {t('data.connectWalletToViewData')}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </FadeIn>
-        </div>
-      </PageTransition>
-    )
 
   // 如果正在加载，显示加载状态
   if (isLoading) {
