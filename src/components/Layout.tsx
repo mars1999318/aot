@@ -13,39 +13,39 @@ export function Layout() {
   const [activeTab, setActiveTab] = useState('dashboard')
   const [refreshKey, setRefreshKey] = useState(0)
 
-  // 添加移动端检测调试
+  // Add mobile detection debugging
   React.useEffect(() => {
-    console.log('屏幕宽度:', window.innerWidth)
-    console.log('用户代理:', navigator.userAgent)
-    console.log('是否为移动设备:', /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
+    console.log('Screen width:', window.innerWidth)
+    console.log('User agent:', navigator.userAgent)
+    console.log('Is mobile device:', /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
   }, [])
 
-  // 处理页面切换，确保滚动到顶部
+  // Handle page switching, ensure scrolling to top
   const handleTabChange = (tab: string) => {
-    // 立即滚动到顶部，不使用动画
+    // Immediately scroll to top without animation
     window.scrollTo({ top: 0, behavior: 'instant' })
-    // 强制设置scrollTop为0
+    // Force set scrollTop to 0
     document.documentElement.scrollTop = 0
     document.body.scrollTop = 0
-    // 然后切换页面
+    // Then switch page
     setActiveTab(tab)
-    // 强制重新渲染
+    // Force re-render
     setRefreshKey(prev => prev + 1)
   }
 
-  // 监听页面切换，确保每次切换都滚动到顶部
+  // Listen for page switching, ensure scrolling to top on each switch
   useEffect(() => {
-    // 使用setTimeout确保DOM更新后再滚动
+    // Use setTimeout to ensure scrolling after DOM updates
     const scrollToTop = () => {
       window.scrollTo({ top: 0, behavior: 'instant' })
       document.documentElement.scrollTop = 0
       document.body.scrollTop = 0
     }
     
-    // 立即执行一次
+    // Execute immediately once
     scrollToTop()
     
-    // 延迟执行一次，确保页面内容加载完成
+    // Execute once after delay to ensure page content is loaded
     const timeoutId = setTimeout(scrollToTop, 10)
     
     return () => clearTimeout(timeoutId)
@@ -53,7 +53,7 @@ export function Layout() {
 
   const handleRefresh = () => {
     setRefreshKey(prev => prev + 1)
-    // 触发页面重新渲染和数据刷新
+    // Trigger page re-render and data refresh
     window.location.reload()
   }
 
@@ -74,7 +74,7 @@ export function Layout() {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* 桌面端布局 */}
+      {/* Desktop Layout */}
       <div className="hidden lg:flex">
         <Sidebar activeTab={activeTab} setActiveTab={handleTabChange} />
         <main className="flex-1 ml-64">
@@ -84,7 +84,7 @@ export function Layout() {
         </main>
       </div>
 
-      {/* 移动端布局 */}
+      {/* Mobile Layout */}
       <div className="lg:hidden">
         <MobileNavbar activeTab={activeTab} setActiveTab={handleTabChange} />
         <main className="pt-20 pb-20">

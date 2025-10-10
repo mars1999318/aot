@@ -123,8 +123,16 @@
     "currentReferralRate": "当前推荐率"
   },
   "charity": {
-    "title": "公益慈善",
-    "subtitle": "通过区块链技术，让慈善更加透明、高效、可信",
+    "title": "公益",
+    "subtitle": "把每一笔捐赠都将记录在区块链上，确保透明可查",
+    "twoHoursAgo": "2小时前",
+    "fiveHoursAgo": "5小时前", 
+    "oneDayAgo": "1天前",
+    "fundPoolBalance": "公益资金池余额 (AOT)",
+    "totalDonationCount": "累计捐赠笔数",
+    "totalBeneficiaries": "累计受助人数",
+    "blockchainTransparency": "每一笔捐赠都将记录在区块链上，确保透明可查",
+    "loveTransmission": "让爱心传递，让世界更美好",
     "activeProjects": "活跃公益项目",
     "participants": "参与捐赠人数",
     "totalDonations": "累计捐赠金额",

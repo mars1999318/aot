@@ -41,7 +41,7 @@ export function PullToRefresh({ onRefresh, children, className = '' }: PullToRef
       setIsRefreshing(true)
       onRefresh()
       
-      // 模拟刷新完成
+      // Simulate refresh completion
       setTimeout(() => {
         setIsRefreshing(false)
         setPullDistance(0)
@@ -77,7 +77,7 @@ export function PullToRefresh({ onRefresh, children, className = '' }: PullToRef
         transition: isPulling ? 'none' : 'transform 0.3s ease-out'
       }}
     >
-      {/* 下拉刷新指示器 */}
+      {/* Pull to refresh indicator */}
       <div 
         className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-center bg-white/90 backdrop-blur-sm transition-all duration-300 ${
           pullDistance > 0 ? 'opacity-100' : 'opacity-0'

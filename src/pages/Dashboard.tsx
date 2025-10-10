@@ -32,39 +32,39 @@ export function Dashboard() {
   const { referralStats, referralRecords, isLoading: isReferralLoading, refreshData, dataVersion } = useReferral()
   const { t } = useTranslation()
 
-  // 添加调试信息
+  // Add debug information
   console.log('Dashboard - isConnected:', isConnected)
   console.log('Dashboard - address:', address)
   console.log('Dashboard - userInfo:', userInfo)
   console.log('Dashboard - pendingRewards:', pendingRewards)
   console.log('Dashboard - tokenBalance:', tokenBalance)
 
-  // 如果钱包没有连接，显示连接提示
+  // If wallet is not connected, show connection prompt
   if (!isConnected) {
     return <WalletNotConnected />
   }
 
-  // 添加数据加载状态检查
+  // Add data loading state check
   const isDataLoading = !userInfo && !pendingRewards && !tokenBalance
 
-  // 从合约获取真实数据，使用Wei到Ether转换
+  // Get real data from contract, using Wei to Ether conversion
   const totalStakedWei = userInfo?.[0]?.toString() || '0'
   const pendingRewardsWei = pendingRewards?.toString() || '0'
   const walletBalanceWei = tokenBalance?.toString() || '0'
   
-  // 转换Wei到Ether（18位小数）
+  // Convert Wei to Ether (18 decimal places)
   const totalStaked = formatWeiToEther(totalStakedWei, 4)
   const pendingRewardsValue = formatWeiToEther(pendingRewardsWei, 4)
   const walletBalance = formatWeiToEther(walletBalanceWei, 4)
   
-  // 计算数值用于比较
+  // Calculate values for comparison
   const totalStakedNumber = parseFloat(totalStaked) || 0
   const pendingRewardsNumber = parseFloat(pendingRewardsValue) || 0
   const walletBalanceNumber = parseFloat(walletBalance) || 0
   
-  // 基于真实数据计算其他指标
-  const totalReferrals = referralStats?.totalReferrals || 0 // 从推荐hook获取推荐数量
-  // 优先使用推荐记录(仅活跃)的聚合，避免基础统计延迟导致显示不一致
+  // Calculate other metrics based on real data
+  const totalReferrals = referralStats?.totalReferrals || 0 // Get referral count from referral hook
+  // Prioritize aggregated referral records (active only) to avoid display inconsistency due to basic stats delay
   const aggregatedActiveReferred = Array.isArray(referralRecords)
     ? referralRecords.reduce((sum, r) => sum + (r.status === 'active' ? parseFloat(r.stakedAmount || '0') : 0), 0)
     : 0

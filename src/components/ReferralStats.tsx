@@ -14,8 +14,8 @@ interface ReferralStatsProps {
 export function ReferralStatsComponent({ stats, className = '' }: ReferralStatsProps) {
   const { t } = useTranslation()
   
-  // 使用统一的推荐率格式化函数
-  const referralRatePercent = formatReferralRate(stats.currentReferralRate * 1000000) // 转换为原始值
+  // Use unified referral rate formatting function
+  const referralRatePercent = formatReferralRate(stats.currentReferralRate * 1000000) // Convert to original value
   
   const statCards = [
     {
