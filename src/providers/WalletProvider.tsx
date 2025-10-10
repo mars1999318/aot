@@ -8,7 +8,7 @@ import '@rainbow-me/rainbowkit/styles.css'
 
 const config = getDefaultConfig({
   appName: 'ArriveOnTime',
-  projectId: 'your-project-id', // 可以留空或使用默认值
+  projectId: 'aot-dapp-project', // 使用一个有效的项目ID
   chains: [bsc],
   transports: {
     [bsc.id]: http(CURRENT_NETWORK.rpcUrl),
@@ -21,7 +21,10 @@ export function WalletProvider({ children }: { children: React.ReactNode }) {
   return (
     <WagmiProvider config={config}>
       <QueryClientProvider client={queryClient}>
-        <RainbowKitProvider>
+        <RainbowKitProvider
+          modalSize="compact"
+          showRecentTransactions={true}
+        >
           {children}
         </RainbowKitProvider>
       </QueryClientProvider>

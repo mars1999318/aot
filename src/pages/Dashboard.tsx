@@ -1,4 +1,5 @@
 import React from 'react'
+import { useAccount } from 'wagmi'
 import { useUserInfo } from '../hooks/useUserData'
 import { useReferral } from '../hooks/useReferral'
 import { useTranslation } from '../hooks/useTranslation'
@@ -25,9 +26,34 @@ import {
 } from 'lucide-react'
 
 export function Dashboard() {
+  const { isConnected, address } = useAccount()
   const { userInfo, pendingRewards, tokenBalance } = useUserInfo()
   const { referralStats, referralRecords, isLoading: isReferralLoading, refreshData, dataVersion } = useReferral()
   const { t } = useTranslation()
+
+  // 添加调试信息
+  console.log('Dashboard - isConnected:', isConnected)
+  console.log('Dashboard - address:', address)
+  console.log('Dashboard - userInfo:', userInfo)
+  console.log('Dashboard - pendingRewards:', pendingRewards)
+  console.log('Dashboard - tokenBalance:', tokenBalance)
+
+  // 如果钱包没有连接，显示连接提示
+  if (!isConnected) {
+    return (
+      <PageTransition>
+        <div className="min-h-screen flex items-center justify-center">
+          <div className="text-center">
+            <h2 className="text-2xl font-bold mb-4">请连接钱包</h2>
+            <p className="text-gray-600 mb-6">连接钱包后即可查看您的数据</p>
+            <div className="text-sm text-gray-500">
+              请点击右上角的"连接钱包"按钮
+            </div>
+          </div>
+        </div>
+      </PageTransition>
+    )
+  }
 
   // 添加数据加载状态检查
   const isDataLoading = !userInfo && !pendingRewards && !tokenBalance
