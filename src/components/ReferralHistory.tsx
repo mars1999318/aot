@@ -1,8 +1,7 @@
 import { useState } from 'react'
-import { Calendar, User, DollarSign, CheckCircle, XCircle, ExternalLink } from 'lucide-react'
+import { User, CheckCircle, XCircle, ExternalLink } from 'lucide-react'
 import { ModernCard, ModernCardHeader, ModernCardBody } from './ModernCard'
 import { ModernBadge } from './ModernBadge'
-import { ModernButton } from './ModernButton'
 import { ReferralRecord } from '../hooks/useReferral'
 
 interface ReferralHistoryProps {
