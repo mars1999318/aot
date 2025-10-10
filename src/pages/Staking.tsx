@@ -300,10 +300,10 @@ export function Staking() {
   const currentStakingRate = userInfo?.[3] ? Number(userInfo[3]) : 0 // currentStakingRate
   const currentReferralRate = userInfo?.[4] ? Number(userInfo[4]) : 0 // currentReferralRate
   
-  // 调试信息
-  console.log('质押页面调试:', { userInfo, pendingRewards, tokenBalance })
-  console.log('当前质押率:', currentStakingRate, '当前推荐率:', currentReferralRate)
-  console.log('合约总奖励:', pendingRewardsValue, 'AOT')
+  // Debug information
+  console.log('Staking page debug:', { userInfo, pendingRewards, tokenBalance })
+  console.log('Current staking rate:', currentStakingRate, 'Current referral rate:', currentReferralRate)
+  console.log('Contract total rewards:', pendingRewardsValue, 'AOT')
   
   // 收益率转换 - 使用统一的格式化函数
   let stakingRatePercent = '0.0000'
@@ -312,9 +312,9 @@ export function Staking() {
   try {
     stakingRatePercent = formatStakingRate(currentStakingRate)
     referralRatePercent = formatReferralRate(currentReferralRate)
-    console.log('格式化成功:', { stakingRatePercent, referralRatePercent })
+    console.log('Formatting successful:', { stakingRatePercent, referralRatePercent })
   } catch (error) {
-    console.error('格式化错误:', error)
+    console.error('Formatting error:', error)
     stakingRatePercent = '0.0000'
     referralRatePercent = '0'
   }

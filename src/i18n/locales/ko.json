@@ -93,11 +93,27 @@
     "totalEarned": "총 수익"
   },
   "dashboard": {
+    "title": "대시보드",
     "welcome": "ArriveOnTime에 오신 것을 환영합니다",
+    "subtitle": "스테이킹, 추천, 보상을 한 곳에서 관리",
     "totalStaked": "총 스테이킹",
-    "totalRewards": "총 보상",
-    "referralCount": "추천 수",
+    "pendingRewards": "미수령 보상",
+    "walletBalance": "지갑 잔액",
+    "totalReferrals": "총 추천 수",
+    "totalEarnings": "총 수익",
+    "stakingTime": "스테이킹 시간",
     "quickActions": "빠른 작업",
+    "users": "사용자",
+    "noReferrals": "추천 없음",
+    "totalReferredStaked": "총 추천 스테이킹",
+    "referredStaked": "추천인 스테이킹",
+    "noReferredStaked": "추천 스테이킹 없음",
+    "referralRate": "추천 수익률",
+    "referralRewardRate": "추천 보상률",
+    "noReferralReward": "추천 보상 없음",
+    "stakingRate": "스테이킹 수익률",
+    "dailyYieldRate": "일일 수익률",
+    "noStakingReward": "스테이킹 보상 없음",
     "recentActivity": "최근 활동",
     "statistics": "통계"
   },
@@ -136,5 +152,17 @@
     "daysAgo": "일 전",
     "hoursAgo": "시간 전",
     "justNow": "방금 전"
+  },
+  "charity": {
+    "title": "공익",
+    "subtitle": "모든 기부가 블록체인에 기록되어 투명성과 추적 가능성을 보장",
+    "twoHoursAgo": "2시간 전",
+    "fiveHoursAgo": "5시간 전",
+    "oneDayAgo": "1일 전",
+    "fundPoolBalance": "공익 자금 풀 잔액 (AOT)",
+    "totalDonationCount": "누적 기부 건수",
+    "totalBeneficiaries": "누적 수혜자 수",
+    "blockchainTransparency": "모든 기부가 블록체인에 기록되어 투명성과 추적 가능성을 보장",
+    "loveTransmission": "사랑을 전달하고 세상을 더 아름답게 만들기"
   }
 }

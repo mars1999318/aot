@@ -39,7 +39,7 @@ export function useStakingRecords() {
     }
   })
 
-  // 监听奖励领取事件
+  // Listen for rewards claimed events
   useWatchContractEvent({
     address: CURRENT_NETWORK.ArriveOnTime,
     abi: ARRIVE_ON_TIME_ABI,
@@ -122,20 +122,31 @@ export function useStakingRecords() {
               feeReduction = Math.max(0, 10 - (stakingDays / 100) * 10)
             }
             
-            // 使用每单质押的真实收益率计算奖励
-            const rawStakeRate = Number(stake.rate) // 原始值，用于formatStakingRate
-            const stakeRate = rawStakeRate / 1000000 // 合约中rate需要除以1000000转换为小数
-            const dailyRate = stakeRate / 365 // 将年收益率转换为日收益率
-            const stakingAmount = parseFloat(stake.amount?.toString() || '0') / 1e18
-            
-            // 关键修改：使用 lastClaimTime 来计算奖励
-            // 如果 lastClaimTime 存在且大于 startTime，则从 lastClaimTime 开始计算
-            // 否则从 startTime 开始计算
-            const lastClaimTimeMs = stake.lastClaimTime ? Number(stake.lastClaimTime) * 1000 : startTimeMs
-            const claimTimeMs = Math.max(lastClaimTimeMs, startTimeMs)
-            const rewardStakingMs = nowMs - claimTimeMs
-            const rewardStakingDays = rewardStakingMs / (1000 * 60 * 60 * 24)
-            const pendingRewards = (stakingAmount * dailyRate * rewardStakingDays).toFixed(18)
+            // 直接从链上获取每个质押记录的待领取奖励
+            let pendingRewards = '0'
+            try {
+              if (publicClient) {
+                const stakePendingRewards = await publicClient.readContract({
+                  address: CURRENT_NETWORK.ArriveOnTime,
+                  abi: ARRIVE_ON_TIME_ABI,
+                  functionName: 'getStakePendingRewards',
+                  args: [address as `0x${string}`, BigInt(index)]
+                })
+                pendingRewards = (parseFloat(stakePendingRewards.toString()) / 1e18).toFixed(18)
+              }
+            } catch (error) {
+              console.error(`Error fetching pending rewards for stake ${index}:`, error)
+              // 如果链上查询失败，使用本地计算作为备选
+              const rawStakeRate = Number(stake.rate)
+              const stakeRate = rawStakeRate / 1000000
+              const dailyRate = stakeRate / 365
+              const stakingAmount = parseFloat(stake.amount?.toString() || '0') / 1e18
+              const lastClaimTimeMs = stake.lastClaimTime ? Number(stake.lastClaimTime) * 1000 : startTimeMs
+              const claimTimeMs = Math.max(lastClaimTimeMs, startTimeMs)
+              const rewardStakingMs = nowMs - claimTimeMs
+              const rewardStakingDays = rewardStakingMs / (1000 * 60 * 60 * 24)
+              pendingRewards = (stakingAmount * dailyRate * rewardStakingDays).toFixed(18)
+            }
             
             
             console.log(`Stake ${index} calculation:`, {
@@ -200,10 +211,16 @@ export function useStakingRecords() {
 
   // 移除调试日志以避免无限循环
 
+  // 暴露刷新函数供外部调用
+  const refreshRecords = () => {
+    setRefreshTrigger(prev => prev + 1)
+  }
+
   return {
     stakingRecords,
     isLoading: isLoading || isCountLoading,
     error,
-    stakeCount: userStakes ? userStakes.length : 0
+    stakeCount: userStakes ? userStakes.length : 0,
+    refreshRecords
   }
 }

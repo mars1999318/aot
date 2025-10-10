@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useStakingRecords, StakingRecord } from '../hooks/useStakingRecords'
 import { useTranslation } from '../hooks/useTranslation'
 import { formatStakingRate } from '../utils/formatting'
@@ -178,8 +178,19 @@ function ExpandableRecord({
 }
 
 export function StakingRecords({ onWithdraw }: StakingRecordsProps) {
-  const { stakingRecords, isLoading, error } = useStakingRecords()
+  const { stakingRecords, isLoading, error, refreshRecords } = useStakingRecords()
   const { t } = useTranslation()
+  
+  // Listen for data refresh events
+  useEffect(() => {
+    const handleDataRefresh = () => {
+      console.log('StakingRecords: Data refresh event received')
+      refreshRecords()
+    }
+
+    window.addEventListener('dataRefresh', handleDataRefresh)
+    return () => window.removeEventListener('dataRefresh', handleDataRefresh)
+  }, [refreshRecords])
   
   // Calculate total rewards from individual orders
   const totalIndividualRewards = stakingRecords.reduce((sum, record) => {
@@ -235,7 +246,7 @@ export function StakingRecords({ onWithdraw }: StakingRecordsProps) {
     return formatStakingRate(rate)
   }
 
-  // 格式化质押天数，显示更精确的时间
+  // Format staking days with more precise time display
   const formatStakingDays = (timestamp: number) => {
     const now = Date.now()
     const startTime = timestamp

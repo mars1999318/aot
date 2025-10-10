@@ -93,11 +93,27 @@
     "totalEarned": "総収益"
   },
   "dashboard": {
+    "title": "ダッシュボード",
     "welcome": "ArriveOnTimeへようこそ",
+    "subtitle": "ステーキング、紹介、報酬を一箇所で管理",
     "totalStaked": "総ステーク",
-    "totalRewards": "総報酬",
-    "referralCount": "紹介数",
+    "pendingRewards": "未受取報酬",
+    "walletBalance": "ウォレット残高",
+    "totalReferrals": "総紹介数",
+    "totalEarnings": "総収益",
+    "stakingTime": "ステーキング時間",
     "quickActions": "クイックアクション",
+    "users": "ユーザー",
+    "noReferrals": "紹介なし",
+    "totalReferredStaked": "総紹介ステーク",
+    "referredStaked": "紹介者ステーク",
+    "noReferredStaked": "紹介ステークなし",
+    "referralRate": "紹介収益率",
+    "referralRewardRate": "紹介報酬率",
+    "noReferralReward": "紹介報酬なし",
+    "stakingRate": "ステーキング収益率",
+    "dailyYieldRate": "日次利回り率",
+    "noStakingReward": "ステーキング報酬なし",
     "recentActivity": "最近の活動",
     "statistics": "統計"
   },
@@ -136,5 +152,17 @@
     "daysAgo": "日前",
     "hoursAgo": "時間前",
     "justNow": "たった今"
+  },
+  "charity": {
+    "title": "公益",
+    "subtitle": "すべての寄付がブロックチェーンに記録され、透明性と追跡可能性を確保",
+    "twoHoursAgo": "2時間前",
+    "fiveHoursAgo": "5時間前",
+    "oneDayAgo": "1日前",
+    "fundPoolBalance": "公益資金プール残高 (AOT)",
+    "totalDonationCount": "累計寄付件数",
+    "totalBeneficiaries": "累計受益者数",
+    "blockchainTransparency": "すべての寄付がブロックチェーンに記録され、透明性と追跡可能性を確保",
+    "loveTransmission": "愛を伝え、世界をより美しくする"
   }
 }

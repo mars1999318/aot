@@ -157,9 +157,9 @@ export function useClaimRewards() {
 
   // 监听交易确认，记录奖励
   const recordRewardClaim = async (txHash: string) => {
-    console.log('recordRewardClaim 被调用:', { txHash, publicClient: !!publicClient, address })
+    console.log('recordRewardClaim called:', { txHash, publicClient: !!publicClient, address })
     if (!publicClient || !address) {
-      console.log('缺少必要参数，退出记录奖励')
+      console.log('Missing required parameters, exiting reward recording')
       return
     }
 
@@ -214,11 +214,11 @@ export function useClaimRewards() {
 
       // 保存到本地存储
       const storageKey = `aot_reward_records_${address}`
-      console.log('保存奖励记录，存储键:', storageKey)
-      console.log('奖励记录:', rewardRecord)
+      console.log('Saving reward record, storage key:', storageKey)
+      console.log('Reward record:', rewardRecord)
       
       const existingRecords = JSON.parse(localStorage.getItem(storageKey) || '[]')
-      console.log('现有记录:', existingRecords)
+      console.log('Existing records:', existingRecords)
       
       const newRecord = {
         ...rewardRecord,
@@ -226,12 +226,12 @@ export function useClaimRewards() {
       }
       
       existingRecords.unshift(newRecord)
-      console.log('更新后的记录:', existingRecords)
+      console.log('Updated records:', existingRecords)
       
       localStorage.setItem(storageKey, JSON.stringify(existingRecords))
-      console.log('奖励记录已保存到本地存储')
+      console.log('Reward record saved to local storage')
     } catch (error) {
-      console.error('记录奖励失败:', error)
+      console.error('Failed to record reward:', error)
     }
   }
 
@@ -239,7 +239,7 @@ export function useClaimRewards() {
   useEffect(() => {
     console.log('useClaimRewards useEffect:', { hash, isConfirming, address })
     if (hash && !isConfirming && address && publicClient) {
-      console.log('开始记录奖励，交易哈希:', hash)
+      console.log('Starting to record reward, transaction hash:', hash)
       recordRewardClaim(hash)
     }
   }, [hash, isConfirming, address, publicClient])

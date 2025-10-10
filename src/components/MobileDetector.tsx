@@ -8,7 +8,7 @@ export function MobileDetector() {
       const width = window.innerWidth
       const isMobileDevice = width < 1024 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
       setIsMobile(isMobileDevice)
-      console.log('移动端检测:', { width, isMobileDevice, userAgent: navigator.userAgent })
+      console.log('Mobile detection:', { width, isMobileDevice, userAgent: navigator.userAgent })
     }
 
     checkMobile()
