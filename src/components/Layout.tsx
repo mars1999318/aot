@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Sidebar } from './Sidebar'
 import { MobileNavbar } from './MobileNavbar'
 import { NetworkDebug } from './NetworkDebug'
+import { MobileDetector } from './MobileDetector'
 import { Dashboard } from '../pages/Dashboard'
 import { Staking } from '../pages/Staking'
 import { Referral } from '../pages/Referral'
@@ -9,6 +10,13 @@ import { Charity } from '../pages/Charity'
 
 export function Layout() {
   const [activeTab, setActiveTab] = useState('dashboard')
+
+  // 添加移动端检测调试
+  React.useEffect(() => {
+    console.log('屏幕宽度:', window.innerWidth)
+    console.log('用户代理:', navigator.userAgent)
+    console.log('是否为移动设备:', /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
+  }, [])
 
   const renderContent = () => {
     switch (activeTab) {
@@ -28,6 +36,7 @@ export function Layout() {
   return (
     <div className="min-h-screen bg-white">
       <NetworkDebug />
+      <MobileDetector />
       {/* 桌面端布局 */}
       <div className="hidden lg:flex">
         <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
