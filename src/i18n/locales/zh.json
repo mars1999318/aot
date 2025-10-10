@@ -137,7 +137,14 @@
     "people": "人",
     "totalReferredStaked": "推荐质押总量",
     "referredStakedTotal": "被推荐人质押总量",
-    "currentReferralRate": "当前推荐率"
+    "currentReferralRate": "当前推荐率",
+    "progressTitle": "推荐进度",
+    "progress": "进度",
+    "nextTier": "下一档位",
+    "needToRefer": "还需推荐",
+    "maxTierReached": "已达到最高档位",
+    "maxTierMessage": "恭喜！您已达到最高推荐率档位",
+    "incentiveMessage": "继续推荐更多用户质押，解锁更高推荐率！"
   },
   "charity": {
     "title": "公益",

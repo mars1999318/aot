@@ -4,6 +4,7 @@ import { useTranslation } from '../hooks/useTranslation'
 import { useReferral } from '../hooks/useReferral'
 import { ReferralStatsComponent } from '../components/ReferralStats'
 import { ReferralHistory } from '../components/ReferralHistory'
+import { ReferralProgressCard } from '../components/ReferralProgressCard'
 import { WalletNotConnected } from '../components/WalletNotConnected'
 import { ModernCard, ModernCardHeader, ModernCardBody } from '../components/ModernCard'
 import { PageTransition, FadeIn } from '../components/PageTransition'
@@ -128,6 +129,17 @@ export function Referral() {
         {/* Referral Statistics */}
         <FadeIn delay={100}>
           {referralStats && <ReferralStatsComponent stats={referralStats as any} className="mb-8" />}
+        </FadeIn>
+
+        {/* Referral Progress Card */}
+        <FadeIn delay={200}>
+          {referralStats && (
+            <ReferralProgressCard 
+              totalReferredStaked={referralStats.totalReferredStaked || 0}
+              currentReferralRate={referralStats.referralRate || 0}
+              className="mb-8"
+            />
+          )}
         </FadeIn>
 
         <div className="space-y-6">

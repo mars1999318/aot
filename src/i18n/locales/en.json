@@ -124,7 +124,14 @@
     "people": "people",
     "totalReferredStaked": "Total Referred Staked",
     "referredStakedTotal": "Referred Staked Total",
-    "currentReferralRate": "Current Referral Rate"
+    "currentReferralRate": "Current Referral Rate",
+    "progressTitle": "Referral Progress",
+    "progress": "Progress",
+    "nextTier": "Next Tier",
+    "needToRefer": "Need to Refer",
+    "maxTierReached": "Max Tier Reached",
+    "maxTierMessage": "Congratulations! You've reached the highest referral rate tier",
+    "incentiveMessage": "Continue referring more users to stake and unlock higher referral rates!"
   },
   "charity": {
     "title": "Charity",
