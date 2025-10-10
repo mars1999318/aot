@@ -189,7 +189,7 @@ export function ReferralHistory({ records, isLoading = false, className = '', da
                   {getStatusBadge(record.status)}
                   <button
                     onClick={() => window.open(`https://bscscan.com/address/${record.address}`, '_blank')}
-                    className="glass-button px-2 py-1 text-xs sm:px-3 sm:py-1 sm:text-sm flex items-center"
+                    className="glass-button px-2 py-1 text-xs sm:px-3 sm:py-1 sm:text-sm flex items-center text-gray-800 font-semibold"
                   >
                     <ExternalLink className="h-3 w-3 sm:h-4 sm:w-4 mr-1" />
                     <span className="hidden sm:inline">查看</span>

@@ -110,8 +110,11 @@
   },
   "wallet": {
     "connectWallet": "连接钱包",
+    "connect": "连接",
     "walletConnected": "钱包已连接",
     "disconnect": "断开连接",
+    "disconnectShort": "断开",
+    "connecting": "连接中...",
     "balance": "余额"
   },
   "network": {
@@ -125,6 +128,7 @@
   "data": {
     "walletNotConnected": "钱包未连接",
     "connectWalletToViewData": "请连接钱包以查看您的数据",
+    "clickConnectWalletButton": "请点击右上角的"连接钱包"按钮",
     "dataLoadError": "数据加载错误",
     "failedToLoadData": "从合约加载数据失败",
     "loadingData": "正在加载数据",

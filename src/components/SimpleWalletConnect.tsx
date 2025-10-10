@@ -17,27 +17,27 @@ export function SimpleWalletConnect() {
   const handleConnect = async () => {
     try {
       setIsLoading(true)
-      console.log('尝试连接钱包...')
-      console.log('可用连接器:', connectors)
-      console.log('当前连接状态:', { isConnected, address })
+      console.log('Attempting to connect wallet...')
+      console.log('Available connectors:', connectors)
+      console.log('Current connection status:', { isConnected, address })
       
       if (connectors.length > 0) {
         const result = await connect({ connector: connectors[0] })
-        console.log('连接结果:', result)
+        console.log('Connection result:', result)
         
         // 等待连接状态更新
         setTimeout(() => {
-          console.log('连接后状态:', { isConnected, address })
+          console.log('Post-connection status:', { isConnected, address })
           setIsLoading(false)
         }, 2000)
       } else {
-        console.error('没有可用的钱包连接器')
-        alert('没有检测到钱包，请安装MetaMask或其他钱包')
+        console.error('No available wallet connectors')
+        alert('No wallet detected, please install MetaMask or other wallet')
         setIsLoading(false)
       }
     } catch (error) {
-      console.error('钱包连接失败:', error)
-      alert('钱包连接失败，请重试')
+      console.error('Wallet connection failed:', error)
+      alert('Wallet connection failed, please try again')
       setIsLoading(false)
     }
   }
@@ -45,15 +45,15 @@ export function SimpleWalletConnect() {
   const handleDisconnect = () => {
     try {
       disconnect()
-      console.log('钱包已断开连接')
+      console.log('Wallet disconnected')
     } catch (error) {
-      console.error('断开连接失败:', error)
+      console.error('Disconnect failed:', error)
     }
   }
 
   // 显示连接错误
   if (connectError) {
-    console.error('连接错误:', connectError)
+    console.error('Connection error:', connectError)
   }
 
   if (isConnected && address) {
@@ -62,8 +62,8 @@ export function SimpleWalletConnect() {
         onClick={handleDisconnect}
         className="modern-btn modern-btn-error modern-btn-sm"
       >
-        <span className="hidden sm:inline">断开连接</span>
-        <span className="sm:hidden">断开</span>
+        <span className="hidden sm:inline">{t('wallet.disconnect')}</span>
+        <span className="sm:hidden">{t('wallet.disconnectShort')}</span>
       </button>
     )
   }
@@ -74,12 +74,12 @@ export function SimpleWalletConnect() {
       disabled={isLoading || isConnecting}
       className="modern-btn modern-btn-primary modern-btn-sm"
     >
-      <span className="hidden sm:inline">
-        {isLoading || isConnecting ? '连接中...' : '连接钱包'}
-      </span>
-      <span className="sm:hidden">
-        {isLoading || isConnecting ? '连接中...' : '连接'}
-      </span>
+        <span className="hidden sm:inline">
+          {isLoading || isConnecting ? t('wallet.connecting') : t('wallet.connectWallet')}
+        </span>
+        <span className="sm:hidden">
+          {isLoading || isConnecting ? t('wallet.connecting') : t('wallet.connect')}
+        </span>
     </button>
   )
 }

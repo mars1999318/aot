@@ -44,10 +44,10 @@ export function Dashboard() {
       <PageTransition>
         <div className="min-h-screen flex items-center justify-center">
           <div className="text-center">
-            <h2 className="text-2xl font-bold mb-4">请连接钱包</h2>
-            <p className="text-gray-600 mb-6">连接钱包后即可查看您的数据</p>
+            <h2 className="text-2xl font-bold mb-4">{t('wallet.connectWallet')}</h2>
+            <p className="text-gray-600 mb-6">{t('data.connectWalletToViewData')}</p>
             <div className="text-sm text-gray-500">
-              请点击右上角的"连接钱包"按钮
+              {t('data.clickConnectWalletButton')}
             </div>
           </div>
         </div>

@@ -405,7 +405,7 @@ export function Staking() {
                     loading={isStakeLoading || (isProcessing && operationType === 'stake')}
                     onClick={handleStake}
                     disabled={!getFieldValue('stakeAmount') || hasFieldError('stakeAmount') || (!hasReferrer && hasFieldError('referralCode')) || isProcessing}
-                    variant="success"
+                    variant="gold"
                     size="lg"
                     className="w-full"
                     loadingText={isProcessing ? '处理中...' : t('common.loading')}

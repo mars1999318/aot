@@ -36,7 +36,7 @@ export function ReferralLink({ link, className = '' }: ReferralLinkProps) {
           </div>
           <button
             onClick={handleCopy}
-            className="glass-button flex-shrink-0 px-3 py-2 text-sm flex items-center justify-center w-full sm:w-auto"
+            className="glass-button flex-shrink-0 px-3 py-2 text-sm flex items-center justify-center w-full sm:w-auto text-gray-800 font-semibold"
           >
             {copied ? <Check className="h-4 w-4 mr-1" /> : <Copy className="h-4 w-4 mr-1" />}
             {copied ? '已复制' : '复制'}

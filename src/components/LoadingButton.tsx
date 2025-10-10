@@ -5,7 +5,7 @@ interface LoadingButtonProps {
   children: React.ReactNode
   onClick?: () => void
   disabled?: boolean
-  variant?: 'primary' | 'secondary' | 'danger' | 'success'
+  variant?: 'primary' | 'secondary' | 'danger' | 'success' | 'gold'
   size?: 'sm' | 'md' | 'lg'
   className?: string
   loadingText?: string
@@ -33,7 +33,8 @@ export function LoadingButton({
     primary: 'bg-blue-500 text-white hover:bg-blue-600 focus:ring-blue-500',
     secondary: 'bg-gray-500 text-white hover:bg-gray-600 focus:ring-gray-500',
     danger: 'bg-red-500 text-white hover:bg-red-600 focus:ring-red-500',
-    success: 'bg-green-500 text-white hover:bg-green-600 focus:ring-green-500'
+    success: 'bg-green-500 text-white hover:bg-green-600 focus:ring-green-500',
+    gold: 'bg-gradient-to-r from-yellow-400 to-yellow-600 text-white hover:from-yellow-500 hover:to-yellow-700 focus:ring-yellow-500 shadow-lg'
   }
 
   // 使用key属性确保React正确识别组件状态变化

@@ -42,7 +42,7 @@
   -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 15px;
-  color: white;
+  color: #1f2937 !important; /* 深色字体确保可见性 */
   font-weight: 600;
   transition: all 0.3s ease;
   box-shadow: 0 4px 15px 0 rgba(31, 38, 135, 0.3);
@@ -52,6 +52,7 @@
   background: rgba(255, 255, 255, 0.2);
   transform: translateY(-2px);
   box-shadow: 0 8px 25px 0 rgba(31, 38, 135, 0.4);
+  color: #111827 !important; /* 悬停时更深的字体颜色 */
 }
 
 /* 玻璃拟态导航栏 */

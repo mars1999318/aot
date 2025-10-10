@@ -110,8 +110,11 @@
   },
   "wallet": {
     "connectWallet": "Connect Wallet",
+    "connect": "Connect",
     "walletConnected": "Wallet Connected",
     "disconnect": "Disconnect",
+    "disconnectShort": "Disconnect",
+    "connecting": "Connecting...",
     "balance": "Balance"
   },
   "network": {
@@ -125,6 +128,7 @@
   "data": {
     "walletNotConnected": "Wallet Not Connected",
     "connectWalletToViewData": "Please connect your wallet to view your data",
+    "clickConnectWalletButton": "Please click the 'Connect Wallet' button in the top right corner",
     "dataLoadError": "Data Load Error",
     "failedToLoadData": "Failed to load data from contract",
     "loadingData": "Loading Data",

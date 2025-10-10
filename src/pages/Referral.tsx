@@ -138,7 +138,7 @@ export function Referral() {
             <div className="mt-4">
               <button
                 onClick={refreshData}
-                className="glass-button px-4 py-2 text-sm"
+                className="glass-button px-4 py-2 text-sm text-gray-800 font-semibold"
               >
                 强制刷新数据 (v{dataVersion})
               </button>
