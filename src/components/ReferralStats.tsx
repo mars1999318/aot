@@ -15,7 +15,8 @@ export function ReferralStatsComponent({ stats, className = '' }: ReferralStatsP
   const { t } = useTranslation()
   
   // Use unified referral rate formatting function
-  const referralRatePercent = formatReferralRate(stats.currentReferralRate * 1000000) // Convert to original value
+  // stats.currentReferralRate is already in decimal form (e.g., 0.2 for 0.2%)
+  const referralRatePercent = formatReferralRate(stats.currentReferralRate * 1_000_000) // Convert back to 1e6 precision for formatting
   
   const statCards = [
     {

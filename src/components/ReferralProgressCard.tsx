@@ -18,34 +18,42 @@ export function ReferralProgressCard({
   
   // Based on real contract configuration for referral tier system
   const getNextReferralTierInfo = () => {
-    // According to contract constructor configuration:
-    // referralRateConfig.push(RateConfig({threshold: 0, rate: 200}));
-    // referralRateConfig.push(RateConfig({threshold: 1000 ether, rate: 250}));
-    // referralRateConfig.push(RateConfig({threshold: 5000 ether, rate: 300}));
-    // referralRateConfig.push(RateConfig({threshold: 10000 ether, rate: 350}));
-    // referralRateConfig.push(RateConfig({threshold: 20000 ether, rate: 400}));
-    // referralRateConfig.push(RateConfig({threshold: 50000 ether, rate: 450}));
-    // referralRateConfig.push(RateConfig({threshold: 100000 ether, rate: 500}));
+    // According to contract constructor configuration (1e6 precision):
+    // referralRateConfig.push(RateConfig({threshold: 0, rate: 200_000}));
+    // referralRateConfig.push(RateConfig({threshold: 1_500 ether, rate: 210_000}));
+    // referralRateConfig.push(RateConfig({threshold: 3_000 ether, rate: 230_000}));
+    // referralRateConfig.push(RateConfig({threshold: 6_000 ether, rate: 260_000}));
+    // referralRateConfig.push(RateConfig({threshold: 12_000 ether, rate: 300_000}));
+    // referralRateConfig.push(RateConfig({threshold: 24_000 ether, rate: 350_000}));
+    // referralRateConfig.push(RateConfig({threshold: 45_000 ether, rate: 410_000}));
+    // referralRateConfig.push(RateConfig({threshold: 90_000 ether, rate: 480_000}));
+    // referralRateConfig.push(RateConfig({threshold: 150_000 ether, rate: 560_000}));
     
     // Calculate next tier based on current referred staked amount
-    if (totalReferredStaked < 1000) {
-      // Next tier: 1000 AOT, referral rate: 250 (0.025%)
-      return { required: 1000, name: '1000 AOT', rate: 250 / 1000000 }
-    } else if (totalReferredStaked < 5000) {
-      // Next tier: 5000 AOT, referral rate: 300 (0.030%)
-      return { required: 5000, name: '5000 AOT', rate: 300 / 1000000 }
-    } else if (totalReferredStaked < 10000) {
-      // Next tier: 10000 AOT, referral rate: 350 (0.035%)
-      return { required: 10000, name: '10000 AOT', rate: 350 / 1000000 }
-    } else if (totalReferredStaked < 20000) {
-      // Next tier: 20000 AOT, referral rate: 400 (0.040%)
-      return { required: 20000, name: '20000 AOT', rate: 400 / 1000000 }
-    } else if (totalReferredStaked < 50000) {
-      // Next tier: 50000 AOT, referral rate: 450 (0.045%)
-      return { required: 50000, name: '50000 AOT', rate: 450 / 1000000 }
-    } else if (totalReferredStaked < 100000) {
-      // Next tier: 100000 AOT, referral rate: 500 (0.050%)
-      return { required: 100000, name: '100000 AOT', rate: 500 / 1000000 }
+    if (totalReferredStaked < 1500) {
+      // Next tier: 1500 AOT, referral rate: 210_000 (21%)
+      return { required: 1500, name: '1500 AOT', rate: 210_000 / 1_000_000 }
+    } else if (totalReferredStaked < 3000) {
+      // Next tier: 3000 AOT, referral rate: 230_000 (23%)
+      return { required: 3000, name: '3000 AOT', rate: 230_000 / 1_000_000 }
+    } else if (totalReferredStaked < 6000) {
+      // Next tier: 6000 AOT, referral rate: 260_000 (26%)
+      return { required: 6000, name: '6000 AOT', rate: 260_000 / 1_000_000 }
+    } else if (totalReferredStaked < 12000) {
+      // Next tier: 12000 AOT, referral rate: 300_000 (30%)
+      return { required: 12000, name: '12000 AOT', rate: 300_000 / 1_000_000 }
+    } else if (totalReferredStaked < 24000) {
+      // Next tier: 24000 AOT, referral rate: 350_000 (35%)
+      return { required: 24000, name: '24000 AOT', rate: 350_000 / 1_000_000 }
+    } else if (totalReferredStaked < 45000) {
+      // Next tier: 45000 AOT, referral rate: 410_000 (41%)
+      return { required: 45000, name: '45000 AOT', rate: 410_000 / 1_000_000 }
+    } else if (totalReferredStaked < 90000) {
+      // Next tier: 90000 AOT, referral rate: 480_000 (48%)
+      return { required: 90000, name: '90000 AOT', rate: 480_000 / 1_000_000 }
+    } else if (totalReferredStaked < 150000) {
+      // Next tier: 150000 AOT, referral rate: 560_000 (56%)
+      return { required: 150000, name: '150000 AOT', rate: 560_000 / 1_000_000 }
     }
     return null // Reached highest tier
   }
@@ -54,7 +62,8 @@ export function ReferralProgressCard({
   const remainingToNext = nextTier ? Math.max(0, nextTier.required - totalReferredStaked) : 0
   
   // Calculate current referral rate display using the same formatting function as other pages
-  const displayRate = formatReferralRate(currentReferralRate)
+  // currentReferralRate is already in decimal form (e.g., 0.2 for 0.2%)
+  const displayRate = formatReferralRate(currentReferralRate * 1_000_000) // Convert back to 1e6 precision for formatting
   
   // Calculate progress percentage
   const progressPercentage = nextTier ? Math.min(100, (totalReferredStaked / nextTier.required) * 100) : 100
@@ -94,7 +103,7 @@ export function ReferralProgressCard({
                 <span className="text-xs font-medium glass-text-blue">{t('referral.nextTier')}: {nextTier.name}</span>
               </div>
               <div className="text-sm font-bold glass-text-red mb-1">
-                {formatReferralRate(nextTier.rate * 1000000)}%
+                {formatReferralRate(nextTier.rate * 1_000_000)}%
               </div>
               <div className="text-xs glass-text-gold-light">
                 {t('referral.needToRefer')} <span className="font-semibold">{remainingToNext.toFixed(2)} AOT</span>

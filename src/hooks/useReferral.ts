@@ -121,7 +121,8 @@ export function useReferral() {
         const totalReferredStaked = userInfo[2] ? formatWeiToEther(userInfo[2].toString(), 4) : '0' // totalReferred - 推荐总质押量
         const userTotalStaked = userInfo[0] ? formatWeiToEther(userInfo[0].toString(), 4) : '0' // 用户自己的质押量
         // 使用合约提供的推荐率，保持与仪表盘/质押页一致（不自行推导）
-        const currentReferralRate = userInfo[4] ? Number(userInfo[4]) / 1000000 : 0 // 小数形式，例如 0.026 表示 2.6%
+        // 合约返回的推荐率是1e6精度（如200_000表示20%），需要除以1_000_000转换为小数
+        const currentReferralRate = userInfo[4] ? Number(userInfo[4]) / 1_000_000 : 0 // 转换为小数形式（0.2 = 20%）
         const totalEarnedRewards = pendingRewards ? formatWeiToEther(pendingRewards.toString(), 6) : '0'
         
         // 获取真实的推荐人数
