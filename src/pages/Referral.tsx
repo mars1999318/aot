@@ -5,6 +5,7 @@ import { useReferral } from '../hooks/useReferral'
 import { ReferralLink } from '../components/ReferralLink'
 import { ReferralStatsComponent } from '../components/ReferralStats'
 import { ReferralHistory } from '../components/ReferralHistory'
+import { WalletNotConnected } from '../components/WalletNotConnected'
 import { ModernCard, ModernCardHeader, ModernCardBody } from '../components/ModernCard'
 import { PageTransition, FadeIn } from '../components/PageTransition'
 import { 
@@ -17,7 +18,7 @@ import {
 } from 'lucide-react'
 
 export function Referral() {
-  const { address } = useAccount()
+  const { isConnected } = useAccount()
   const { t } = useTranslation()
   const { 
     referralStats, 
@@ -31,7 +32,9 @@ export function Referral() {
   } = useReferral()
 
   // 如果没有连接钱包，显示提示
-  if (!address) {
+  if (!isConnected) {
+    return <WalletNotConnected />
+  }
     return (
       <PageTransition className="min-h-screen">
         <div className="space-y-6">

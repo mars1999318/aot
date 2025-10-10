@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useAccount } from 'wagmi'
 import { useTranslation } from '../hooks/useTranslation'
 import { PageTransition, FadeIn } from '../components/PageTransition'
+import { WalletNotConnected } from '../components/WalletNotConnected'
 import { 
   Heart, 
   Wallet,
@@ -14,8 +15,13 @@ import {
 } from 'lucide-react'
 
 export function Charity() {
-  const { address } = useAccount()
+  const { isConnected } = useAccount()
   const { t } = useTranslation()
+
+  // 如果钱包没有连接，显示连接提示
+  if (!isConnected) {
+    return <WalletNotConnected />
+  }
   
   // 状态管理
   const [donationAmount, setDonationAmount] = useState('')

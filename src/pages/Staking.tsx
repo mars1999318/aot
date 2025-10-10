@@ -18,6 +18,7 @@ import { CURRENT_NETWORK } from '../constants/contracts'
 import { NetworkSwitcher } from '../components/NetworkSwitcher'
 import { StakingRecords } from '../components/StakingRecords'
 import { StakingProgressCard } from '../components/StakingProgressCard'
+import { WalletNotConnected } from '../components/WalletNotConnected'
 import { 
   Coins, 
   TrendingUp, 
@@ -39,6 +40,7 @@ function getStakingProgress(amount: number, stakingRate: number): number {
 }
 
 export function Staking() {
+  const { isConnected } = useAccount()
   const { userInfo, pendingRewards, tokenBalance } = useUserInfo()
   const { stake, isStakeLoading } = useStake()
   const { approve, isApproveLoading } = useApprove()
@@ -46,6 +48,11 @@ export function Staking() {
   const { claimRewards, isClaimLoading } = useClaimRewards()
   const publicClient = usePublicClient()
   const { t } = useTranslation()
+
+  // 如果钱包没有连接，显示连接提示
+  if (!isConnected) {
+    return <WalletNotConnected />
+  }
   const { showSuccess, showError, showWarning } = useToast()
 
   const [isApproved, setIsApproved] = useState(false)

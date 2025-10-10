@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { User, CheckCircle, XCircle, ExternalLink } from 'lucide-react'
 import { ModernCard, ModernCardHeader, ModernCardBody } from './ModernCard'
 import { ModernBadge } from './ModernBadge'
+import { useTranslation } from '../hooks/useTranslation'
 import { ReferralRecord } from '../hooks/useReferral'
 
 interface ReferralHistoryProps {
@@ -12,6 +13,7 @@ interface ReferralHistoryProps {
 }
 
 export function ReferralHistory({ records, isLoading = false, className = '', dataVersion }: ReferralHistoryProps) {
+  const { t } = useTranslation()
   const [sortBy, setSortBy] = useState<'date' | 'amount' | 'status'>('date')
   const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc')
 

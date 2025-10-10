@@ -51,15 +51,15 @@ function ExpandableRecord({
 
   return (
     <div className="glass-card hover:shadow-lg transition-all duration-300">
-      {/* 紧凑的摘要行 */}
+      {/* 紧凑的摘要行 - 移动端优化 */}
       <div 
-        className="p-3 cursor-pointer hover:bg-white/20 transition-colors"
+        className="p-3 sm:p-4 cursor-pointer hover:bg-white/20 transition-colors"
         onClick={() => setIsExpanded(!isExpanded)}
       >
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
           <div className="flex items-center space-x-3">
             {getStatusIcon(record.isActive)}
-            <div>
+            <div className="min-w-0 flex-1">
               <div className="flex items-center space-x-2">
                 <h4 className="text-sm font-medium glass-text-blue">
                   {t('staking.stake')}
@@ -72,8 +72,8 @@ function ExpandableRecord({
             </div>
           </div>
           
-          <div className="flex items-center space-x-3">
-            <div className="text-right">
+          <div className="flex items-center justify-between sm:justify-end sm:space-x-3">
+            <div className="text-left sm:text-right">
               <div className="text-sm font-semibold glass-text-red">
                 {formatStakingAmount(record.amount)} AOT
               </div>
@@ -95,12 +95,12 @@ function ExpandableRecord({
         </div>
       </div>
 
-      {/* 展开的详细内容 */}
+      {/* 展开的详细内容 - 移动端优化 */}
       {isExpanded && (
         <div className="px-3 pb-3 border-t border-gray-100 bg-gray-50">
           <div className="pt-3 space-y-3">
-            {/* 基本信息 */}
-            <div className="grid grid-cols-2 gap-4 text-sm">
+            {/* 基本信息 - 移动端响应式网格 */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 text-sm">
               <div className="flex items-center">
                 <DollarSign className="h-4 w-4 text-gray-400 mr-2" />
                 <span className="text-gray-600">{t('staking.amount')}:</span>
@@ -132,8 +132,8 @@ function ExpandableRecord({
               </div>
             </div>
 
-            {/* 手续费和推荐人信息 */}
-            <div className="flex items-center space-x-6">
+            {/* 手续费和推荐人信息 - 移动端优化 */}
+            <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-6 space-y-2 sm:space-y-0">
               <div className="flex items-center">
                 <Percent className="h-4 w-4 text-blue-500 mr-2" />
                 <span className="text-sm text-gray-600">{t('staking.feeReduction')}:</span>
