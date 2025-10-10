@@ -1,5 +1,6 @@
 import React from 'react'
 import { Percent, Target, TrendingUp } from 'lucide-react'
+import { useTranslation } from '../hooks/useTranslation'
 
 interface StakingProgressCardProps {
   currentStaked: number
@@ -8,6 +9,7 @@ interface StakingProgressCardProps {
 }
 
 export function StakingProgressCard({ currentStaked, currentRate, className = '' }: StakingProgressCardProps) {
+  const { t } = useTranslation()
   // 显示正确的质押率 - 使用合约返回的实际收益率
   // 按照Dashboard的方式转换：rawStakingRate / 1000000，然后乘以100显示为百分比
   const stakingRate = currentRate > 0 ? (currentRate / 1000000) : 0
@@ -65,7 +67,7 @@ export function StakingProgressCard({ currentStaked, currentRate, className = ''
         <div className="text-center">
           <div className="flex items-center justify-center mb-1">
             <Percent className="h-3 w-3 text-green-600 mr-1" />
-            <span className="text-xs font-semibold glass-text-blue-light">当前质押率</span>
+            <span className="text-xs font-semibold glass-text-blue-light">{t('staking.currentStakingRate')}</span>
           </div>
           <div className="text-xl font-bold glass-text-red">
             {displayRate}%
@@ -78,7 +80,7 @@ export function StakingProgressCard({ currentStaked, currentRate, className = ''
             <div className="text-sm font-semibold glass-text-gold">
               {currentStaked.toFixed(2)} AOT
             </div>
-            <div className="text-xs glass-text-blue-light">当前质押量</div>
+            <div className="text-xs glass-text-blue-light">{t('staking.currentStakingAmount')}</div>
           </div>
         </div>
 
@@ -88,13 +90,13 @@ export function StakingProgressCard({ currentStaked, currentRate, className = ''
             <div className="text-center">
               <div className="flex items-center justify-center mb-1">
                 <Target className="h-3 w-3 text-blue-600 mr-1" />
-                <span className="text-xs font-medium glass-text-blue">下一档位: {nextTier.name}</span>
+                <span className="text-xs font-medium glass-text-blue">{t('staking.nextTier')}: {nextTier.name}</span>
               </div>
               <div className="text-sm font-bold glass-text-red mb-1">
                 {(nextTier.rate * 100).toFixed(4)}%
               </div>
               <div className="text-xs glass-text-gold-light">
-                还需质押 <span className="font-semibold">{remainingToNext.toFixed(2)} AOT</span>
+                {t('staking.needToStake')} <span className="font-semibold">{remainingToNext.toFixed(2)} AOT</span>
               </div>
             </div>
           </div>

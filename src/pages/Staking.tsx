@@ -414,7 +414,7 @@ export function Staking() {
                     onClick={handleApprove}
                     disabled={!getFieldValue('stakeAmount') || hasFieldError('stakeAmount') || isProcessing}
                     variant="gold"
-                    size="lg"
+                    size="md"
                     className="w-full"
                     loadingText={isProcessing ? '处理中...' : t('common.loading')}
                   >
