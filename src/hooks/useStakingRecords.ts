@@ -151,14 +151,9 @@ export function useStakingRecords() {
             
             console.log(`Stake ${index} calculation:`, {
               stakingDays,
-              stakingAmount,
-              stakeRate: stakeRate * 100, // 转换为百分比显示
-              dailyRate: dailyRate * 100, // 转换为百分比显示
               pendingRewards,
               feeReduction,
-              lastClaimTime: stake.lastClaimTime,
-              claimTimeMs,
-              rewardStakingDays
+              lastClaimTime: stake.lastClaimTime
             })
             
             const userStakeRecord: StakingRecord = {
@@ -170,7 +165,7 @@ export function useStakingRecords() {
               pendingRewards: pendingRewards, // 基于 lastClaimTime 计算的奖励
               daysStaked: Math.floor(stakingDays), // 向下取整的天数
               feeReduction: feeReduction, // 基于质押时间的递减手续费
-              stakingRate: rawStakeRate // 质押收益率（年化）- 使用原始值
+              stakingRate: Number(stake.rate) // 质押收益率（年化）- 使用原始值
             }
             records.push(userStakeRecord)
           } catch (err) {

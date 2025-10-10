@@ -60,89 +60,60 @@ export function ReferralProgressCard({
   const progressPercentage = nextTier ? Math.min(100, (totalReferredStaked / nextTier.required) * 100) : 100
 
   return (
-    <div className={`glass-card p-4 ${className}`}>
-      <div className="space-y-4">
-        {/* 标题 */}
-        <div className="flex items-center justify-between">
-          <div className="flex items-center">
-            <Users className="h-5 w-5 text-blue-600 mr-2" />
-            <h3 className="text-lg font-semibold glass-text-blue">
-              {t('referral.progressTitle')}
-            </h3>
-          </div>
-          <div className="text-sm glass-text-gold">
-            {totalReferredStaked.toFixed(2)} AOT
-          </div>
-        </div>
-
+    <div className={`glass-card p-3 ${className}`}>
+      <div className="space-y-3">
         {/* 当前推荐率 */}
         <div className="text-center">
           <div className="flex items-center justify-center mb-1">
-            <TrendingUp className="h-4 w-4 text-green-600 mr-1" />
-            <span className="text-sm font-semibold glass-text-blue-light">
+            <TrendingUp className="h-3 w-3 text-green-600 mr-1" />
+            <span className="text-xs font-semibold glass-text-blue-light">
               {t('referral.currentReferralRate')}
             </span>
           </div>
-          <div className="text-2xl font-bold glass-text-red">
+          <div className="text-xl font-bold glass-text-red">
             {displayRate}%
           </div>
         </div>
 
-        {/* 进度条 */}
-        {nextTier && (
-          <div className="space-y-2">
-            <div className="flex justify-between text-xs glass-text-blue-light">
-              <span>{t('referral.progress')}</span>
-              <span>{progressPercentage.toFixed(1)}%</span>
+        {/* 当前推荐质押量 */}
+        <div className="bg-white/30 backdrop-blur-sm rounded-lg p-2 border border-white/20">
+          <div className="text-center">
+            <div className="text-sm font-semibold glass-text-gold">
+              {totalReferredStaked.toFixed(2)} AOT
             </div>
-            <div className="w-full bg-white/20 rounded-full h-2">
-              <div 
-                className="bg-gradient-to-r from-blue-500 to-green-500 h-2 rounded-full transition-all duration-300"
-                style={{ width: `${progressPercentage}%` }}
-              />
-            </div>
+            <div className="text-xs glass-text-blue-light">{t('referral.progress')}</div>
           </div>
-        )}
+        </div>
 
         {/* 下一档位信息 */}
-        {nextTier ? (
-          <div className="bg-white/30 backdrop-blur-sm rounded-lg p-3 border border-white/20">
+        {nextTier && (
+          <div className="bg-white/30 backdrop-blur-sm rounded-lg p-2 border border-white/20">
             <div className="text-center">
-              <div className="flex items-center justify-center mb-2">
-                <Target className="h-4 w-4 text-blue-600 mr-1" />
-                <span className="text-sm font-medium glass-text-blue">
-                  {t('referral.nextTier')}: {nextTier.name}
-                </span>
+              <div className="flex items-center justify-center mb-1">
+                <Target className="h-3 w-3 text-blue-600 mr-1" />
+                <span className="text-xs font-medium glass-text-blue">{t('referral.nextTier')}: {nextTier.name}</span>
               </div>
-              <div className="text-lg font-bold glass-text-red mb-2">
+              <div className="text-sm font-bold glass-text-red mb-1">
                 {(nextTier.rate * 100).toFixed(4)}%
               </div>
-              <div className="text-sm glass-text-gold-light">
+              <div className="text-xs glass-text-gold-light">
                 {t('referral.needToRefer')} <span className="font-semibold">{remainingToNext.toFixed(2)} AOT</span>
               </div>
             </div>
           </div>
-        ) : (
-          <div className="bg-gradient-to-r from-green-500/20 to-blue-500/20 backdrop-blur-sm rounded-lg p-3 border border-green-400/30">
-            <div className="text-center">
-              <div className="flex items-center justify-center mb-2">
-                <Target className="h-4 w-4 text-green-600 mr-1" />
-                <span className="text-sm font-medium glass-text-green">
-                  {t('referral.maxTierReached')}
-                </span>
-              </div>
-              <div className="text-sm glass-text-green-light">
-                {t('referral.maxTierMessage')}
-              </div>
-            </div>
-          </div>
         )}
 
-        {/* 激励信息 */}
-        {nextTier && (
-          <div className="text-center">
-            <div className="text-xs glass-text-blue-light">
-              {t('referral.incentiveMessage')}
+        {/* 最高档位提示 */}
+        {!nextTier && (
+          <div className="bg-gradient-to-r from-yellow-50/50 to-orange-50/50 backdrop-blur-sm rounded-lg p-2 border border-yellow-200/30">
+            <div className="text-center">
+              <div className="flex items-center justify-center mb-1">
+                <TrendingUp className="h-3 w-3 text-yellow-600 mr-1" />
+                <span className="text-xs font-semibold glass-text-gold">{t('referral.maxTierReached')}</span>
+              </div>
+              <div className="text-xs glass-text-gold-light">
+                {t('referral.maxTierMessage')}
+              </div>
             </div>
           </div>
         )}
