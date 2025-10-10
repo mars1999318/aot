@@ -35,8 +35,6 @@ export function Layout() {
 
   return (
     <div className="min-h-screen bg-white">
-      <NetworkDebug />
-      <MobileDetector />
       {/* 桌面端布局 */}
       <div className="hidden lg:flex">
         <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />

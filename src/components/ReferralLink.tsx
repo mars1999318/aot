@@ -25,18 +25,18 @@ export function ReferralLink({ link, className = '' }: ReferralLinkProps) {
   }
 
   return (
-    <div className={`glass-card p-6 ${className}`}>
+    <div className={`glass-card p-4 sm:p-6 ${className}`}>
       <div className="mb-4">
         <h3 className="text-lg font-semibold glass-text-blue">推荐链接</h3>
       </div>
-      <div className="bg-white/20 rounded-lg p-4">
-        <div className="flex items-center justify-between">
+      <div className="bg-white/20 rounded-lg p-3 sm:p-4">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-3">
           <div className="flex-1 min-w-0">
-            <p className="text-sm glass-text-gold break-all">{link}</p>
+            <p className="text-xs sm:text-sm glass-text-gold break-all">{link}</p>
           </div>
           <button
             onClick={handleCopy}
-            className="glass-button ml-2 flex-shrink-0 px-3 py-1 text-sm flex items-center"
+            className="glass-button flex-shrink-0 px-3 py-2 text-sm flex items-center justify-center w-full sm:w-auto"
           >
             {copied ? <Check className="h-4 w-4 mr-1" /> : <Copy className="h-4 w-4 mr-1" />}
             {copied ? '已复制' : '复制'}

@@ -138,7 +138,7 @@ export function ReferralHistory({ records, isLoading = false, className = '', da
   return (
     <div className={`glass-card p-6 ${className}`}>
       <div className="mb-4">
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
           <div>
             <h3 className="text-lg font-semibold glass-text-blue">被推荐人记录 ({records.length})</h3>
             <p className="text-xs glass-text-blue-light mt-1">
@@ -168,31 +168,31 @@ export function ReferralHistory({ records, isLoading = false, className = '', da
       <div>
         <div className="space-y-4">
           {sortedRecords.map((record) => (
-            <div key={record.id} className="flex items-center justify-between p-4 bg-white/20 rounded-lg hover:bg-white/30 transition-colors">
-              <div className="flex items-center space-x-4">
-                <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
-                  <User className="h-5 w-5 text-blue-600" />
+            <div key={record.id} className="flex flex-col sm:flex-row sm:items-center sm:justify-between p-3 sm:p-4 bg-white/20 rounded-lg hover:bg-white/30 transition-colors gap-3">
+              <div className="flex items-center space-x-3">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                  <User className="h-4 w-4 sm:h-5 sm:w-5 text-blue-600" />
                 </div>
-                <div>
-                  <p className="font-medium glass-text-red">{formatAddress(record.address)}</p>
-                  <p className="text-sm glass-text-blue-light">{formatDate(record.timestamp)}</p>
-                  <p className="text-xs glass-text-gold-light">通过推荐链接首次质押</p>
+                <div className="min-w-0 flex-1">
+                  <p className="font-medium glass-text-red text-sm sm:text-base truncate">{formatAddress(record.address)}</p>
+                  <p className="text-xs sm:text-sm glass-text-blue-light">{formatDate(record.timestamp)}</p>
+                  <p className="text-xs glass-text-gold-light hidden sm:block">通过推荐链接首次质押</p>
                 </div>
               </div>
               
-              <div className="flex items-center space-x-4">
-                <div className="text-right">
-                  <p className="font-medium glass-text-gold">质押 {formatStakeAmount(record.stakedAmount)} AOT</p>
-                  <p className="text-sm glass-text-blue-light">{formatDate(record.timestamp)}</p>
+              <div className="flex items-center justify-between sm:justify-end sm:space-x-4">
+                <div className="text-left sm:text-right">
+                  <p className="font-medium glass-text-gold text-sm sm:text-base">质押 {formatStakeAmount(record.stakedAmount)} AOT</p>
+                  <p className="text-xs glass-text-blue-light sm:hidden">{formatDate(record.timestamp)}</p>
                 </div>
                 <div className="flex items-center space-x-2">
                   {getStatusBadge(record.status)}
                   <button
                     onClick={() => window.open(`https://bscscan.com/address/${record.address}`, '_blank')}
-                    className="glass-button px-3 py-1 text-sm flex items-center"
+                    className="glass-button px-2 py-1 text-xs sm:px-3 sm:py-1 sm:text-sm flex items-center"
                   >
-                    <ExternalLink className="h-4 w-4 mr-1" />
-                    查看
+                    <ExternalLink className="h-3 w-3 sm:h-4 sm:w-4 mr-1" />
+                    <span className="hidden sm:inline">查看</span>
                   </button>
                 </div>
               </div>
