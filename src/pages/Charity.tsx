@@ -23,7 +23,7 @@ export function Charity() {
   console.log('Charity - address:', address)
 
   // 如果钱包没有连接，显示连接提示
-  if (!isConnected || !address) {
+  if (!isConnected) {
     return <WalletNotConnected />
   }
   

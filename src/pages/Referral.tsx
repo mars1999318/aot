@@ -18,7 +18,7 @@ import {
 } from 'lucide-react'
 
 export function Referral() {
-  const { isConnected, address } = useAccount()
+  const { isConnected, address, isConnecting } = useAccount()
   const { t } = useTranslation()
   const { 
     referralStats, 
@@ -34,9 +34,25 @@ export function Referral() {
   // 添加调试信息
   console.log('Referral - isConnected:', isConnected)
   console.log('Referral - address:', address)
+  console.log('Referral - isConnecting:', isConnecting)
+
+  // 如果正在连接钱包，显示加载状态
+  if (isConnecting) {
+    return (
+      <PageTransition>
+        <div className="min-h-screen flex items-center justify-center">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500 mx-auto mb-4"></div>
+            <h2 className="text-xl font-semibold mb-2">连接钱包中...</h2>
+            <p className="text-gray-600">请稍候</p>
+          </div>
+        </div>
+      </PageTransition>
+    )
+  }
 
   // 如果没有连接钱包，显示提示
-  if (!isConnected || !address) {
+  if (!isConnected) {
     return <WalletNotConnected />
   }
 
