@@ -18,6 +18,13 @@ export function Layout() {
     console.log('是否为移动设备:', /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent))
   }, [])
 
+  // 处理页面切换，确保滚动到顶部
+  const handleTabChange = (tab: string) => {
+    setActiveTab(tab)
+    // 立即滚动到顶部
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
   const renderContent = () => {
     switch (activeTab) {
       case 'dashboard':
@@ -37,7 +44,7 @@ export function Layout() {
     <div className="min-h-screen bg-white">
       {/* 桌面端布局 */}
       <div className="hidden lg:flex">
-        <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
+        <Sidebar activeTab={activeTab} setActiveTab={handleTabChange} />
         <main className="flex-1 ml-64">
           {renderContent()}
         </main>
@@ -45,7 +52,7 @@ export function Layout() {
 
       {/* 移动端布局 */}
       <div className="lg:hidden">
-        <MobileNavbar activeTab={activeTab} setActiveTab={setActiveTab} />
+        <MobileNavbar activeTab={activeTab} setActiveTab={handleTabChange} />
         <main className="pt-20 pb-20">
           {renderContent()}
         </main>

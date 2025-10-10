@@ -128,7 +128,7 @@ export function Referral() {
                 onClick={refreshData}
                 className="glass-button px-3 py-1 text-xs text-gray-800 font-semibold"
               >
-                刷新数据 (v{dataVersion})
+                {t('common.refresh')} (v{dataVersion})
               </button>
             </div>
           </div>

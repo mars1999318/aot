@@ -14,15 +14,26 @@ export function useStake() {
   })
   const { handleError } = useErrorHandler()
   const { showSuccess, showError } = useToast()
+  const publicClient = usePublicClient()
 
   const stake = async (amount: bigint, referrer: string) => {
     try {
-      await writeContract({
+      const hash = await writeContract({
         address: CURRENT_NETWORK.ArriveOnTime,
         abi: ARRIVE_ON_TIME_ABI,
         functionName: 'stake',
         args: [amount, referrer as `0x${string}`],
       })
+      
+      // 等待交易确认
+      if (hash) {
+        const receipt = await publicClient.waitForTransactionReceipt({ hash })
+        if (receipt.status === 'success') {
+          return { success: true, hash }
+        } else {
+          throw new Error('Transaction failed')
+        }
+      }
     } catch (err) {
       console.error('Stake transaction error:', err)
       handleError(err, 'Stake')
@@ -46,14 +57,30 @@ export function useApprove() {
   const { isLoading: isConfirming } = useWaitForTransactionReceipt({
     hash: hash || undefined,
   })
+  const publicClient = usePublicClient()
 
-  const approve = (spender: string, amount: bigint) => {
-    writeContract({
-      address: CURRENT_NETWORK.AOTToken,
-      abi: AOT_TOKEN_ABI,
-      functionName: 'approve',
-      args: [spender as `0x${string}`, amount],
-    })
+  const approve = async (spender: string, amount: bigint) => {
+    try {
+      const txHash = await writeContract({
+        address: CURRENT_NETWORK.AOTToken,
+        abi: AOT_TOKEN_ABI,
+        functionName: 'approve',
+        args: [spender as `0x${string}`, amount],
+      })
+      
+      // 等待交易确认
+      if (txHash) {
+        const receipt = await publicClient.waitForTransactionReceipt({ hash: txHash })
+        if (receipt.status === 'success') {
+          return { success: true, hash: txHash }
+        } else {
+          throw new Error('Transaction failed')
+        }
+      }
+    } catch (err) {
+      console.error('Approve transaction error:', err)
+      throw err
+    }
   }
 
   return {
@@ -68,14 +95,30 @@ export function useWithdraw() {
   const { isLoading: isConfirming } = useWaitForTransactionReceipt({
     hash: hash || undefined,
   })
+  const publicClient = usePublicClient()
 
-  const withdraw = (stakeIndex: number) => {
-    writeContract({
-      address: CURRENT_NETWORK.ArriveOnTime,
-      abi: ARRIVE_ON_TIME_ABI,
-      functionName: 'withdraw',
-      args: [BigInt(stakeIndex)],
-    })
+  const withdraw = async (stakeIndex: number) => {
+    try {
+      const txHash = await writeContract({
+        address: CURRENT_NETWORK.ArriveOnTime,
+        abi: ARRIVE_ON_TIME_ABI,
+        functionName: 'withdraw',
+        args: [BigInt(stakeIndex)],
+      })
+      
+      // 等待交易确认
+      if (txHash) {
+        const receipt = await publicClient.waitForTransactionReceipt({ hash: txHash })
+        if (receipt.status === 'success') {
+          return { success: true, hash: txHash }
+        } else {
+          throw new Error('Transaction failed')
+        }
+      }
+    } catch (err) {
+      console.error('Withdraw transaction error:', err)
+      throw err
+    }
   }
 
   return {

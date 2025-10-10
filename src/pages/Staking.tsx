@@ -80,7 +80,7 @@ export function Staking() {
     },
     {
       name: 'referralCode',
-      value: userInfo?.[1] || '', // 如果已有推荐人，默认填充推荐人地址
+      value: '', // 默认空值，让用户输入
       validation: validateReferralCode,
       required: false
     }
@@ -151,7 +151,7 @@ export function Staking() {
       // 等待交易确认后再显示成功提示
       setIsApproved(true)
       resetOperationState() // 重置操作状态
-      showSuccess('授权成功', 'AOT代币授权成功，您现在可以进行质押操作。')
+      showSuccess(t('staking.approveSuccess'), t('staking.approveSuccessMessage'))
     } catch (error: any) {
       console.error('Approve failed:', error)
       
@@ -202,7 +202,7 @@ export function Staking() {
       await stake(amount, referrer)
       // 等待交易确认后再显示成功提示和重置表单
       resetOperationState() // 重置操作状态
-      showSuccess('质押成功', `成功质押 ${stakeAmount} AOT代币！`)
+      showSuccess(t('staking.stakeSuccess'), t('staking.stakeSuccessMessage', { amount: stakeAmount }))
       setFieldValue('stakeAmount', '')
       if (!hasReferrer) {
         setFieldValue('referralCode', '')
@@ -255,7 +255,7 @@ export function Staking() {
     try {
       await claimRewards()
       // 奖励领取成功后，显示成功提示
-      showSuccess('奖励领取成功！', '您的奖励已成功领取到钱包。')
+      showSuccess(t('staking.claimSuccess'), t('staking.claimSuccessMessage'))
       
       // 等待一段时间后，使用准确奖励记录系统
       setTimeout(async () => {
@@ -364,10 +364,10 @@ export function Staking() {
                 type="text"
                 value={getFieldValue('referralCode')}
                 onChange={(value) => setFieldValue('referralCode', value)}
-                placeholder={hasReferrer ? '已绑定推荐人' : t('staking.referralCodePlaceholder')}
+                placeholder={hasReferrer ? t('staking.referrerBound') : t('staking.referralCodePlaceholder')}
                 disabled={hasReferrer}
                 error={getFieldError('referralCode')}
-                helpText={hasReferrer ? '您已绑定推荐人，无需重复填写' : t('staking.referralCodeHelp')}
+                helpText={hasReferrer ? t('staking.referrerBoundMessage') : t('staking.referralCodeHelp')}
                 validation={validateReferralCode}
               />
 

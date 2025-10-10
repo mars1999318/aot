@@ -212,7 +212,7 @@ export function Dashboard() {
                 onClick={refreshData}
                 className="text-xs"
               >
-                刷新推荐数据 (v{dataVersion})
+                {t('common.refresh')} (v{dataVersion})
               </ModernButton>
             </div>
           </div>

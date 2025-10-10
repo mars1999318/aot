@@ -8,7 +8,8 @@
     "save": "保存",
     "edit": "编辑",
     "delete": "删除",
-    "actions": "操作"
+    "actions": "操作",
+    "refresh": "刷新数据"
   },
   "dashboard": {
     "title": "仪表板",
@@ -34,8 +35,8 @@
     "withdraw": "提取",
     "amount": "数量",
     "referralCode": "推荐码（可选）",
-    "referralCodePlaceholder": "输入推荐码",
-    "referralCodeHelp": "可选：输入推荐码以获得额外奖励",
+    "referralCodePlaceholder": "请输入推荐人钱包地址",
+    "referralCodeHelp": "可选：输入推荐人钱包地址以获得额外奖励",
     "availableBalance": "可用余额",
     "currentStake": "当前质押",
     "rewardEstimate": "收益预估",
@@ -56,7 +57,15 @@
     "days": "天",
     "feeReduction": "手续费递减",
     "referrer": "推荐人",
-    "claim": "领取"
+    "claim": "领取",
+    "approveSuccess": "授权成功",
+    "approveSuccessMessage": "AOT代币授权成功，您现在可以进行质押操作。",
+    "stakeSuccess": "质押成功",
+    "stakeSuccessMessage": "成功质押 {amount} AOT代币！",
+    "claimSuccess": "奖励领取成功！",
+    "claimSuccessMessage": "您的奖励已成功领取到钱包。",
+    "referrerBound": "已绑定推荐人",
+    "referrerBoundMessage": "您已绑定推荐人，无需重复填写"
   },
   "referral": {
     "title": "推荐",

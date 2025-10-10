@@ -1,6 +1,7 @@
 import { Home, Coins, Users, Heart } from 'lucide-react'
 import { WalletConnect } from './WalletConnect'
 import { LanguageSwitcher } from './LanguageSwitcher'
+import { useTranslation } from '../hooks/useTranslation'
 
 interface MobileNavbarProps {
   className?: string
@@ -9,10 +10,10 @@ interface MobileNavbarProps {
 }
 
 export function MobileNavbar({ className = '', activeTab, setActiveTab }: MobileNavbarProps) {
+  const { t } = useTranslation()
+  
   const handleTabClick = (tab: string) => {
     setActiveTab(tab)
-    // 滚动到页面顶部
-    window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   return (
@@ -51,7 +52,7 @@ export function MobileNavbar({ className = '', activeTab, setActiveTab }: Mobile
             }`}
           >
             <Home className="w-3 h-3 mb-0.5" />
-            <span className="text-xs font-medium">仪表板</span>
+            <span className="text-xs font-medium">{t('dashboard.title')}</span>
           </button>
           <button 
             onClick={() => handleTabClick('staking')}
@@ -62,7 +63,7 @@ export function MobileNavbar({ className = '', activeTab, setActiveTab }: Mobile
             }`}
           >
             <Coins className="w-3 h-3 mb-0.5" />
-            <span className="text-xs font-medium">质押</span>
+            <span className="text-xs font-medium">{t('staking.title')}</span>
           </button>
           <button 
             onClick={() => handleTabClick('referral')}
@@ -73,7 +74,7 @@ export function MobileNavbar({ className = '', activeTab, setActiveTab }: Mobile
             }`}
           >
             <Users className="w-3 h-3 mb-0.5" />
-            <span className="text-xs font-medium">推荐</span>
+            <span className="text-xs font-medium">{t('referral.title')}</span>
           </button>
           <button 
             onClick={() => handleTabClick('charity')}
@@ -84,7 +85,7 @@ export function MobileNavbar({ className = '', activeTab, setActiveTab }: Mobile
             }`}
           >
             <Heart className="w-3 h-3 mb-0.5" />
-            <span className="text-xs font-medium">公益</span>
+            <span className="text-xs font-medium">{t('charity.title')}</span>
           </button>
         </div>
       </div>

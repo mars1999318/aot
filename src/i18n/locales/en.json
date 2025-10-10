@@ -8,7 +8,8 @@
     "save": "Save",
     "edit": "Edit",
     "delete": "Delete",
-    "actions": "Actions"
+    "actions": "Actions",
+    "refresh": "Refresh Data"
   },
   "dashboard": {
     "title": "Dashboard",
@@ -34,8 +35,8 @@
     "withdraw": "Withdraw",
     "amount": "Amount",
     "referralCode": "Referral Code (Optional)",
-    "referralCodePlaceholder": "Enter referral code",
-    "referralCodeHelp": "Optional: Enter a referral code to earn bonus rewards",
+    "referralCodePlaceholder": "Enter referrer wallet address",
+    "referralCodeHelp": "Optional: Enter referrer wallet address to earn bonus rewards",
     "availableBalance": "Available Balance",
     "currentStake": "Current Stake",
     "rewardEstimate": "Reward Estimate",
@@ -56,7 +57,15 @@
     "days": "days",
     "feeReduction": "Fee Reduction",
     "referrer": "Referrer",
-    "claim": "Claim"
+    "claim": "Claim",
+    "approveSuccess": "Approve Success",
+    "approveSuccessMessage": "AOT token approved successfully, you can now stake.",
+    "stakeSuccess": "Stake Success",
+    "stakeSuccessMessage": "Successfully staked {amount} AOT tokens!",
+    "claimSuccess": "Rewards Claimed Successfully!",
+    "claimSuccessMessage": "Your rewards have been successfully claimed to your wallet.",
+    "referrerBound": "Referrer Bound",
+    "referrerBoundMessage": "You have already bound a referrer, no need to fill again"
   },
   "referral": {
     "title": "Referral",

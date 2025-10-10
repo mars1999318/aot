@@ -22,8 +22,6 @@ export function Sidebar({ activeTab, setActiveTab }: {
 
   const handleTabClick = (tab: string) => {
     setActiveTab(tab)
-    // 滚动到页面顶部
-    window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   return (
