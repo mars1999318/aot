@@ -20,9 +20,8 @@ const rpcUrls = [
   'https://bsc-dataseed3.ninicoin.io/',
 ]
 
-const config = getDefaultConfig({
-  appName: 'ArriveOnTime',
-  projectId: 'aot-dapp-project',
+// 使用简单的Wagmi配置，避免RainbowKit的复杂配置
+const config = createConfig({
   chains: [bsc],
   transports: {
     [bsc.id]: http(rpcUrls[0], {
@@ -46,16 +45,7 @@ export function WalletProvider({ children }: { children: React.ReactNode }) {
   return (
     <WagmiProvider config={config}>
       <QueryClientProvider client={queryClient}>
-        <RainbowKitProvider
-          modalSize="compact"
-          showRecentTransactions={true}
-          appInfo={{
-            appName: 'ArriveOnTime',
-            learnMoreUrl: 'https://arriveontime.com',
-          }}
-        >
-          {children}
-        </RainbowKitProvider>
+        {children}
       </QueryClientProvider>
     </WagmiProvider>
   )
