@@ -52,7 +52,7 @@ export function Referral() {
   }
 
   // 如果没有连接钱包，显示提示
-  if (!isConnected) {
+  if (!isConnected && !isLoading) {
     return <WalletNotConnected />
   }
 
@@ -147,23 +147,16 @@ export function Referral() {
     <PageTransition className="min-h-screen">
       <div className="max-w-6xl mx-auto px-4 py-8 pb-20">
         <FadeIn delay={0}>
-          <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold glass-text-gold mb-4">{t('referral.title')}</h1>
-            <p className="text-lg glass-text-red max-w-2xl mx-auto mb-6">{t('referral.subtitle')}</p>
+          <div className="text-center mb-6">
+            <h1 className="text-2xl font-bold glass-text-gold mb-2">{t('referral.title')}</h1>
+            <p className="text-sm glass-text-red max-w-xl mx-auto mb-3">{t('referral.subtitle')}</p>
             
-            {/* 金色装饰线 */}
-            <div className="flex items-center justify-center mb-6">
-              <div className="w-16 h-1 bg-gradient-to-r from-transparent to-yellow-400"></div>
-              <div className="w-2 h-2 bg-yellow-400 rounded-full mx-4"></div>
-              <div className="w-16 h-1 bg-gradient-to-l from-transparent to-yellow-400"></div>
-            </div>
-            
-            <div className="mt-4">
+            <div className="mt-2">
               <button
                 onClick={refreshData}
-                className="glass-button px-4 py-2 text-sm text-gray-800 font-semibold"
+                className="glass-button px-3 py-1 text-xs text-gray-800 font-semibold"
               >
-                强制刷新数据 (v{dataVersion})
+                刷新数据 (v{dataVersion})
               </button>
             </div>
           </div>

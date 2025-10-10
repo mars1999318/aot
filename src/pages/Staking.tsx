@@ -307,16 +307,9 @@ export function Staking() {
     <PageTransition className="min-h-screen">
       <div className="max-w-6xl mx-auto px-4 py-8 pb-20">
         <FadeIn delay={0}>
-          <div className="text-center mb-12">
-            <h1 className="text-4xl font-bold glass-text-red mb-4">{t('staking.title')}</h1>
-            <p className="text-lg glass-text-blue max-w-2xl mx-auto mb-6">{t('staking.subtitle')}</p>
-            
-            {/* 金色装饰线 */}
-            <div className="flex items-center justify-center mb-6">
-              <div className="w-16 h-1 bg-gradient-to-r from-transparent to-yellow-400"></div>
-              <div className="w-2 h-2 bg-yellow-400 rounded-full mx-4"></div>
-              <div className="w-16 h-1 bg-gradient-to-l from-transparent to-yellow-400"></div>
-            </div>
+          <div className="text-center mb-6">
+            <h1 className="text-2xl font-bold glass-text-red mb-2">{t('staking.title')}</h1>
+            <p className="text-sm glass-text-blue max-w-xl mx-auto">{t('staking.subtitle')}</p>
           </div>
         </FadeIn>
 
@@ -404,7 +397,7 @@ export function Staking() {
                     loading={isApproveLoading || (isProcessing && operationType === 'approve')}
                     onClick={handleApprove}
                     disabled={!getFieldValue('stakeAmount') || hasFieldError('stakeAmount') || isProcessing}
-                    variant="primary"
+                    variant="gold"
                     size="lg"
                     className="w-full"
                     loadingText={isProcessing ? '处理中...' : t('common.loading')}

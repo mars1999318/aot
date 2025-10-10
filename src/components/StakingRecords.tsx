@@ -161,7 +161,7 @@ function ExpandableRecord({
                     e.stopPropagation()
                     onWithdraw(record.index)
                   }}
-                  className="px-3 py-1 text-sm bg-red-500 text-white rounded hover:bg-red-600 transition-colors"
+                  className="px-3 py-1 text-sm bg-gradient-to-r from-yellow-400 to-yellow-600 text-white rounded hover:from-yellow-500 hover:to-yellow-700 transition-colors shadow-lg"
                 >
                   {t('staking.withdraw')}
                 </button>

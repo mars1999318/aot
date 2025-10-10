@@ -32,18 +32,18 @@ export function ModernStatsCard({
 
   return (
     <div className={`
-      bg-white rounded-xl shadow-sm border border-gray-200 p-6 
+      bg-white rounded-lg shadow-sm border border-gray-200 p-4 
       transition-all duration-200 hover:shadow-md hover:scale-105
       ${className}
     `}>
       <div className="flex items-center justify-between">
         <div className="flex-1">
-          <p className="text-sm font-medium text-gray-600 mb-1">{title}</p>
-          <p className="text-2xl font-bold text-gray-900 mb-2">{value}</p>
+          <p className="text-xs font-medium text-gray-600 mb-1">{title}</p>
+          <p className="text-lg font-bold text-gray-900 mb-1">{value}</p>
           
           {change && (
             <div className="flex items-center">
-              <span className={`text-sm font-medium ${changeColorClasses[changeType]}`}>
+              <span className={`text-xs font-medium ${changeColorClasses[changeType]}`}>
                 {change}
               </span>
               {trend && (
@@ -56,10 +56,10 @@ export function ModernStatsCard({
         </div>
         
         <div className={`
-          w-12 h-12 rounded-lg flex items-center justify-center text-white
+          w-10 h-10 rounded-lg flex items-center justify-center text-white
           ${color}
         `}>
-          <Icon className="h-6 w-6" />
+          <Icon className="h-5 w-5" />
         </div>
       </div>
     </div>
