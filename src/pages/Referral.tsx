@@ -135,8 +135,8 @@ export function Referral() {
         <FadeIn delay={200}>
           {referralStats && (
             <ReferralProgressCard 
-              totalReferredStaked={referralStats.totalReferredStaked || 0}
-              currentReferralRate={referralStats.referralRate || 0}
+              totalReferredStaked={parseFloat(referralStats.totalReferredStaked || '0')}
+              currentReferralRate={referralStats.currentReferralRate || 0}
               className="mb-8"
             />
           )}
