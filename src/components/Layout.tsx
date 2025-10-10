@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Sidebar } from './Sidebar'
 import { MobileNavbar } from './MobileNavbar'
+import { NetworkDebug } from './NetworkDebug'
 import { Dashboard } from '../pages/Dashboard'
 import { Staking } from '../pages/Staking'
 import { Referral } from '../pages/Referral'
@@ -26,6 +27,7 @@ export function Layout() {
 
   return (
     <div className="min-h-screen bg-white">
+      <NetworkDebug />
       {/* 桌面端布局 */}
       <div className="hidden lg:flex">
         <Sidebar activeTab={activeTab} setActiveTab={setActiveTab} />
