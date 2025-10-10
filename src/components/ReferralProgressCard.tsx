@@ -15,9 +15,9 @@ export function ReferralProgressCard({
 }: ReferralProgressCardProps) {
   const { t } = useTranslation()
   
-  // 基于合约真实配置的推荐档位系统
+  // Based on real contract configuration for referral tier system
   const getNextReferralTierInfo = () => {
-    // 根据合约构造函数中的真实配置：
+    // According to contract constructor configuration:
     // referralRateConfig.push(RateConfig({threshold: 0, rate: 200}));
     // referralRateConfig.push(RateConfig({threshold: 1000 ether, rate: 250}));
     // referralRateConfig.push(RateConfig({threshold: 5000 ether, rate: 300}));
@@ -26,37 +26,37 @@ export function ReferralProgressCard({
     // referralRateConfig.push(RateConfig({threshold: 50000 ether, rate: 450}));
     // referralRateConfig.push(RateConfig({threshold: 100000 ether, rate: 500}));
     
-    // 根据当前推荐质押量计算下一档位
+    // Calculate next tier based on current referred staked amount
     if (totalReferredStaked < 1000) {
-      // 下一档位：1000 AOT，推荐率：250 (0.025%)
+      // Next tier: 1000 AOT, referral rate: 250 (0.025%)
       return { required: 1000, name: '1000 AOT', rate: 250 / 1000000 }
     } else if (totalReferredStaked < 5000) {
-      // 下一档位：5000 AOT，推荐率：300 (0.030%)
+      // Next tier: 5000 AOT, referral rate: 300 (0.030%)
       return { required: 5000, name: '5000 AOT', rate: 300 / 1000000 }
     } else if (totalReferredStaked < 10000) {
-      // 下一档位：10000 AOT，推荐率：350 (0.035%)
+      // Next tier: 10000 AOT, referral rate: 350 (0.035%)
       return { required: 10000, name: '10000 AOT', rate: 350 / 1000000 }
     } else if (totalReferredStaked < 20000) {
-      // 下一档位：20000 AOT，推荐率：400 (0.040%)
+      // Next tier: 20000 AOT, referral rate: 400 (0.040%)
       return { required: 20000, name: '20000 AOT', rate: 400 / 1000000 }
     } else if (totalReferredStaked < 50000) {
-      // 下一档位：50000 AOT，推荐率：450 (0.045%)
+      // Next tier: 50000 AOT, referral rate: 450 (0.045%)
       return { required: 50000, name: '50000 AOT', rate: 450 / 1000000 }
     } else if (totalReferredStaked < 100000) {
-      // 下一档位：100000 AOT，推荐率：500 (0.050%)
+      // Next tier: 100000 AOT, referral rate: 500 (0.050%)
       return { required: 100000, name: '100000 AOT', rate: 500 / 1000000 }
     }
-    return null // 已达到最高档
+    return null // Reached highest tier
   }
 
   const nextTier = getNextReferralTierInfo()
   const remainingToNext = nextTier ? Math.max(0, nextTier.required - totalReferredStaked) : 0
   
-  // 计算当前推荐率显示
+  // Calculate current referral rate display
   const currentRate = currentReferralRate > 0 ? (currentReferralRate / 1000000) : 0
   const displayRate = (currentRate * 100).toFixed(4)
   
-  // 计算进度百分比
+  // Calculate progress percentage
   const progressPercentage = nextTier ? Math.min(100, (totalReferredStaked / nextTier.required) * 100) : 100
 
   return (
