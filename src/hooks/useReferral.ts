@@ -225,7 +225,7 @@ export function useReferral() {
             address: result.address,
             stakedAmount: result.stakedAmount,
             timestamp: result.timestamp,
-            status: result.status
+            status: result.status as 'active' | 'inactive'
           })
         })
 

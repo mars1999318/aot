@@ -23,8 +23,8 @@ export function useReferralEvents(referralAddresses: string[]) {
       console.log('Staked events:', logs)
       
       const newEvents: ReferralEvent[] = logs.map(log => ({
-        address: log.args.user as string,
-        amount: log.args.amount?.toString() || '0',
+        address: (log.args as any).user as string,
+        amount: (log.args as any).amount?.toString() || '0',
         timestamp: Date.now(),
         type: 'stake'
       }))
@@ -42,8 +42,8 @@ export function useReferralEvents(referralAddresses: string[]) {
       console.log('Unstaked events:', logs)
       
       const newEvents: ReferralEvent[] = logs.map(log => ({
-        address: log.args.user as string,
-        amount: log.args.amount?.toString() || '0',
+        address: (log.args as any).user as string,
+        amount: (log.args as any).amount?.toString() || '0',
         timestamp: Date.now(),
         type: 'unstake'
       }))
@@ -61,8 +61,8 @@ export function useReferralEvents(referralAddresses: string[]) {
       console.log('RewardsClaimed events:', logs)
       
       const newEvents: ReferralEvent[] = logs.map(log => ({
-        address: log.args.user as string,
-        amount: log.args.amount?.toString() || '0',
+        address: (log.args as any).user as string,
+        amount: (log.args as any).amount?.toString() || '0',
         timestamp: Date.now(),
         type: 'claim'
       }))

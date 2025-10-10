@@ -40,10 +40,10 @@ function getStakingProgress(amount: number, stakingRate: number): number {
 
 export function Staking() {
   const { userInfo, pendingRewards, tokenBalance } = useUserInfo()
-  const { stake, isStakeLoading, error: stakeError } = useStake()
-  const { approve, isApproveLoading, error: approveError } = useApprove()
-  const { withdraw, isWithdrawLoading, error: withdrawError } = useWithdraw()
-  const { claimRewards, isClaimLoading, error: claimError } = useClaimRewards()
+  const { stake, isStakeLoading } = useStake()
+  const { approve, isApproveLoading } = useApprove()
+  const { withdraw, isWithdrawLoading } = useWithdraw()
+  const { claimRewards, isClaimLoading } = useClaimRewards()
   const publicClient = usePublicClient()
   const { t } = useTranslation()
   const { showSuccess, showError } = useToast()
