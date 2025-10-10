@@ -15,7 +15,10 @@
     "pullToRefresh": "Pull to Refresh",
     "pleaseWait": "Please wait",
     "retry": "Retry",
-    "view": "View"
+    "view": "View",
+    "daysAgo": " days ago",
+    "hoursAgo": " hours ago",
+    "justNow": "Just now"
   },
   "dashboard": {
     "title": "Dashboard",

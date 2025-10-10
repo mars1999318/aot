@@ -15,7 +15,10 @@
     "pullToRefresh": "下拉刷新",
     "pleaseWait": "请稍候",
     "retry": "重试",
-    "view": "查看"
+    "view": "查看",
+    "daysAgo": "天前",
+    "hoursAgo": "小时前",
+    "justNow": "刚刚"
   },
   "dashboard": {
     "title": "仪表板",
