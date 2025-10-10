@@ -123,16 +123,32 @@ export function useStakingRecords() {
               feeReduction = Math.max(0, 10 - (stakingDays / 100) * 10)
             }
             
-            // 使用本地计算获取每个质押记录的待领取奖励
-            const rawStakeRate = Number(stake.rate)
-            const stakeRate = rawStakeRate / 1000000
-            const dailyRate = stakeRate / 365
-            const stakingAmount = parseFloat(stake.amount?.toString() || '0') / 1e18
-            const lastClaimTimeMs = stake.lastClaimTime ? Number(stake.lastClaimTime) * 1000 : startTimeMs
-            const claimTimeMs = Math.max(lastClaimTimeMs, startTimeMs)
-            const rewardStakingMs = nowMs - claimTimeMs
-            const rewardStakingDays = rewardStakingMs / (1000 * 60 * 60 * 24)
-            const pendingRewards = (stakingAmount * dailyRate * rewardStakingDays).toFixed(18)
+            // 使用链上数据获取每个质押记录的待领取奖励
+            let pendingRewards = '0'
+            try {
+              if (publicClient) {
+                const stakeDetails = await publicClient.readContract({
+                  address: CURRENT_NETWORK.ArriveOnTime,
+                  abi: ARRIVE_ON_TIME_ABI,
+                  functionName: 'getStakeDetails',
+                  args: [address, BigInt(index)]
+                })
+                // stakeDetails[5] 是 pendingReward 字段
+                pendingRewards = formatWeiToEther(stakeDetails[5].toString(), 18)
+              }
+            } catch (err) {
+              console.error(`Error fetching stake details for stake ${index}:`, err)
+              // 如果链上调用失败，使用本地计算作为备用
+              const rawStakeRate = Number(stake.rate)
+              const stakeRate = rawStakeRate / 1000000
+              const dailyRate = stakeRate / 365
+              const stakingAmount = parseFloat(stake.amount?.toString() || '0') / 1e18
+              const lastClaimTimeMs = stake.lastClaimTime ? Number(stake.lastClaimTime) * 1000 : startTimeMs
+              const claimTimeMs = Math.max(lastClaimTimeMs, startTimeMs)
+              const rewardStakingMs = nowMs - claimTimeMs
+              const rewardStakingDays = rewardStakingMs / (1000 * 60 * 60 * 24)
+              pendingRewards = (stakingAmount * dailyRate * rewardStakingDays).toFixed(18)
+            }
             
             
             console.log(`Stake ${index} calculation:`, {
