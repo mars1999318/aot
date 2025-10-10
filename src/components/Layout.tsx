@@ -3,6 +3,7 @@ import { Sidebar } from './Sidebar'
 import { MobileNavbar } from './MobileNavbar'
 import { NetworkDebug } from './NetworkDebug'
 import { MobileDetector } from './MobileDetector'
+import { PullToRefresh } from './PullToRefresh'
 import { Dashboard } from '../pages/Dashboard'
 import { Staking } from '../pages/Staking'
 import { Referral } from '../pages/Referral'
@@ -10,6 +11,7 @@ import { Charity } from '../pages/Charity'
 
 export function Layout() {
   const [activeTab, setActiveTab] = useState('dashboard')
+  const [refreshKey, setRefreshKey] = useState(0)
 
   // 添加移动端检测调试
   React.useEffect(() => {
@@ -47,18 +49,24 @@ export function Layout() {
     return () => clearTimeout(timeoutId)
   }, [activeTab])
 
+  const handleRefresh = () => {
+    setRefreshKey(prev => prev + 1)
+    // 触发页面重新渲染和数据刷新
+    window.location.reload()
+  }
+
   const renderContent = () => {
     switch (activeTab) {
       case 'dashboard':
-        return <Dashboard />
+        return <Dashboard key={`dashboard-${refreshKey}`} />
       case 'staking':
-        return <Staking />
+        return <Staking key={`staking-${refreshKey}`} />
       case 'referral':
-        return <Referral />
+        return <Referral key={`referral-${refreshKey}`} />
       case 'charity':
-        return <Charity />
+        return <Charity key={`charity-${refreshKey}`} />
       default:
-        return <Dashboard />
+        return <Dashboard key={`dashboard-${refreshKey}`} />
     }
   }
 
@@ -68,7 +76,9 @@ export function Layout() {
       <div className="hidden lg:flex">
         <Sidebar activeTab={activeTab} setActiveTab={handleTabChange} />
         <main className="flex-1 ml-64">
-          {renderContent()}
+          <PullToRefresh onRefresh={handleRefresh}>
+            {renderContent()}
+          </PullToRefresh>
         </main>
       </div>
 
@@ -76,7 +86,9 @@ export function Layout() {
       <div className="lg:hidden">
         <MobileNavbar activeTab={activeTab} setActiveTab={handleTabChange} />
         <main className="pt-20 pb-20">
-          {renderContent()}
+          <PullToRefresh onRefresh={handleRefresh}>
+            {renderContent()}
+          </PullToRefresh>
         </main>
       </div>
     </div>

@@ -123,14 +123,6 @@ export function Referral() {
             <h1 className="text-2xl font-bold glass-text-gold mb-2">{t('referral.title')}</h1>
             <p className="text-sm glass-text-red max-w-xl mx-auto mb-3">{t('referral.subtitle')}</p>
             
-            <div className="mt-2">
-              <button
-                onClick={refreshData}
-                className="glass-button px-3 py-1 text-xs text-gray-800 font-semibold"
-              >
-                {t('common.refresh')} (v{dataVersion})
-              </button>
-            </div>
           </div>
         </FadeIn>
 

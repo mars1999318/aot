@@ -194,16 +194,6 @@ export function Dashboard() {
               <div className="w-16 h-1 bg-gradient-to-l from-transparent to-yellow-400"></div>
             </div>
             
-            <div className="mt-4">
-              <ModernButton
-                variant="outline"
-                size="sm"
-                onClick={refreshData}
-                className="text-xs"
-              >
-                {t('common.refresh')} (v{dataVersion})
-              </ModernButton>
-            </div>
           </div>
         </FadeIn>
 

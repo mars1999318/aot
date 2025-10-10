@@ -55,7 +55,7 @@ export function ReferralStatsComponent({ stats, className = '' }: ReferralStatsP
 
   return (
     <div className={className}>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {statCards.map((stat, index) => {
           const gradientColors = [
             'gradient-bg-primary',
@@ -64,13 +64,13 @@ export function ReferralStatsComponent({ stats, className = '' }: ReferralStatsP
           ]
           
           return (
-            <div key={index} className={`glass-stats-card ${gradientColors[index % gradientColors.length]} p-6`}>
-              <div className="flex items-center justify-between mb-4">
-                <stat.icon className="w-8 h-8 text-gray-700" />
-                <h3 className="text-sm font-medium glass-text-blue-light">{stat.title}</h3>
+            <div key={index} className={`glass-stats-card ${gradientColors[index % gradientColors.length]} p-4`}>
+              <div className="flex items-center justify-between mb-3">
+                <stat.icon className="w-6 h-6 text-gray-700" />
+                <h3 className="text-xs font-medium glass-text-blue-light">{stat.title}</h3>
               </div>
-              <div className="text-2xl font-bold mb-2 glass-text-red">{stat.value}</div>
-              <div className="text-sm glass-text-gold-light">{stat.change}</div>
+              <div className="text-xl font-bold mb-1 glass-text-red">{stat.value}</div>
+              <div className="text-xs glass-text-gold-light">{stat.change}</div>
             </div>
           )
         })}
