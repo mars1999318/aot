@@ -3,7 +3,7 @@ import { useAccount } from 'wagmi'
 import { CURRENT_NETWORK } from '../constants/contracts'
 import { ARRIVE_ON_TIME_ABI } from '../constants/abis'
 import { useState, useEffect } from 'react'
-import { useUserData } from './useUserData'
+import { useUserInfo } from './useUserData'
 
 export interface StakingRecord {
   index: number
@@ -20,7 +20,7 @@ export interface StakingRecord {
 export function useStakingRecords() {
   const { address } = useAccount()
   const publicClient = usePublicClient()
-  const { userInfo } = useUserData()
+  const { userInfo } = useUserInfo()
   const [stakingRecords, setStakingRecords] = useState<StakingRecord[]>([])
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
