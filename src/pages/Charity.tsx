@@ -114,31 +114,31 @@ export function Charity() {
               <div className="space-y-6">
                 <div className="text-center mb-6">
                   <h3 className="text-xl font-semibold mb-2" style={{ color: '#1E5AA8' }}>
-                    传统慈善公益
+                    {t('charity.traditionalCharity')}
                   </h3>
                 </div>
                 
                 {/* Trust Mechanism */}
                 <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
-                  <h4 className="text-lg font-semibold mb-3 text-gray-800">信任机制</h4>
+                  <h4 className="text-lg font-semibold mb-3 text-gray-800">{t('charity.trustMechanism')}</h4>
                   <p className="text-gray-600 text-sm leading-relaxed">
-                    依赖组织的信誉与公信力（如红十字会、联合国基金）。一旦机构丧失公信力（管理不善或丑闻），会影响整个公益项目。
+                    {t('charity.traditionalTrustDesc')}
                   </p>
                 </div>
 
                 {/* Participation Mode */}
                 <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
-                  <h4 className="text-lg font-semibold mb-3 text-gray-800">参与模式</h4>
+                  <h4 className="text-lg font-semibold mb-3 text-gray-800">{t('charity.participationMode')}</h4>
                   <p className="text-gray-600 text-sm leading-relaxed">
-                    参与方式主要是捐款或做志愿者，大多数捐赠者参与感低，资金一旦捐出便缺乏后续决策权。
+                    {t('charity.traditionalParticipationDesc')}
                   </p>
                 </div>
 
                 {/* Limitations and Challenges */}
                 <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
-                  <h4 className="text-lg font-semibold mb-3 text-gray-800">局限与挑战</h4>
+                  <h4 className="text-lg font-semibold mb-3 text-gray-800">{t('charity.limitationsChallenges')}</h4>
                   <p className="text-gray-600 text-sm leading-relaxed">
-                    覆盖面广、社会接受度高，但透明度不足、效率低。
+                    {t('charity.traditionalLimitationsDesc')}
                   </p>
                 </div>
               </div>
