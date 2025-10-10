@@ -3,6 +3,7 @@ import { useAccount } from 'wagmi'
 import { CURRENT_NETWORK } from '../constants/contracts'
 import { ARRIVE_ON_TIME_ABI } from '../constants/abis'
 import { useState, useEffect } from 'react'
+import { useUserData } from './useUserData'
 
 export interface StakingRecord {
   index: number
