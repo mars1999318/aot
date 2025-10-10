@@ -128,7 +128,7 @@
   "data": {
     "walletNotConnected": "钱包未连接",
     "connectWalletToViewData": "请连接钱包以查看您的数据",
-    "clickConnectWalletButton": "请点击右上角的"连接钱包"按钮",
+    "clickConnectWalletButton": "请点击右上角的\"连接钱包\"按钮",
     "dataLoadError": "数据加载错误",
     "failedToLoadData": "从合约加载数据失败",
     "loadingData": "正在加载数据",
