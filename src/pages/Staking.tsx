@@ -208,6 +208,11 @@ export function Staking() {
         setFieldValue('referralCode', '')
       }
       setIsApproved(false)
+      
+      // 质押成功后刷新页面数据
+      setTimeout(() => {
+        window.location.reload()
+      }, 2000)
     } catch (error: any) {
       console.error('Stake failed:', error)
       
@@ -242,7 +247,15 @@ export function Staking() {
   }
 
   const handleWithdraw = async (stakeIndex: number) => {
-    await withdraw(stakeIndex)
+    try {
+      await withdraw(stakeIndex)
+      // 提取质押订单成功后刷新页面数据
+      setTimeout(() => {
+        window.location.reload()
+      }, 2000)
+    } catch (error) {
+      console.error('Withdraw error:', error)
+    }
   }
 
   const handleClaim = async (stakeIndex: number) => {
@@ -257,10 +270,10 @@ export function Staking() {
       // 奖励领取成功后，显示成功提示
       showSuccess(t('staking.claimSuccess'), t('staking.claimSuccessMessage'))
       
-      // 等待一段时间后，使用准确奖励记录系统
-      setTimeout(async () => {
-        console.log('奖励领取成功')
-      }, 3000) // 等待3秒后记录
+      // 提取奖励成功后刷新页面数据
+      setTimeout(() => {
+        window.location.reload()
+      }, 2000)
     } catch (error) {
       console.error('Claim rewards error:', error)
       showError('奖励领取失败', '请重试')

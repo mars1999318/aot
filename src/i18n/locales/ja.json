@@ -21,7 +21,13 @@
     "copy": "コピー",
     "copied": "コピーしました！",
     "language": "言語",
-    "theme": "テーマ"
+    "theme": "テーマ",
+    "retry": "再試行",
+    "view": "表示",
+    "pleaseWait": "お待ちください",
+    "refreshing": "更新中...",
+    "releaseToRefresh": "離して更新",
+    "pullToRefresh": "引っ張って更新"
   },
   "navigation": {
     "home": "ホーム",
@@ -56,7 +62,16 @@
     "withdrawSuccess": "引き出し成功！",
     "withdrawError": "引き出し失敗。再試行してください。",
     "claimSuccess": "報酬受取成功！",
-    "claimError": "報酬受取失敗。再試行してください。"
+    "claimError": "報酬受取失敗。再試行してください。",
+    "claimAllRewards": "全報酬受取",
+    "yieldRate": "利回り",
+    "rewards": "報酬",
+    "days": "日",
+    "hours": "時間",
+    "minutes": "分",
+    "noFee": "手数料なし",
+    "active": "アクティブ",
+    "inactive": "非アクティブ"
   },
   "referral": {
     "title": "紹介プログラム",
@@ -101,5 +116,25 @@
     "seconds": "秒",
     "ago": "前",
     "remaining": "残り"
+  },
+  "data": {
+    "referralHistory": "紹介履歴",
+    "referralRecords": "紹介された記録",
+    "referralCount": "紹介者数: {count}人",
+    "loadingDetails": "紹介者詳細を取得中：",
+    "loadingDetailsDesc": "ステーク金額、ステーク時間、ステーク状況など",
+    "referrerAddresses": "紹介者アドレス",
+    "noReferralRecords": "紹介記録なし",
+    "shareReferralLink": "紹介リンクを共有し、誰かがあなたのリンクを通じて初回ステークした際に、紹介報酬を獲得",
+    "referralRelationship": "紹介関係は初回ステーク時に確立され、変更不可",
+    "sampleDataDescription": "実際の紹介関係に基づいて生成されたサンプルデータ、紹介関係は初回ステーク時に確立",
+    "sortByDate": "日付順",
+    "sortByAmount": "金額順",
+    "sortByStatus": "状況順",
+    "firstStakeViaReferral": "紹介リンク経由の初回ステーク",
+    "staked": "ステーク済み",
+    "daysAgo": "日前",
+    "hoursAgo": "時間前",
+    "justNow": "たった今"
   }
 }

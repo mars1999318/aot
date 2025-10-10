@@ -13,7 +13,9 @@
     "refreshing": "Refreshing...",
     "releaseToRefresh": "Release to Refresh",
     "pullToRefresh": "Pull to Refresh",
-    "pleaseWait": "Please wait"
+    "pleaseWait": "Please wait",
+    "retry": "Retry",
+    "view": "View"
   },
   "dashboard": {
     "title": "Dashboard",
@@ -80,7 +82,14 @@
     "claimSuccess": "Rewards Claimed Successfully!",
     "claimSuccessMessage": "Your rewards have been successfully claimed to your wallet.",
     "referrerBound": "Referrer Bound",
-    "referrerBoundMessage": "You have already bound a referrer, no need to fill again"
+    "referrerBoundMessage": "You have already bound a referrer, no need to fill again",
+    "claimAllRewards": "Claim All Rewards",
+    "yieldRate": "Yield Rate",
+    "rewards": "Rewards",
+    "days": "days",
+    "hours": "hours",
+    "minutes": "minutes",
+    "noFee": "No Fee"
   },
   "referral": {
     "title": "Referral",
@@ -179,6 +188,22 @@
     "dataLoadError": "Data Load Error",
     "failedToLoadData": "Failed to load data from contract",
     "loadingData": "Loading Data",
-    "fetchingFromContract": "Fetching data from smart contract..."
+    "fetchingFromContract": "Fetching data from smart contract...",
+    "daysAgo": " days ago",
+    "hoursAgo": " hours ago",
+    "justNow": "Just now",
+    "loadingDetails": "Getting referrer details:",
+    "loadingDetailsDesc": "Including staking amount, staking time, staking status, etc.",
+    "referrerAddresses": "Referrer Addresses",
+    "noReferralRecords": "No referral records",
+    "shareReferralLink": "Share your referral link, when someone stakes for the first time through your link, you will get referral rewards",
+    "referralRelationship": "Referral relationship is established at first stake and cannot be changed",
+    "referralRecords": "Referred Records",
+    "sampleDataDescription": "Sample data generated based on real referral relationships, referral relationship is established at first stake",
+    "sortByDate": "By Date",
+    "sortByAmount": "By Amount",
+    "sortByStatus": "By Status",
+    "firstStakeViaReferral": "First stake via referral link",
+    "staked": "Staked"
   }
 }

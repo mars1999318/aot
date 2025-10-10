@@ -21,7 +21,13 @@
     "copy": "복사",
     "copied": "복사됨!",
     "language": "언어",
-    "theme": "테마"
+    "theme": "테마",
+    "retry": "재시도",
+    "view": "보기",
+    "pleaseWait": "잠시만 기다려주세요",
+    "refreshing": "새로고침 중...",
+    "releaseToRefresh": "놓아서 새로고침",
+    "pullToRefresh": "당겨서 새로고침"
   },
   "navigation": {
     "home": "홈",
@@ -56,7 +62,16 @@
     "withdrawSuccess": "출금 성공!",
     "withdrawError": "출금 실패. 다시 시도해주세요.",
     "claimSuccess": "보상 받기 성공!",
-    "claimError": "보상 받기 실패. 다시 시도해주세요."
+    "claimError": "보상 받기 실패. 다시 시도해주세요.",
+    "claimAllRewards": "전체 보상 받기",
+    "yieldRate": "수익률",
+    "rewards": "보상",
+    "days": "일",
+    "hours": "시간",
+    "minutes": "분",
+    "noFee": "수수료 없음",
+    "active": "활성",
+    "inactive": "비활성"
   },
   "referral": {
     "title": "추천 프로그램",
@@ -101,5 +116,25 @@
     "seconds": "초",
     "ago": "전",
     "remaining": "남음"
+  },
+  "data": {
+    "referralHistory": "추천 기록",
+    "referralRecords": "추천된 기록",
+    "referralCount": "추천인 수: {count}명",
+    "loadingDetails": "추천인 상세 정보 가져오는 중:",
+    "loadingDetailsDesc": "스테이킹 금액, 스테이킹 시간, 스테이킹 상태 등",
+    "referrerAddresses": "추천인 주소",
+    "noReferralRecords": "추천 기록 없음",
+    "shareReferralLink": "추천 링크를 공유하고, 누군가 귀하의 링크를 통해 처음 스테이킹할 때 추천 보상을 받으세요",
+    "referralRelationship": "추천 관계는 첫 스테이킹 시 확립되며 변경할 수 없습니다",
+    "sampleDataDescription": "실제 추천 관계를 기반으로 생성된 샘플 데이터, 추천 관계는 첫 스테이킹 시 확립",
+    "sortByDate": "날짜순",
+    "sortByAmount": "금액순",
+    "sortByStatus": "상태순",
+    "firstStakeViaReferral": "추천 링크를 통한 첫 스테이킹",
+    "staked": "스테이킹됨",
+    "daysAgo": "일 전",
+    "hoursAgo": "시간 전",
+    "justNow": "방금 전"
   }
 }

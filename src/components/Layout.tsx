@@ -53,8 +53,8 @@ export function Layout() {
 
   const handleRefresh = () => {
     setRefreshKey(prev => prev + 1)
-    // Trigger page re-render and data refresh
-    window.location.reload()
+    // Trigger page re-render and data refresh without full page reload
+    // The refreshKey change will trigger component re-renders and data refetch
   }
 
   const renderContent = () => {

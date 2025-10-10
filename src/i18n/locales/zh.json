@@ -13,7 +13,9 @@
     "refreshing": "刷新中...",
     "releaseToRefresh": "松开刷新",
     "pullToRefresh": "下拉刷新",
-    "pleaseWait": "请稍候"
+    "pleaseWait": "请稍候",
+    "retry": "重试",
+    "view": "查看"
   },
   "dashboard": {
     "title": "仪表板",
@@ -81,6 +83,13 @@
     "claimSuccessMessage": "您的奖励已成功领取到钱包。",
     "referrerBound": "已绑定推荐人",
     "referrerBoundMessage": "您已绑定推荐人，无需重复填写",
+    "claimAllRewards": "统一领取奖励",
+    "yieldRate": "收益率",
+    "rewards": "奖励",
+    "days": "天",
+    "hours": "小时",
+    "minutes": "分钟",
+    "noFee": "无手续费",
     "operationInProgress": "操作进行中",
     "waitForOperationComplete": "请等待当前操作完成后再试。",
     "operationTooFrequent": "操作过于频繁",
@@ -192,6 +201,22 @@
     "dataLoadError": "数据加载错误",
     "failedToLoadData": "从合约加载数据失败",
     "loadingData": "正在加载数据",
-    "fetchingFromContract": "正在从智能合约获取数据..."
+    "fetchingFromContract": "正在从智能合约获取数据...",
+    "daysAgo": "天前",
+    "hoursAgo": "小时前",
+    "justNow": "刚刚",
+    "loadingDetails": "正在获取推荐人详细信息：",
+    "loadingDetailsDesc": "包括质押金额、质押时间、质押状态等",
+    "referrerAddresses": "推荐人地址",
+    "noReferralRecords": "暂无推荐记录",
+    "shareReferralLink": "分享您的推荐链接，当有人通过您的链接首次质押时，您将获得推荐奖励",
+    "referralRelationship": "推荐关系在首次质押时建立，且不可更改",
+    "referralRecords": "被推荐人记录",
+    "sampleDataDescription": "基于真实推荐关系生成的示例数据，推荐关系在首次质押时建立",
+    "sortByDate": "按日期",
+    "sortByAmount": "按金额",
+    "sortByStatus": "按状态",
+    "firstStakeViaReferral": "通过推荐链接首次质押",
+    "staked": "质押"
   }
 }

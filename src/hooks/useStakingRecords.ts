@@ -119,20 +119,21 @@ export function useStakingRecords() {
               feeReduction = Math.max(0, 10 - (stakingDays / 100) * 10)
             }
             
-            // 使用每单质押的真实收益率计算奖励
-            const rawStakeRate = Number(stake.rate) // 原始值，用于formatStakingRate
-            const stakeRate = rawStakeRate / 1000000 // 合约中rate需要除以1000000转换为小数
-            const dailyRate = stakeRate / 365 // 将年收益率转换为日收益率
-            const stakingAmount = parseFloat(stake.amount?.toString() || '0') / 1e18
+            // 使用链上的总奖励数据，按质押金额比例分配给各个记录
+            const totalPendingRewards = await publicClient.readContract({
+              address: CURRENT_NETWORK.ArriveOnTime,
+              abi: ARRIVE_ON_TIME_ABI,
+              functionName: 'getPendingRewards',
+              args: [address as `0x${string}`]
+            })
             
-            // 关键修改：使用 lastClaimTime 来计算奖励
-            // 如果 lastClaimTime 存在且大于 startTime，则从 lastClaimTime 开始计算
-            // 否则从 startTime 开始计算
-            const lastClaimTimeMs = stake.lastClaimTime ? Number(stake.lastClaimTime) * 1000 : startTimeMs
-            const claimTimeMs = Math.max(lastClaimTimeMs, startTimeMs)
-            const rewardStakingMs = nowMs - claimTimeMs
-            const rewardStakingDays = rewardStakingMs / (1000 * 60 * 60 * 24)
-            const pendingRewards = (stakingAmount * dailyRate * rewardStakingDays).toFixed(18)
+            const totalStakedAmount = parseFloat(stake.amount?.toString() || '0') / 1e18
+            const totalStakedWei = userInfo?.[0]?.toString() || '0'
+            const totalStakedAmountFromContract = parseFloat(totalStakedWei) / 1e18
+            
+            // 按质押金额比例分配奖励
+            const rewardRatio = totalStakedAmountFromContract > 0 ? totalStakedAmount / totalStakedAmountFromContract : 0
+            const pendingRewards = (parseFloat(totalPendingRewards.toString()) / 1e18 * rewardRatio).toFixed(18)
             
             console.log(`Stake ${index} calculation:`, {
               stakingDays,

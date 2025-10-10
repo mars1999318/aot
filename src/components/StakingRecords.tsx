@@ -78,10 +78,10 @@ function ExpandableRecord({
                 {formatStakingAmount(record.amount)} AOT
               </div>
               <div className="text-xs glass-text-blue">
-                收益率: {formatStakingRate(record.stakingRate)}%
+                {t('staking.yieldRate')}: {formatStakingRate(record.stakingRate)}%
               </div>
               <div className="text-xs glass-text-gold">
-                奖励: {formatAmount(record.pendingRewards)} AOT
+                {t('staking.rewards')}: {formatAmount(record.pendingRewards)} AOT
               </div>
             </div>
             <div className="flex items-center space-x-2">
@@ -95,11 +95,11 @@ function ExpandableRecord({
         </div>
       </div>
 
-      {/* 展开的详细内容 - 移动端优化 */}
+      {/* Expanded detailed content - mobile optimized */}
       {isExpanded && (
         <div className="px-3 pb-3 border-t border-gray-100 bg-gray-50">
           <div className="pt-3 space-y-3">
-            {/* 基本信息 - 移动端响应式网格 */}
+            {/* Basic information - mobile responsive grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 text-sm">
               <div className="flex items-center">
                 <DollarSign className="h-4 w-4 text-gray-400 mr-2" />
@@ -127,18 +127,18 @@ function ExpandableRecord({
               
               <div className="flex items-center">
                 <Percent className="h-4 w-4 text-blue-400 mr-2" />
-                <span className="text-gray-600">收益率:</span>
+                <span className="text-gray-600">{t('staking.yieldRate')}:</span>
                 <span className="ml-1 font-medium text-blue-600">{formatStakingRate(record.stakingRate)}%</span>
               </div>
             </div>
 
-            {/* 手续费和推荐人信息 - 移动端优化 */}
+            {/* Fee and referrer information - mobile optimized */}
             <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-6 space-y-2 sm:space-y-0">
               <div className="flex items-center">
                 <Percent className="h-4 w-4 text-blue-500 mr-2" />
                 <span className="text-sm text-gray-600">{t('staking.feeReduction')}:</span>
                 <span className="ml-1 text-sm font-medium text-blue-600">
-                  {record.feeReduction > 0 ? `${formatFeeReduction(record.feeReduction)}手续费` : formatFeeReduction(record.feeReduction)}
+                  {record.feeReduction > 0 ? `${formatFeeReduction(record.feeReduction)}${t('staking.fee')}` : formatFeeReduction(record.feeReduction)}
                 </span>
               </div>
               
@@ -166,7 +166,7 @@ function ExpandableRecord({
                   {t('staking.withdraw')}
                 </button>
                 <div className="px-3 py-1 text-sm bg-gray-100 text-gray-500 rounded cursor-not-allowed">
-                  统一领取奖励
+                  {t('staking.claimAllRewards')}
                 </div>
               </div>
             )}
@@ -181,13 +181,13 @@ export function StakingRecords({ onWithdraw }: StakingRecordsProps) {
   const { stakingRecords, isLoading, error } = useStakingRecords()
   const { t } = useTranslation()
   
-  // 计算各个订单奖励的总和
+  // Calculate total rewards from individual orders
   const totalIndividualRewards = stakingRecords.reduce((sum, record) => {
     return sum + parseFloat(record.pendingRewards || '0')
   }, 0)
   
-  // 调试信息：比较总奖励和各个订单奖励的总和
-  console.log('质押记录奖励数据对比:', {
+  // Debug information: compare total rewards and sum of individual order rewards
+  console.log('Staking records rewards data comparison:', {
     individualRewardsSum: totalIndividualRewards.toFixed(6),
     recordsCount: stakingRecords.length,
     records: stakingRecords.map(r => ({
@@ -212,21 +212,21 @@ export function StakingRecords({ onWithdraw }: StakingRecordsProps) {
     const num = parseFloat(amount)
     if (isNaN(num) || num === 0) return '0.00'
     
-    // 如果数值很小，显示更多小数位
+    // If value is very small, show more decimal places
     if (num < 0.000001) {
       return num.toExponential(2)
     }
     
-    // 正常情况显示6位小数，去除尾随零
+    // Normal case: show 6 decimal places, remove trailing zeros
     return num.toFixed(6).replace(/\.?0+$/, '')
   }
 
-  // 专门用于格式化质押金额（需要从Wei转换）
+  // Specifically for formatting staking amounts (need to convert from Wei)
   const formatStakingAmount = (amount: string) => {
     const num = parseFloat(amount)
     if (isNaN(num) || num === 0) return '0.00'
     
-    // 从Wei转换为Ether
+    // Convert from Wei to Ether
     return (num / 1e18).toFixed(6).replace(/\.?0+$/, '')
   }
 
@@ -246,29 +246,29 @@ export function StakingRecords({ onWithdraw }: StakingRecordsProps) {
     const minutes = Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60))
     
     if (days > 0) {
-      return `${days}天${hours}小时`
+      return `${days}${t('staking.days')}${hours}${t('staking.hours')}`
     } else if (hours > 0) {
-      return `${hours}小时${minutes}分钟`
+      return `${hours}${t('staking.hours')}${minutes}${t('staking.minutes')}`
     } else {
-      return `${minutes}分钟`
+      return `${minutes}${t('staking.minutes')}`
     }
   }
 
-  // 格式化手续费递减，显示更精确的百分比
+  // Format fee reduction, show more precise percentage
   const formatFeeReduction = (feeReduction: number) => {
-    // 如果手续费为0，显示"无手续费"
+    // If fee is 0, show "no fee"
     if (feeReduction === 0) {
-      return '无手续费'
+      return t('staking.noFee')
     }
-    // 如果手续费很小（小于0.1%），显示"无手续费"
+    // If fee is very small (less than 0.1%), show "no fee"
     if (feeReduction < 0.1) {
-      return '无手续费'
+      return t('staking.noFee')
     }
-    // 如果手续费是整数，不显示小数
+    // If fee is integer, don't show decimals
     if (feeReduction % 1 === 0) {
       return `${feeReduction}%`
     }
-    // 否则显示2位小数，确保精确显示
+    // Otherwise show 2 decimal places for precise display
     return `${feeReduction.toFixed(2)}%`
   }
 
@@ -326,7 +326,7 @@ export function StakingRecords({ onWithdraw }: StakingRecordsProps) {
                 onClick={() => window.location.reload()}
                 className="text-sm bg-red-100 hover:bg-red-200 text-red-800 px-3 py-1 rounded"
               >
-                重试
+                {t('common.retry')}
               </button>
             </div>
           </div>
@@ -335,7 +335,7 @@ export function StakingRecords({ onWithdraw }: StakingRecordsProps) {
     )
   }
 
-  // 过滤出活跃的质押订单
+  // Filter out active staking orders
   const activeStakingRecords = stakingRecords.filter(record => record.isActive)
   
   if (activeStakingRecords.length === 0) {
@@ -364,7 +364,7 @@ export function StakingRecords({ onWithdraw }: StakingRecordsProps) {
 
       <div className="space-y-2">
         {activeStakingRecords
-          .sort((a, b) => b.timestamp - a.timestamp) // 按时间戳降序排列，最新的在前
+          .sort((a, b) => b.timestamp - a.timestamp) // Sort by timestamp descending, newest first
           .map((record) => (
             <ExpandableRecord
               key={record.index}
