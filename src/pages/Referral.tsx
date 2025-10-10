@@ -64,7 +64,6 @@ export function Referral() {
         </div>
       </PageTransition>
     )
-  }
 
   // 如果正在加载，显示加载状态
   if (isLoading) {
@@ -152,7 +151,7 @@ export function Referral() {
 
         {/* 推荐统计 */}
         <FadeIn delay={100}>
-          {referralStats && <ReferralStatsComponent stats={referralStats} className="mb-8" />}
+          {referralStats && <ReferralStatsComponent stats={referralStats as any} className="mb-8" />}
         </FadeIn>
 
         <div className="space-y-6">

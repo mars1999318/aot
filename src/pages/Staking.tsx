@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { useAccount } from 'wagmi'
 import { useUserInfo } from '../hooks/useUserData'
 import { useStake, useApprove, useWithdraw, useClaimRewards } from '../hooks/useStaking'
 import { usePublicClient } from 'wagmi'

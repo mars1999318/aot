@@ -15,7 +15,7 @@ import {
 } from 'lucide-react'
 
 export function Charity() {
-  const { isConnected } = useAccount()
+  const { isConnected, address } = useAccount()
   const { t } = useTranslation()
 
   // 如果钱包没有连接，显示连接提示
