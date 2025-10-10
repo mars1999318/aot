@@ -20,6 +20,12 @@ export function Sidebar({ activeTab, setActiveTab }: {
 }) {
   const { t } = useTranslation()
 
+  const handleTabClick = (tab: string) => {
+    setActiveTab(tab)
+    // 滚动到页面顶部
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
   return (
         <div className="fixed left-0 top-0 h-full w-64 glass-sidebar z-50">
       <div className="p-3 border-b border-white/20">
@@ -39,11 +45,11 @@ export function Sidebar({ activeTab, setActiveTab }: {
             return (
                   <button
                     key={item.id}
-                    onClick={() => setActiveTab(item.id)}
+                    onClick={() => handleTabClick(item.id)}
                     className={`w-full flex items-center px-2.5 py-2 text-left rounded-lg transition-smooth ${
                       activeTab === item.id 
-                        ? 'bg-white/50 text-gray-800 font-semibold' 
-                        : 'text-gray-700 hover:bg-white/30 hover:text-gray-800'
+                        ? 'bg-gradient-to-r from-blue-500/80 to-blue-600/80 text-white font-bold shadow-lg border border-blue-400/50' 
+                        : 'text-gray-700 hover:bg-white/40 hover:text-gray-900 hover:shadow-md'
                     }`}
                   >
                     <Icon className="w-4 h-4 mr-2.5" />

@@ -11,6 +11,8 @@ interface MobileNavbarProps {
 export function MobileNavbar({ className = '', activeTab, setActiveTab }: MobileNavbarProps) {
   const handleTabClick = (tab: string) => {
     setActiveTab(tab)
+    // 滚动到页面顶部
+    window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
   return (
@@ -44,8 +46,8 @@ export function MobileNavbar({ className = '', activeTab, setActiveTab }: Mobile
             onClick={() => handleTabClick('dashboard')}
             className={`flex flex-col items-center py-0.5 px-1 rounded-lg transition-smooth ${
               activeTab === 'dashboard' 
-                ? 'bg-white/50 text-gray-800 font-semibold' 
-                : 'text-gray-700 hover:bg-white/30 hover:text-gray-800'
+                ? 'bg-gradient-to-r from-blue-500/80 to-blue-600/80 text-white font-bold shadow-lg border border-blue-400/50' 
+                : 'text-gray-700 hover:bg-white/40 hover:text-gray-900 hover:shadow-md'
             }`}
           >
             <Home className="w-3 h-3 mb-0.5" />
@@ -55,8 +57,8 @@ export function MobileNavbar({ className = '', activeTab, setActiveTab }: Mobile
             onClick={() => handleTabClick('staking')}
             className={`flex flex-col items-center py-0.5 px-1 rounded-lg transition-smooth ${
               activeTab === 'staking' 
-                ? 'bg-white/50 text-gray-800 font-semibold' 
-                : 'text-gray-700 hover:bg-white/30 hover:text-gray-800'
+                ? 'bg-gradient-to-r from-blue-500/80 to-blue-600/80 text-white font-bold shadow-lg border border-blue-400/50' 
+                : 'text-gray-700 hover:bg-white/40 hover:text-gray-900 hover:shadow-md'
             }`}
           >
             <Coins className="w-3 h-3 mb-0.5" />
@@ -66,8 +68,8 @@ export function MobileNavbar({ className = '', activeTab, setActiveTab }: Mobile
             onClick={() => handleTabClick('referral')}
             className={`flex flex-col items-center py-0.5 px-1 rounded-lg transition-smooth ${
               activeTab === 'referral' 
-                ? 'bg-white/50 text-gray-800 font-semibold' 
-                : 'text-gray-700 hover:bg-white/30 hover:text-gray-800'
+                ? 'bg-gradient-to-r from-blue-500/80 to-blue-600/80 text-white font-bold shadow-lg border border-blue-400/50' 
+                : 'text-gray-700 hover:bg-white/40 hover:text-gray-900 hover:shadow-md'
             }`}
           >
             <Users className="w-3 h-3 mb-0.5" />
@@ -77,8 +79,8 @@ export function MobileNavbar({ className = '', activeTab, setActiveTab }: Mobile
             onClick={() => handleTabClick('charity')}
             className={`flex flex-col items-center py-0.5 px-1 rounded-lg transition-smooth ${
               activeTab === 'charity' 
-                ? 'bg-white/50 text-gray-800 font-semibold' 
-                : 'text-gray-700 hover:bg-white/30 hover:text-gray-800'
+                ? 'bg-gradient-to-r from-blue-500/80 to-blue-600/80 text-white font-bold shadow-lg border border-blue-400/50' 
+                : 'text-gray-700 hover:bg-white/40 hover:text-gray-900 hover:shadow-md'
             }`}
           >
             <Heart className="w-3 h-3 mb-0.5" />
