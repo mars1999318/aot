@@ -18,8 +18,12 @@ export function Charity() {
   const { isConnected, address } = useAccount()
   const { t } = useTranslation()
 
+  // 添加调试信息
+  console.log('Charity - isConnected:', isConnected)
+  console.log('Charity - address:', address)
+
   // 如果钱包没有连接，显示连接提示
-  if (!isConnected) {
+  if (!isConnected || !address) {
     return <WalletNotConnected />
   }
   

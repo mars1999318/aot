@@ -41,7 +41,7 @@ function getStakingProgress(amount: number, stakingRate: number): number {
 }
 
 export function Staking() {
-  const { isConnected } = useAccount()
+  const { isConnected, address } = useAccount()
   const { userInfo, pendingRewards, tokenBalance } = useUserInfo()
   const { stake, isStakeLoading } = useStake()
   const { approve, isApproveLoading } = useApprove()
@@ -50,8 +50,12 @@ export function Staking() {
   const publicClient = usePublicClient()
   const { t } = useTranslation()
 
+  // 添加调试信息
+  console.log('Staking - isConnected:', isConnected)
+  console.log('Staking - address:', address)
+
   // 如果钱包没有连接，显示连接提示
-  if (!isConnected) {
+  if (!isConnected || !address) {
     return <WalletNotConnected />
   }
   const { showSuccess, showError, showWarning } = useToast()

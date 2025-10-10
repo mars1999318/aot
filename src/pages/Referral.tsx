@@ -18,7 +18,7 @@ import {
 } from 'lucide-react'
 
 export function Referral() {
-  const { isConnected } = useAccount()
+  const { isConnected, address } = useAccount()
   const { t } = useTranslation()
   const { 
     referralStats, 
@@ -31,8 +31,12 @@ export function Referral() {
     refreshData
   } = useReferral()
 
+  // 添加调试信息
+  console.log('Referral - isConnected:', isConnected)
+  console.log('Referral - address:', address)
+
   // 如果没有连接钱包，显示提示
-  if (!isConnected) {
+  if (!isConnected || !address) {
     return <WalletNotConnected />
   }
 
