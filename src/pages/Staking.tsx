@@ -209,9 +209,10 @@ export function Staking() {
       }
       setIsApproved(false)
       
-      // 质押成功后刷新页面数据
+      // 质押成功后刷新页面数据（不重新加载页面）
       setTimeout(() => {
-        window.location.reload()
+        // 触发数据重新获取，但不重新加载页面
+        window.dispatchEvent(new CustomEvent('dataRefresh'))
       }, 2000)
     } catch (error: any) {
       console.error('Stake failed:', error)
@@ -249,9 +250,10 @@ export function Staking() {
   const handleWithdraw = async (stakeIndex: number) => {
     try {
       await withdraw(stakeIndex)
-      // 提取质押订单成功后刷新页面数据
+      // 提取质押订单成功后刷新页面数据（不重新加载页面）
       setTimeout(() => {
-        window.location.reload()
+        // 触发数据重新获取，但不重新加载页面
+        window.dispatchEvent(new CustomEvent('dataRefresh'))
       }, 2000)
     } catch (error) {
       console.error('Withdraw error:', error)
@@ -270,9 +272,10 @@ export function Staking() {
       // 奖励领取成功后，显示成功提示
       showSuccess(t('staking.claimSuccess'), t('staking.claimSuccessMessage'))
       
-      // 提取奖励成功后刷新页面数据
+      // 提取奖励成功后刷新页面数据（不重新加载页面）
       setTimeout(() => {
-        window.location.reload()
+        // 触发数据重新获取，但不重新加载页面
+        window.dispatchEvent(new CustomEvent('dataRefresh'))
       }, 2000)
     } catch (error) {
       console.error('Claim rewards error:', error)
@@ -367,7 +370,7 @@ export function Staking() {
                 placeholder="0.00"
                 required
                 error={getFieldError('stakeAmount')}
-                helpText={`${t('staking.availableBalance')}: ${formatToken(walletBalance, 'AOT', 2)} | 最小质押: 100 AOT`}
+                helpText={`${t('staking.availableBalance')}: ${formatToken(walletBalance, 'AOT', 2)} | ${t('staking.minimumStake')}: 100 AOT`}
                 validation={(value) => validateAOTAmount(value, walletBalance)}
               />
 
@@ -448,7 +451,7 @@ export function Staking() {
             <div className="mb-4">
               <div className="text-center">
                 <div className="text-2xl font-bold glass-text-gold mb-1">{pendingRewardsValue} AOT</div>
-                <div className="text-sm glass-text-blue-light">可领取奖励</div>
+                <div className="text-sm glass-text-blue-light">{t('staking.claimableRewards')}</div>
               </div>
             </div>
             <div>
@@ -461,7 +464,7 @@ export function Staking() {
                 className="w-full"
                 loadingText={t('common.loading')}
               >
-                {t('rewards.claimRewards')}
+                {t('staking.claimRewards')}
               </LoadingButton>
             </div>
           </div>

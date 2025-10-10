@@ -86,7 +86,7 @@ export function ReferralHistory({ records, isLoading = false, className = '', da
     )
   }
 
-  // 检查是否有真实数据（质押金额不为0）
+  // Check if there is real data (staked amount is not 0)
   const hasRealData = records.length > 0 && records.some(record => record.stakedAmount !== '0')
   
   if (!hasRealData && records.length > 0) {

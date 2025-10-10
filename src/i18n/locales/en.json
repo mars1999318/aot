@@ -89,7 +89,13 @@
     "days": "days",
     "hours": "hours",
     "minutes": "minutes",
-    "noFee": "No Fee"
+    "noFee": "No Fee",
+    "claimableRewards": "Claimable Rewards",
+    "minimumStake": "Minimum Stake",
+    "currentStakingRate": "Current Staking Rate",
+    "currentStakingAmount": "Current Staking Amount",
+    "nextTier": "Next Tier",
+    "needToStake": "Need to Stake"
   },
   "referral": {
     "title": "Referral",
