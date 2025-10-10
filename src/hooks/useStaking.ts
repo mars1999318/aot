@@ -18,7 +18,7 @@ export function useStake() {
 
   const stake = async (amount: bigint, referrer: string) => {
     try {
-      const hash = await writeContract({
+      await writeContract({
         address: CURRENT_NETWORK.ArriveOnTime,
         abi: ARRIVE_ON_TIME_ABI,
         functionName: 'stake',
@@ -26,7 +26,7 @@ export function useStake() {
       })
       
       // 等待交易确认
-      if (hash) {
+      if (hash && publicClient) {
         const receipt = await publicClient.waitForTransactionReceipt({ hash })
         if (receipt.status === 'success') {
           return { success: true, hash }
@@ -61,7 +61,7 @@ export function useApprove() {
 
   const approve = async (spender: string, amount: bigint) => {
     try {
-      const txHash = await writeContract({
+      await writeContract({
         address: CURRENT_NETWORK.AOTToken,
         abi: AOT_TOKEN_ABI,
         functionName: 'approve',
@@ -69,10 +69,10 @@ export function useApprove() {
       })
       
       // 等待交易确认
-      if (txHash) {
-        const receipt = await publicClient.waitForTransactionReceipt({ hash: txHash })
+      if (hash && publicClient) {
+        const receipt = await publicClient.waitForTransactionReceipt({ hash })
         if (receipt.status === 'success') {
-          return { success: true, hash: txHash }
+          return { success: true, hash }
         } else {
           throw new Error('Transaction failed')
         }
@@ -99,7 +99,7 @@ export function useWithdraw() {
 
   const withdraw = async (stakeIndex: number) => {
     try {
-      const txHash = await writeContract({
+      await writeContract({
         address: CURRENT_NETWORK.ArriveOnTime,
         abi: ARRIVE_ON_TIME_ABI,
         functionName: 'withdraw',
@@ -107,10 +107,10 @@ export function useWithdraw() {
       })
       
       // 等待交易确认
-      if (txHash) {
-        const receipt = await publicClient.waitForTransactionReceipt({ hash: txHash })
+      if (hash && publicClient) {
+        const receipt = await publicClient.waitForTransactionReceipt({ hash })
         if (receipt.status === 'success') {
-          return { success: true, hash: txHash }
+          return { success: true, hash }
         } else {
           throw new Error('Transaction failed')
         }
