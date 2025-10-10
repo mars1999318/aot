@@ -11,7 +11,10 @@ import {
   Users,
   DollarSign,
   CheckCircle,
-  AlertCircle
+  AlertCircle,
+  Lightbulb,
+  HandHeart,
+  FileCheck
 } from 'lucide-react'
 
 export function Charity() {
@@ -123,6 +126,103 @@ export function Charity() {
           </div>
         </FadeIn>
 
+        {/* DAO Global Aid Process Timeline */}
+        <FadeIn delay={200}>
+          <div className="max-w-4xl mx-auto mb-8">
+            <div className="text-center mb-8">
+              <h2 className="text-2xl font-bold mb-3" style={{ color: '#1E5AA8' }}>
+                🌍 DAO 全球援助流程
+              </h2>
+              <p className="text-gray-600 text-sm">
+                从提案、投票、募捐到执行与反馈，每一步都公开透明，链上可查。
+              </p>
+            </div>
+
+            {/* Timeline */}
+            <div className="relative">
+              {/* Vertical Line */}
+              <div className="absolute left-6 top-0 bottom-0 w-0.5" style={{ backgroundColor: '#D4AF37' }}></div>
+              
+              {/* Timeline Steps */}
+              <div className="space-y-8">
+                {/* Step 1 */}
+                <div className="relative flex items-start">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center bg-white border-4 shadow-lg" style={{ borderColor: '#D4AF37' }}>
+                    <Lightbulb className="w-6 h-6" style={{ color: '#D4AF37' }} />
+                  </div>
+                  <div className="ml-6 flex-1">
+                    <h3 className="text-lg font-semibold mb-2" style={{ color: '#1E5AA8' }}>
+                      发起援助提案
+                    </h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      当某个地区发生灾害或紧急需求时，任何 DAO 成员都可在链上发起提案，公开描述援助背景与计划。
+                    </p>
+                  </div>
+                </div>
+
+                {/* Step 2 */}
+                <div className="relative flex items-start">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center bg-white border-4 shadow-lg" style={{ borderColor: '#D4AF37' }}>
+                    <Users className="w-6 h-6" style={{ color: '#D4AF37' }} />
+                  </div>
+                  <div className="ml-6 flex-1">
+                    <h3 className="text-lg font-semibold mb-2" style={{ color: '#1E5AA8' }}>
+                      社区公开投票
+                    </h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      提案发布后，全球社区成员将对提案进行链上投票，结果公开透明、不可篡改，确保每一票都真实有效。
+                    </p>
+                  </div>
+                </div>
+
+                {/* Step 3 */}
+                <div className="relative flex items-start">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center bg-white border-4 shadow-lg" style={{ borderColor: '#D4AF37' }}>
+                    <HandHeart className="w-6 h-6" style={{ color: '#D4AF37' }} />
+                  </div>
+                  <div className="ml-6 flex-1">
+                    <h3 className="text-lg font-semibold mb-2" style={{ color: '#1E5AA8' }}>
+                      全球募捐
+                    </h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      投票通过后，系统进入全球募捐阶段。用户可使用稳定币或代币捐赠，所有资金进入智能合约资金池，过程公开透明。
+                    </p>
+                  </div>
+                </div>
+
+                {/* Step 4 */}
+                <div className="relative flex items-start">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center bg-white border-4 shadow-lg" style={{ borderColor: '#D4AF37' }}>
+                    <Wallet className="w-6 h-6" style={{ color: '#D4AF37' }} />
+                  </div>
+                  <div className="ml-6 flex-1">
+                    <h3 className="text-lg font-semibold mb-2" style={{ color: '#1E5AA8' }}>
+                      拨款与执行
+                    </h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      募捐完成后，DAO 依据提案内容，通过多签钱包或合约自动拨款，确保资金精准送达受援方。
+                    </p>
+                  </div>
+                </div>
+
+                {/* Step 5 */}
+                <div className="relative flex items-start">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center bg-white border-4 shadow-lg" style={{ borderColor: '#D4AF37' }}>
+                    <FileCheck className="w-6 h-6" style={{ color: '#D4AF37' }} />
+                  </div>
+                  <div className="ml-6 flex-1">
+                    <h3 className="text-lg font-semibold mb-2" style={{ color: '#1E5AA8' }}>
+                      援助反馈与结案
+                    </h3>
+                    <p className="text-gray-600 text-sm leading-relaxed">
+                      援助完成后，提案方需提交资金使用与援助成果报告，所有资料上链存证，形成完整透明的援助闭环。
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </FadeIn>
 
         {/* Bottom Description */}
         <FadeIn delay={400}>
