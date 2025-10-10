@@ -33,7 +33,7 @@ interface ExpandableRecordProps {
   getStatusBadge: (isActive: boolean) => React.ReactNode
 }
 
-// 可展开的质押记录组件
+// Expandable staking record component
 function ExpandableRecord({ 
   record, 
   onWithdraw, 
@@ -51,7 +51,7 @@ function ExpandableRecord({
 
   return (
     <div className="glass-card hover:shadow-lg transition-all duration-300">
-      {/* 紧凑的摘要行 - 移动端优化 */}
+      {/* Compact summary row - mobile optimized */}
       <div 
         className="p-3 sm:p-4 cursor-pointer hover:bg-white/20 transition-colors"
         onClick={() => setIsExpanded(!isExpanded)}

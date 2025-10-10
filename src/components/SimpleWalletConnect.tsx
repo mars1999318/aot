@@ -9,9 +9,9 @@ export function SimpleWalletConnect() {
   const { t } = useTranslation()
   const [isLoading, setIsLoading] = useState(false)
 
-  // 添加连接状态监听
+  // Add connection state listener
   useEffect(() => {
-    console.log('连接状态变化:', { isConnected, address, isConnecting })
+    console.log('Connection state changed:', { isConnected, address, isConnecting })
   }, [isConnected, address, isConnecting])
 
   const handleConnect = async () => {

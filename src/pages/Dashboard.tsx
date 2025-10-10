@@ -72,23 +72,23 @@ export function Dashboard() {
     ? aggregatedActiveReferred.toFixed(4)
     : (referralStats?.totalReferredStaked || '0')
   
-  // 调试信息
-  console.log('Dashboard推荐数据调试:', {
+  // Debug information
+  console.log('Dashboard referral data debug:', {
     referralStats,
     totalReferrals,
     displayTotalReferredStaked,
     aggregatedActiveReferred,
-    userInfo: userInfo?.[2] // 合约返回的totalReferred
+    userInfo: userInfo?.[2] // Contract returned totalReferred
   })
-  // 直接从合约获取利率数据 - 使用正确的转换
+  // Get interest rate data directly from contract - using correct conversion
   const rawReferralRate = userInfo?.[4] ? Number(userInfo[4]) : 0
   const rawStakingRate = userInfo?.[3] ? Number(userInfo[3]) : 0
   
-  // 统一推荐率和质押率计算，与推荐页面保持一致
-  // 推荐利率: 260000 -> 0.026 (2.6%)
-  // 质押利率: 910 -> 0.00091 (0.091%)
-  const referralRate = rawReferralRate / 1000000 // 转换为小数
-  const stakingRate = rawStakingRate / 1000000   // 转换为小数
+  // Unified referral rate and staking rate calculation, consistent with referral page
+  // Referral rate: 260000 -> 0.026 (2.6%)
+  // Staking rate: 910 -> 0.00091 (0.091%)
+  const referralRate = rawReferralRate / 1000000 // Convert to decimal
+  const stakingRate = rawStakingRate / 1000000   // Convert to decimal
 
   const stats = [
     {
