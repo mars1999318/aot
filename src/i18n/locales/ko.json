@@ -179,6 +179,11 @@
     "stakingRate": "스테이킹 수익률",
     "dailyYieldRate": "일일 수익률",
     "noStakingReward": "스테이킹 보상 없음",
+    "active": "활성",
+    "available": "사용 가능",
+    "noStaking": "스테이킹 없음",
+    "noRewards": "보상 없음",
+    "empty": "비어있음",
     "recentActivity": "최근 활동",
     "statistics": "통계"
   },

@@ -38,7 +38,12 @@
     "noReferralReward": "无推荐奖励",
     "stakingRate": "质押收益率",
     "dailyYieldRate": "日化收益率",
-    "noStakingReward": "无质押收益"
+    "noStakingReward": "无质押收益",
+    "active": "活跃",
+    "available": "可用",
+    "noStaking": "无质押",
+    "noRewards": "无奖励",
+    "empty": "空"
   },
   "staking": {
     "title": "质押",

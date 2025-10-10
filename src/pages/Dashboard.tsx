@@ -94,7 +94,7 @@ export function Dashboard() {
     {
       title: t('dashboard.totalStaked'),
       value: totalStakedNumber > 0 ? formatToken(totalStaked, 'AOT', 4) : '0 AOT',
-      change: totalStakedNumber > 0 ? 'Active' : 'No Staking',
+      change: totalStakedNumber > 0 ? t('dashboard.active') : t('dashboard.noStaking'),
       changeType: totalStakedNumber > 0 ? 'positive' as const : 'neutral' as const,
       icon: Coins,
       color: 'bg-blue-500'
@@ -102,7 +102,7 @@ export function Dashboard() {
     {
       title: t('dashboard.pendingRewards'),
       value: pendingRewardsNumber > 0 ? formatToken(pendingRewardsValue, 'AOT', 4) : '0 AOT',
-      change: pendingRewardsNumber > 0 ? 'Available' : 'No Rewards',
+      change: pendingRewardsNumber > 0 ? t('dashboard.available') : t('dashboard.noRewards'),
       changeType: pendingRewardsNumber > 0 ? 'positive' as const : 'neutral' as const,
       icon: Gift,
       color: 'bg-green-500'
@@ -110,7 +110,7 @@ export function Dashboard() {
     {
       title: t('dashboard.walletBalance'),
       value: walletBalanceNumber > 0 ? formatToken(walletBalance, 'AOT', 4) : '0 AOT',
-      change: walletBalanceNumber > 0 ? 'Available' : 'Empty',
+      change: walletBalanceNumber > 0 ? t('dashboard.available') : t('dashboard.empty'),
       changeType: walletBalanceNumber > 0 ? 'positive' as const : 'neutral' as const,
       icon: DollarSign,
       color: 'bg-purple-500'

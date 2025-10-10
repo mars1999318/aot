@@ -333,17 +333,17 @@ export function Charity() {
                     <span className="text-white text-sm font-bold">2</span>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-semibold mb-3 text-gray-800">DAO 公益组织的兴起</h3>
+                    <h3 className="text-lg font-semibold mb-3 text-gray-800">{t('charity.point2Title')}</h3>
                     <p className="text-gray-600 leading-relaxed">
-                      随着 <strong>去中心化自治组织（DAO）</strong> 的普及，未来可能出现"全球公益 DAO"：
+                      {t('charity.point2Desc')}
                     </p>
                     <ul className="text-gray-600 leading-relaxed mt-3 space-y-2">
-                      <li>• 捐赠者通过持有代币或 NFT，获得 <strong>投票权</strong>。</li>
-                      <li>• 善款的流向由全球社区共同投票决定，而非某个单一机构拍板。</li>
-                      <li>• 受助者可以通过链上申请与社区投票直接获得援助，减少繁琐的审批流程。</li>
+                      <li>• {t('charity.point2List1')}</li>
+                      <li>• {t('charity.point2List2')}</li>
+                      <li>• {t('charity.point2List3')}</li>
                     </ul>
                     <p className="text-gray-600 leading-relaxed mt-3">
-                      这将形成真正的 <strong>去中心化、共识驱动型公益生态</strong>。
+                      {t('charity.point2Conclusion')}
                     </p>
                   </div>
                 </div>

@@ -179,6 +179,11 @@
     "stakingRate": "ステーキング収益率",
     "dailyYieldRate": "日次利回り率",
     "noStakingReward": "ステーキング報酬なし",
+    "active": "アクティブ",
+    "available": "利用可能",
+    "noStaking": "ステーキングなし",
+    "noRewards": "報酬なし",
+    "empty": "空",
     "recentActivity": "最近の活動",
     "statistics": "統計"
   },

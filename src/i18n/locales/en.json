@@ -38,7 +38,12 @@
     "noReferralReward": "No Referral Reward",
     "stakingRate": "Staking Rate",
     "dailyYieldRate": "Daily Yield Rate",
-    "noStakingReward": "No Staking Reward"
+    "noStakingReward": "No Staking Reward",
+    "active": "Active",
+    "available": "Available",
+    "noStaking": "No Staking",
+    "noRewards": "No Rewards",
+    "empty": "Empty"
   },
   "staking": {
     "title": "Staking",
