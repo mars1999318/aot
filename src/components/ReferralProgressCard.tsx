@@ -1,6 +1,7 @@
 import React from 'react'
 import { Users, Target, TrendingUp, ArrowRight } from 'lucide-react'
 import { useTranslation } from '../hooks/useTranslation'
+import { formatReferralRate } from '../utils/formatting'
 
 interface ReferralProgressCardProps {
   totalReferredStaked: number
@@ -52,9 +53,8 @@ export function ReferralProgressCard({
   const nextTier = getNextReferralTierInfo()
   const remainingToNext = nextTier ? Math.max(0, nextTier.required - totalReferredStaked) : 0
   
-  // Calculate current referral rate display
-  const currentRate = currentReferralRate > 0 ? (currentReferralRate / 1000000) : 0
-  const displayRate = (currentRate * 100).toFixed(4)
+  // Calculate current referral rate display using the same formatting function as other pages
+  const displayRate = formatReferralRate(currentReferralRate)
   
   // Calculate progress percentage
   const progressPercentage = nextTier ? Math.min(100, (totalReferredStaked / nextTier.required) * 100) : 100
@@ -94,7 +94,7 @@ export function ReferralProgressCard({
                 <span className="text-xs font-medium glass-text-blue">{t('referral.nextTier')}: {nextTier.name}</span>
               </div>
               <div className="text-sm font-bold glass-text-red mb-1">
-                {(nextTier.rate * 100).toFixed(4)}%
+                {formatReferralRate(nextTier.rate * 1000000)}%
               </div>
               <div className="text-xs glass-text-gold-light">
                 {t('referral.needToRefer')} <span className="font-semibold">{remainingToNext.toFixed(2)} AOT</span>

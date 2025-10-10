@@ -147,31 +147,31 @@ export function Charity() {
               <div className="space-y-6">
                 <div className="text-center mb-6">
                   <h3 className="text-xl font-semibold mb-2" style={{ color: '#1E5AA8' }}>
-                    区块链慈善公益
+                    {t('charity.blockchainCharity')}
                   </h3>
                 </div>
                 
                 {/* Trust Mechanism */}
                 <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
-                  <h4 className="text-lg font-semibold mb-3 text-gray-800">信任机制</h4>
+                  <h4 className="text-lg font-semibold mb-3 text-gray-800">{t('charity.trustMechanism')}</h4>
                   <p className="text-gray-600 text-sm leading-relaxed">
-                    依赖智能合约和链上规则运行，减少人为操纵。资金分配和执行由 DAO 治理决定，信任建立在"代码与透明度"之上。
+                    {t('charity.blockchainTrustDesc')}
                   </p>
                 </div>
 
                 {/* Participation Mode */}
                 <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
-                  <h4 className="text-lg font-semibold mb-3 text-gray-800">参与模式</h4>
+                  <h4 className="text-lg font-semibold mb-3 text-gray-800">{t('charity.participationMode')}</h4>
                   <p className="text-gray-600 text-sm leading-relaxed">
-                    捐赠者可通过持有代币或参与治理，对善款使用进行投票，形成"公益共识网络"，每个参与者都成为治理者。结合 NFT、DAO、DeFi 等形式，能激励更多年轻人参与。
+                    {t('charity.blockchainParticipationDesc')}
                   </p>
                 </div>
 
                 {/* Limitations and Challenges */}
                 <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
-                  <h4 className="text-lg font-semibold mb-3 text-gray-800">局限与挑战</h4>
+                  <h4 className="text-lg font-semibold mb-3 text-gray-800">{t('charity.limitationsChallenges')}</h4>
                   <p className="text-gray-600 text-sm leading-relaxed">
-                    透明高效，但有技术门槛；当资金需要落地时，需与合规机构合作。小额捐赠可直接链上执行，大额建议通过基金会或 NGO。
+                    {t('charity.blockchainLimitationsDesc')}
                   </p>
                 </div>
               </div>
@@ -180,21 +180,21 @@ export function Charity() {
             {/* Summary Section */}
             <div className="max-w-4xl mx-auto text-center">
               <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-8 border border-blue-200">
-                <p className="text-gray-700 leading-relaxed mb-4">
-                  传统慈善依赖"机构信誉"，但效率和透明度有限。
-                </p>
-                <p className="text-gray-700 leading-relaxed mb-4">
-                  区块链慈善依赖"代码与透明度"，让资金使用公开化、参与民主化、跨境无障碍。
-                </p>
-                <p className="text-gray-700 leading-relaxed mb-4">
-                  理想模式：传统公益机构 + 区块链技术结合。
-                </p>
-                <p className="text-gray-700 leading-relaxed mb-4">
-                  小额资金可直接链上执行，大额资金通过合规机构合法落地。
-                </p>
-                <p className="text-gray-700 leading-relaxed font-bold">
-                  这样既能保留技术透明度，又能获得社会认可，实现真正高效可信的全球公益网络。
-                </p>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                {t('charity.summary1')}
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                {t('charity.summary2')}
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                {t('charity.summary3')}
+              </p>
+              <p className="text-gray-700 leading-relaxed mb-4">
+                {t('charity.summary4')}
+              </p>
+              <p className="text-gray-700 leading-relaxed font-bold">
+                {t('charity.summary5')}
+              </p>
               </div>
             </div>
           </div>
@@ -304,7 +304,7 @@ export function Charity() {
             {/* Module Title */}
             <div className="text-center mb-12">
               <h2 className="text-2xl md:text-3xl font-bold mb-4" style={{ color: '#1E5AA8' }}>
-                🌍 区块链 + 慈善公益的发展前景
+                {t('charity.prospectsTitle')}
               </h2>
               <div className="w-15 h-1 mx-auto" style={{ backgroundColor: '#D4AF37' }}></div>
             </div>
@@ -318,11 +318,9 @@ export function Charity() {
                     <span className="text-white text-sm font-bold">1</span>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-semibold mb-3 text-gray-800">全球透明公益的新标准</h3>
+                    <h3 className="text-lg font-semibold mb-3 text-gray-800">{t('charity.point1Title')}</h3>
                     <p className="text-gray-600 leading-relaxed">
-                      区块链的 <strong>不可篡改</strong> 和 <strong>可追溯</strong> 特性，将成为未来公益的"信任基石"。
-                      未来每一笔捐款、每一笔援助资金，都将能被捐赠者、受助者和社会公众 <strong>实时追踪</strong>。
-                      这会逐渐改变传统"黑箱公益"的质疑，使透明度成为全球公益组织的标配。
+                      {t('charity.point1Desc')}
                     </p>
                   </div>
                 </div>
