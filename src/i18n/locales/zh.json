@@ -9,7 +9,10 @@
     "edit": "编辑",
     "delete": "删除",
     "actions": "操作",
-    "refresh": "刷新数据"
+    "refresh": "刷新数据",
+    "refreshing": "刷新中...",
+    "releaseToRefresh": "松开刷新",
+    "pullToRefresh": "下拉刷新"
   },
   "dashboard": {
     "title": "仪表板",
@@ -113,7 +116,11 @@
     "referralLevel": "推荐等级",
     "levelDescription": "黄金等级 - 10%佣金率",
     "nextLevel": "下一等级",
-    "shareReferralLink": "分享推荐链接"
+    "shareReferralLink": "分享推荐链接",
+    "people": "人",
+    "totalReferredStaked": "推荐质押总量",
+    "referredStakedTotal": "被推荐人质押总量",
+    "currentReferralRate": "当前推荐率"
   },
   "charity": {
     "title": "公益慈善",

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 import { RefreshCw } from 'lucide-react'
+import { useTranslation } from '../hooks/useTranslation'
 
 interface PullToRefreshProps {
   onRefresh: () => void
@@ -8,6 +9,7 @@ interface PullToRefreshProps {
 }
 
 export function PullToRefresh({ onRefresh, children, className = '' }: PullToRefreshProps) {
+  const { t } = useTranslation()
   const [isRefreshing, setIsRefreshing] = useState(false)
   const [pullDistance, setPullDistance] = useState(0)
   const [isPulling, setIsPulling] = useState(false)
@@ -90,7 +92,7 @@ export function PullToRefresh({ onRefresh, children, className = '' }: PullToRef
             }}
           />
           <span className="text-sm text-gray-600">
-            {isRefreshing ? '刷新中...' : pullDistance > 50 ? '松开刷新' : '下拉刷新'}
+            {isRefreshing ? t('common.refreshing') : pullDistance > 50 ? t('common.releaseToRefresh') : t('common.pullToRefresh')}
           </span>
         </div>
       </div>

@@ -4,6 +4,7 @@ import { ModernStatsCard } from './ModernStatsCard'
 import { ModernCard, ModernCardHeader, ModernCardBody } from './ModernCard'
 import { ReferralStats } from '../hooks/useReferral'
 import { formatReferralRate } from '../utils/formatting'
+import { useTranslation } from '../hooks/useTranslation'
 
 interface ReferralStatsProps {
   stats: ReferralStats
@@ -11,14 +12,16 @@ interface ReferralStatsProps {
 }
 
 export function ReferralStatsComponent({ stats, className = '' }: ReferralStatsProps) {
+  const { t } = useTranslation()
+  
   // 使用统一的推荐率格式化函数
   const referralRatePercent = formatReferralRate(stats.currentReferralRate * 1000000) // 转换为原始值
   
   const statCards = [
     {
-      title: '推荐人数',
+      title: t('referral.totalReferrals'),
       value: stats.totalReferrals.toString(),
-      change: `${stats.totalReferrals} 人`,
+      change: `${stats.totalReferrals} ${t('referral.people')}`,
       changeType: 'positive' as const,
       icon: Users,
       color: 'bg-blue-500',
@@ -28,9 +31,9 @@ export function ReferralStatsComponent({ stats, className = '' }: ReferralStatsP
       }
     },
     {
-      title: '推荐质押总量',
+      title: t('referral.totalReferredStaked'),
       value: `${stats.totalReferredStaked} AOT`,
-      change: '被推荐人质押总量',
+      change: t('referral.referredStakedTotal'),
       changeType: 'positive' as const,
       icon: TrendingUp,
       color: 'bg-green-500',
@@ -40,9 +43,9 @@ export function ReferralStatsComponent({ stats, className = '' }: ReferralStatsP
       }
     },
     {
-      title: '推荐收益率',
+      title: t('referral.referralRate'),
       value: `${referralRatePercent}%`,
-      change: '当前推荐率',
+      change: t('referral.currentReferralRate'),
       changeType: 'positive' as const,
       icon: DollarSign,
       color: 'bg-yellow-500',

@@ -9,7 +9,10 @@
     "edit": "Edit",
     "delete": "Delete",
     "actions": "Actions",
-    "refresh": "Refresh Data"
+    "refresh": "Refresh Data",
+    "refreshing": "Refreshing...",
+    "releaseToRefresh": "Release to Refresh",
+    "pullToRefresh": "Pull to Refresh"
   },
   "dashboard": {
     "title": "Dashboard",
@@ -100,7 +103,11 @@
     "referralLevel": "Referral Level",
     "levelDescription": "Gold level - 10% commission rate",
     "nextLevel": "Next Level",
-    "shareReferralLink": "Share Referral Link"
+    "shareReferralLink": "Share Referral Link",
+    "people": "people",
+    "totalReferredStaked": "Total Referred Staked",
+    "referredStakedTotal": "Referred Staked Total",
+    "currentReferralRate": "Current Referral Rate"
   },
   "charity": {
     "title": "Charity",

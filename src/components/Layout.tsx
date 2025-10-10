@@ -29,6 +29,8 @@ export function Layout() {
     document.body.scrollTop = 0
     // 然后切换页面
     setActiveTab(tab)
+    // 强制重新渲染
+    setRefreshKey(prev => prev + 1)
   }
 
   // 监听页面切换，确保每次切换都滚动到顶部
