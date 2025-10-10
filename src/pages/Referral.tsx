@@ -35,7 +35,8 @@ export function Referral() {
   if (!isConnected) {
     return <WalletNotConnected />
   }
-    return (
+
+  return (
       <PageTransition className="min-h-screen">
         <div className="space-y-6">
           <FadeIn delay={0}>
