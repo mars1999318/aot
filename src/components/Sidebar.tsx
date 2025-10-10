@@ -25,7 +25,7 @@ export function Sidebar({ activeTab, setActiveTab }: {
       <div className="p-3 border-b border-white/20">
         <div className="flex items-center space-x-2">
           <img 
-            src="/logo.png" 
+            src="/aot/logo.png" 
             alt="ArriveOnTime Logo" 
             className="w-8 h-8 rounded-full flex-shrink-0 border-2 border-white/30"
           />
