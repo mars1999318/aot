@@ -109,7 +109,7 @@ export function formatRelativeTime(timestamp: number): string {
  * @returns 格式化后的Ether值
  */
 export function formatWeiToEther(wei: string | bigint, decimals: number = 4): string {
-  if (!wei || wei === '0' || wei === 0) return '0'
+  if (!wei || wei === '0' || wei === 0n) return '0'
   
   try {
     const weiValue = typeof wei === 'bigint' ? wei : BigInt(wei)

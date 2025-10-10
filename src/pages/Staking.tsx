@@ -46,7 +46,7 @@ export function Staking() {
   const { claimRewards, isClaimLoading } = useClaimRewards()
   const publicClient = usePublicClient()
   const { t } = useTranslation()
-  const { showSuccess, showError } = useToast()
+  const { showSuccess, showError, showWarning } = useToast()
 
   const [isApproved, setIsApproved] = useState(false)
   const [estimatedRewards, setEstimatedRewards] = useState('0')
@@ -243,7 +243,7 @@ export function Staking() {
     try {
       await claimRewards()
       // 奖励领取成功后，显示成功提示
-      showSuccess('奖励领取成功！')
+      showSuccess('奖励领取成功！', '您的奖励已成功领取到钱包。')
       
       // 等待一段时间后，使用准确奖励记录系统
       setTimeout(async () => {
@@ -251,7 +251,7 @@ export function Staking() {
       }, 3000) // 等待3秒后记录
     } catch (error) {
       console.error('Claim rewards error:', error)
-      showError('奖励领取失败，请重试')
+      showError('奖励领取失败', '请重试')
     }
   }
 
@@ -468,7 +468,6 @@ export function Staking() {
           <div className="mt-8">
             <StakingRecords 
               onWithdraw={handleWithdraw}
-              onClaim={handleClaim}
             />
           </div>
         </FadeIn>
