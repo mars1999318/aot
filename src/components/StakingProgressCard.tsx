@@ -59,23 +59,23 @@ export function StakingProgressCard({ currentStaked, currentRate, className = ''
   const remainingToNext = nextTier ? Math.max(0, nextTier.required - currentStaked) : 0
 
   return (
-    <div className={`glass-card p-4 ${className}`}>
-      <div className="space-y-4">
+    <div className={`glass-card p-3 ${className}`}>
+      <div className="space-y-3">
         {/* 当前质押率 */}
         <div className="text-center">
-          <div className="flex items-center justify-center mb-2">
-            <Percent className="h-4 w-4 text-green-600 mr-2" />
-            <span className="text-sm font-semibold glass-text-blue-light">当前质押率</span>
+          <div className="flex items-center justify-center mb-1">
+            <Percent className="h-3 w-3 text-green-600 mr-1" />
+            <span className="text-xs font-semibold glass-text-blue-light">当前质押率</span>
           </div>
-          <div className="text-2xl font-bold glass-text-red">
+          <div className="text-xl font-bold glass-text-red">
             {displayRate}%
           </div>
         </div>
 
         {/* 当前质押量 */}
-        <div className="bg-white/30 backdrop-blur-sm rounded-lg p-3 border border-white/20">
+        <div className="bg-white/30 backdrop-blur-sm rounded-lg p-2 border border-white/20">
           <div className="text-center">
-            <div className="text-lg font-semibold glass-text-gold">
+            <div className="text-sm font-semibold glass-text-gold">
               {currentStaked.toFixed(2)} AOT
             </div>
             <div className="text-xs glass-text-blue-light">当前质押量</div>
@@ -84,16 +84,16 @@ export function StakingProgressCard({ currentStaked, currentRate, className = ''
 
         {/* 下一档位信息 */}
         {nextTier && (
-          <div className="bg-white/30 backdrop-blur-sm rounded-lg p-3 border border-white/20">
+          <div className="bg-white/30 backdrop-blur-sm rounded-lg p-2 border border-white/20">
             <div className="text-center">
-              <div className="flex items-center justify-center mb-2">
+              <div className="flex items-center justify-center mb-1">
                 <Target className="h-3 w-3 text-blue-600 mr-1" />
                 <span className="text-xs font-medium glass-text-blue">下一档位: {nextTier.name}</span>
               </div>
-              <div className="text-lg font-bold glass-text-red mb-1">
+              <div className="text-sm font-bold glass-text-red mb-1">
                 {(nextTier.rate * 100).toFixed(4)}%
               </div>
-              <div className="text-sm glass-text-gold-light">
+              <div className="text-xs glass-text-gold-light">
                 还需质押 <span className="font-semibold">{remainingToNext.toFixed(2)} AOT</span>
               </div>
             </div>
@@ -102,10 +102,10 @@ export function StakingProgressCard({ currentStaked, currentRate, className = ''
 
         {/* 最高档位提示 */}
         {!nextTier && (
-          <div className="bg-gradient-to-r from-yellow-50/50 to-orange-50/50 backdrop-blur-sm rounded-lg p-3 border border-yellow-200/30">
+          <div className="bg-gradient-to-r from-yellow-50/50 to-orange-50/50 backdrop-blur-sm rounded-lg p-2 border border-yellow-200/30">
             <div className="text-center">
               <div className="flex items-center justify-center mb-1">
-                <TrendingUp className="h-4 w-4 text-yellow-600 mr-1" />
+                <TrendingUp className="h-3 w-3 text-yellow-600 mr-1" />
                 <span className="text-xs font-semibold glass-text-gold">已达到最高档位</span>
               </div>
               <div className="text-xs glass-text-gold-light">

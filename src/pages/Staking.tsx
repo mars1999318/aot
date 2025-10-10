@@ -345,13 +345,13 @@ export function Staking() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* 质押表单 */}
         <div className="lg:col-span-2">
-          <div className="glass-card p-6">
-            <div className="mb-4">
-              <h2 className="text-xl font-semibold glass-text-gold">{t('staking.stakeTokens')}</h2>
+          <div className="glass-card p-4">
+            <div className="mb-3">
+              <h2 className="text-lg font-semibold glass-text-gold">{t('staking.stakeTokens')}</h2>
             </div>
             <div>
             
-            <div className="space-y-6">
+            <div className="space-y-4">
               {/* 质押金额 */}
               <FormField
                 label={`${t('staking.amount')} (AOT)`}
@@ -434,27 +434,23 @@ export function Staking() {
 
         {/* 侧边栏信息 */}
         <div className="space-y-6">
-          {/* 当前质押信息 */}
-          <div className="glass-card p-6">
+          {/* 待领取奖励 */}
+          <div className="glass-card p-4">
+            <div className="mb-3">
+              <h3 className="text-lg font-semibold glass-text-blue">{t('staking.pendingRewards')}</h3>
+            </div>
             <div className="mb-4">
-              <h3 className="text-lg font-semibold glass-text-blue">{t('staking.currentStake')}</h3>
-            </div>
-            <div className="space-y-3">
-              <div className="flex justify-between">
-                <span className="glass-text-blue-light">{t('staking.totalStaked')}</span>
-                <span className="font-medium glass-text-red">{totalStaked} AOT</span>
-              </div>
-              <div className="flex justify-between">
-                <span className="glass-text-blue-light">{t('staking.pendingRewards')}</span>
-                <span className="font-medium glass-text-gold">{pendingRewardsValue} AOT</span>
+              <div className="text-center">
+                <div className="text-2xl font-bold glass-text-gold mb-1">{pendingRewardsValue} AOT</div>
+                <div className="text-sm glass-text-blue-light">可领取奖励</div>
               </div>
             </div>
-            <div className="mt-4 space-y-2">
+            <div>
               <LoadingButton
                 loading={isClaimLoading}
                 onClick={handleClaimRewards}
                 disabled={!pendingRewardsValue}
-                variant="success"
+                variant="gold"
                 size="md"
                 className="w-full"
                 loadingText={t('common.loading')}
