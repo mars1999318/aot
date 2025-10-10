@@ -96,13 +96,13 @@ export function Staking() {
     
     // 如果正在处理中，不允许新操作
     if (isProcessing) {
-      showWarning('操作进行中', '请等待当前操作完成后再试。')
+      showWarning(t('staking.operationInProgress'), t('staking.waitForOperationComplete'))
       return false
     }
     
     // 如果距离上次操作不足2秒，不允许新操作
     if (timeSinceLastOperation < 2000) {
-      showWarning('操作过于频繁', '请稍等2秒后再试。')
+      showWarning(t('staking.operationTooFrequent'), t('staking.waitTwoSeconds'))
       return false
     }
     
@@ -156,24 +156,24 @@ export function Staking() {
       console.error('Approve failed:', error)
       
       // 记录错误状态
-      setLastError(error?.message || '授权失败')
+      setLastError(error?.message || t('staking.approveFailed'))
       
       // 根据具体错误类型提供更详细的提示
       if (error?.message?.includes('Transaction does not have a transaction hash')) {
         showError(
-          '交易提交失败', 
-          '交易未能成功提交到区块链。这通常是由于网络拥堵或Gas费用设置过低。请尝试：\n1. 增加Gas费用\n2. 稍后重试\n3. 检查网络连接'
+          t('staking.transactionSubmitFailed'), 
+          t('staking.transactionSubmitFailedMessage')
         )
       } else if (error?.message?.includes('RPC Error')) {
         showError(
-          'RPC连接错误', 
-          '与区块链网络连接出现问题。请尝试：\n1. 刷新页面\n2. 切换网络\n3. 稍后重试'
+          t('staking.rpcConnectionError'), 
+          t('staking.rpcConnectionErrorMessage')
         )
       } else if (error?.message?.includes('User rejected')) {
-        showWarning('交易被取消', '您取消了授权操作。')
+        showWarning(t('staking.transactionCancelled'), t('staking.approveCancelled'))
         resetOperationState() // 用户取消，重置状态
       } else {
-        showError('授权失败', `AOT代币授权失败：${error?.message || '未知错误'}，请重试。`)
+        showError(t('staking.approveFailed'), t('staking.approveFailedMessage', { error: error?.message || t('staking.unknownError') }))
       }
       
       // 延迟重置状态，避免立即重试

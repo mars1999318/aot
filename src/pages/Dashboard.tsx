@@ -127,33 +127,33 @@ export function Dashboard() {
       color: 'bg-purple-500'
     },
     {
-      title: '总推荐用户',
+      title: t('dashboard.totalReferrals'),
       value: totalReferrals > 0 ? totalReferrals.toString() : '0',
-      change: totalReferrals > 0 ? `${totalReferrals} 用户` : '无推荐用户',
+      change: totalReferrals > 0 ? `${totalReferrals} ${t('dashboard.users')}` : t('dashboard.noReferrals'),
       changeType: totalReferrals > 0 ? 'positive' as const : 'neutral' as const,
       icon: Users,
       color: 'bg-orange-500'
     },
     {
-      title: '总推荐质押',
+      title: t('dashboard.totalReferredStaked'),
       value: parseFloat(displayTotalReferredStaked) > 0 ? `${parseFloat(displayTotalReferredStaked).toFixed(4)} AOT` : '0 AOT',
-      change: parseFloat(displayTotalReferredStaked) > 0 ? '推荐人质押' : '无推荐质押',
+      change: parseFloat(displayTotalReferredStaked) > 0 ? t('dashboard.referredStaked') : t('dashboard.noReferredStaked'),
       changeType: parseFloat(displayTotalReferredStaked) > 0 ? 'positive' as const : 'neutral' as const,
       icon: TrendingUp,
       color: 'bg-indigo-500'
     },
     {
-      title: '推荐收益率',
+      title: t('dashboard.referralRate'),
       value: `${formatReferralRate(rawReferralRate)}%`,
-      change: rawReferralRate > 0 ? '推荐奖励率' : '无推荐奖励',
+      change: rawReferralRate > 0 ? t('dashboard.referralRewardRate') : t('dashboard.noReferralReward'),
       changeType: rawReferralRate > 0 ? 'positive' as const : 'neutral' as const,
       icon: Gift,
       color: 'bg-green-500'
     },
     {
-      title: '质押收益率',
+      title: t('dashboard.stakingRate'),
       value: `${formatStakingRate(rawStakingRate)}%`,
-      change: rawStakingRate > 0 ? '日化收益率' : '无质押收益',
+      change: rawStakingRate > 0 ? t('dashboard.dailyYieldRate') : t('dashboard.noStakingReward'),
       changeType: rawStakingRate > 0 ? 'positive' as const : 'neutral' as const,
       icon: Coins,
       color: 'bg-blue-500'

@@ -21,7 +21,18 @@
     "totalReferrals": "Total Referrals",
     "totalEarnings": "Total Earnings",
     "stakingTime": "Staking Time",
-    "quickActions": "Quick Actions"
+    "quickActions": "Quick Actions",
+    "users": "users",
+    "noReferrals": "No Referrals",
+    "totalReferredStaked": "Total Referred Staked",
+    "referredStaked": "Referred Staked",
+    "noReferredStaked": "No Referred Staked",
+    "referralRate": "Referral Rate",
+    "referralRewardRate": "Referral Reward Rate",
+    "noReferralReward": "No Referral Reward",
+    "stakingRate": "Staking Rate",
+    "dailyYieldRate": "Daily Yield Rate",
+    "noStakingReward": "No Staking Reward"
   },
   "staking": {
     "title": "Staking",

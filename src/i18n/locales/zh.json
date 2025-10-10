@@ -21,7 +21,18 @@
     "totalReferrals": "总推荐数",
     "totalEarnings": "总收益",
     "stakingTime": "质押时间",
-    "quickActions": "快速操作"
+    "quickActions": "快速操作",
+    "users": "用户",
+    "noReferrals": "无推荐用户",
+    "totalReferredStaked": "总推荐质押",
+    "referredStaked": "推荐人质押",
+    "noReferredStaked": "无推荐质押",
+    "referralRate": "推荐收益率",
+    "referralRewardRate": "推荐奖励率",
+    "noReferralReward": "无推荐奖励",
+    "stakingRate": "质押收益率",
+    "dailyYieldRate": "日化收益率",
+    "noStakingReward": "无质押收益"
   },
   "staking": {
     "title": "质押",
@@ -65,7 +76,20 @@
     "claimSuccess": "奖励领取成功！",
     "claimSuccessMessage": "您的奖励已成功领取到钱包。",
     "referrerBound": "已绑定推荐人",
-    "referrerBoundMessage": "您已绑定推荐人，无需重复填写"
+    "referrerBoundMessage": "您已绑定推荐人，无需重复填写",
+    "operationInProgress": "操作进行中",
+    "waitForOperationComplete": "请等待当前操作完成后再试。",
+    "operationTooFrequent": "操作过于频繁",
+    "waitTwoSeconds": "请稍等2秒后再试。",
+    "approveFailed": "授权失败",
+    "transactionSubmitFailed": "交易提交失败",
+    "transactionSubmitFailedMessage": "交易未能成功提交到区块链。这通常是由于网络拥堵或Gas费用设置过低。请尝试：\n1. 增加Gas费用\n2. 稍后重试\n3. 检查网络连接",
+    "rpcConnectionError": "RPC连接错误",
+    "rpcConnectionErrorMessage": "与区块链网络连接出现问题。请尝试：\n1. 刷新页面\n2. 切换网络\n3. 稍后重试",
+    "transactionCancelled": "交易被取消",
+    "approveCancelled": "您取消了授权操作。",
+    "approveFailedMessage": "AOT代币授权失败：{error}，请重试。",
+    "unknownError": "未知错误"
   },
   "referral": {
     "title": "推荐",
