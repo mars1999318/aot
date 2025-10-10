@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Sidebar } from './Sidebar'
 import { MobileNavbar } from './MobileNavbar'
 import { NetworkDebug } from './NetworkDebug'
@@ -20,10 +20,32 @@ export function Layout() {
 
   // 处理页面切换，确保滚动到顶部
   const handleTabChange = (tab: string) => {
+    // 立即滚动到顶部，不使用动画
+    window.scrollTo({ top: 0, behavior: 'instant' })
+    // 强制设置scrollTop为0
+    document.documentElement.scrollTop = 0
+    document.body.scrollTop = 0
+    // 然后切换页面
     setActiveTab(tab)
-    // 立即滚动到顶部
-    window.scrollTo({ top: 0, behavior: 'smooth' })
   }
+
+  // 监听页面切换，确保每次切换都滚动到顶部
+  useEffect(() => {
+    // 使用setTimeout确保DOM更新后再滚动
+    const scrollToTop = () => {
+      window.scrollTo({ top: 0, behavior: 'instant' })
+      document.documentElement.scrollTop = 0
+      document.body.scrollTop = 0
+    }
+    
+    // 立即执行一次
+    scrollToTop()
+    
+    // 延迟执行一次，确保页面内容加载完成
+    const timeoutId = setTimeout(scrollToTop, 10)
+    
+    return () => clearTimeout(timeoutId)
+  }, [activeTab])
 
   const renderContent = () => {
     switch (activeTab) {
