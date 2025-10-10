@@ -311,17 +311,14 @@ export function Staking() {
       <NetworkSwitcher />
 
       {/* 错误状态显示 */}
-      {(stakeError || approveError || withdrawError || claimError) && (
+      {lastError && (
         <div className="mb-6 bg-red-50 border border-red-200 rounded-lg p-4">
           <div className="flex items-center">
             <AlertCircle className="h-5 w-5 text-red-500 mr-3" />
             <div className="flex-1">
               <h3 className="text-sm font-medium text-red-800">操作失败</h3>
               <p className="text-sm text-red-600 mt-1">
-                {stakeError && '质押操作失败，请重试。'}
-                {approveError && '授权操作失败，请重试。'}
-                {withdrawError && '提取操作失败，请重试。'}
-                {claimError && '领取奖励失败，请重试。'}
+                {lastError}
               </p>
             </div>
             <RetryButton
