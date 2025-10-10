@@ -18,7 +18,7 @@ export function useStake() {
 
   const stake = async (amount: bigint, referrer: string) => {
     try {
-      const txHash = await writeContract({
+      await writeContract({
         address: CURRENT_NETWORK.ArriveOnTime,
         abi: ARRIVE_ON_TIME_ABI,
         functionName: 'stake',
@@ -26,10 +26,10 @@ export function useStake() {
       })
       
       // 等待交易确认
-      if (txHash && publicClient) {
-        const receipt = await publicClient.waitForTransactionReceipt({ hash: txHash })
+      if (hash && publicClient) {
+        const receipt = await publicClient.waitForTransactionReceipt({ hash })
         if (receipt.status === 'success') {
-          return { success: true, hash: txHash }
+          return { success: true, hash }
         } else {
           throw new Error('Transaction failed')
         }

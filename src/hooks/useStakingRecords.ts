@@ -19,6 +19,7 @@ export interface StakingRecord {
 export function useStakingRecords() {
   const { address } = useAccount()
   const publicClient = usePublicClient()
+  const { userInfo } = useUserData()
   const [stakingRecords, setStakingRecords] = useState<StakingRecord[]>([])
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -121,6 +122,11 @@ export function useStakingRecords() {
             }
             
             // 使用链上的总奖励数据，按质押金额比例分配给各个记录
+            if (!publicClient) {
+              console.error('PublicClient not available')
+              continue
+            }
+            
             const totalPendingRewards = await publicClient.readContract({
               address: CURRENT_NETWORK.ArriveOnTime,
               abi: ARRIVE_ON_TIME_ABI,
