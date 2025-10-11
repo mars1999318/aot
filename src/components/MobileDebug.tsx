@@ -21,6 +21,10 @@ export function MobileDebug() {
       touchSupport: 'ontouchstart' in window,
       isOPPO: navigator.userAgent.toLowerCase().includes('oppo') || 
               navigator.userAgent.toLowerCase().includes('coloros'),
+      isTokenPocket: navigator.userAgent.toLowerCase().includes('tokenpocket') || 
+                     navigator.userAgent.toLowerCase().includes('tpwallet') ||
+                     window.location.href.includes('tokenpocket') ||
+                     (window.ethereum && window.ethereum.isTokenPocket),
       isAndroid: /Android/i.test(navigator.userAgent),
       isIOS: /iPhone|iPad|iPod/i.test(navigator.userAgent),
       viewport: {
@@ -31,8 +35,8 @@ export function MobileDebug() {
     setDebugInfo(info)
   }, [])
 
-  // 只在开发环境或OPPO设备上显示
-  const shouldShow = process.env.NODE_ENV === 'development' || debugInfo.isOPPO
+  // 只在开发环境、OPPO设备或TokenPocket钱包上显示
+  const shouldShow = process.env.NODE_ENV === 'development' || debugInfo.isOPPO || debugInfo.isTokenPocket
 
   if (!shouldShow) return null
 
@@ -50,6 +54,7 @@ export function MobileDebug() {
           <div className="space-y-1">
             <div><strong>设备信息:</strong></div>
             <div>OPPO: {debugInfo.isOPPO ? '是' : '否'}</div>
+            <div>TokenPocket: {debugInfo.isTokenPocket ? '是' : '否'}</div>
             <div>Android: {debugInfo.isAndroid ? '是' : '否'}</div>
             <div>iOS: {debugInfo.isIOS ? '是' : '否'}</div>
             <div>屏幕: {debugInfo.screenWidth}x{debugInfo.screenHeight}</div>

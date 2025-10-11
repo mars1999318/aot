@@ -5,6 +5,7 @@ import { NetworkDebug } from './NetworkDebug'
 import { MobileDetector } from './MobileDetector'
 import { PullToRefresh } from './PullToRefresh'
 import { MobileDebug } from './MobileDebug'
+import { TokenPocketFix } from './TokenPocketFix'
 import { Dashboard } from '../pages/Dashboard'
 import { Staking } from '../pages/Staking'
 import { Referral } from '../pages/Referral'
@@ -97,6 +98,9 @@ export function Layout() {
       
       {/* Mobile Debug Component */}
       <MobileDebug />
+      
+      {/* TokenPocket Fix Component */}
+      <TokenPocketFix />
     </div>
   )
 }

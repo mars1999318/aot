@@ -291,6 +291,41 @@
   }
 }
 
+/* TokenPocket钱包兼容性修复 */
+@media screen and (-webkit-min-device-pixel-ratio: 1) {
+  /* TokenPocket钱包WebView修复 */
+  body {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  /* 修复TokenPocket钱包渲染问题 */
+  #root {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  
+  /* TokenPocket钱包内容显示修复 */
+  .mobile-container {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  
+  /* 强制显示内容 */
+  .mobile-container * {
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+}
+
 /* 移动端弹性布局 */
 .mobile-flex-col {
   display: flex;
