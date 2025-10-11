@@ -64,8 +64,8 @@ export function StakingProgressCard({ currentStaked, currentRate, className = ''
     <div className={`glass-card p-3 ${className}`}>
       <div className="space-y-3">
         {/* 当前质押率 */}
-        <div>
-          <div className="flex items-center mb-1">
+        <div className="text-center">
+          <div className="flex items-center justify-center mb-1">
             <Percent className="h-3 w-3 text-green-600 mr-1" />
             <span className="text-xs font-semibold glass-text-blue-light">{t('staking.currentStakingRate')}</span>
           </div>

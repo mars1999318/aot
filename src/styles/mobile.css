@@ -395,8 +395,8 @@
     padding: 0 1rem !important;
   }
   
-  /* 确保卡片在移动端居中 */
-  .glass-card, .glass-stats-card {
+  /* 确保卡片在移动端居中 - 但不影响grid布局 */
+  .glass-card:not(.grid .glass-card), .glass-stats-card:not(.grid .glass-stats-card) {
     margin: 0 auto !important;
     max-width: 100% !important;
     display: block !important;
