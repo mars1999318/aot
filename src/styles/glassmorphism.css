@@ -58,6 +58,11 @@
 
 /* 玻璃拟态导航栏 */
 .glass-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
   background: rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
@@ -144,6 +149,11 @@
 
 /* 玻璃拟态底部导航 */
 .glass-bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
   background: rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
