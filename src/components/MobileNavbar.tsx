@@ -20,7 +20,10 @@ export function MobileNavbar({ className = '', activeTab, setActiveTab }: Mobile
   return (
     <div className={`lg:hidden ${className}`}>
       {/* Mobile Top Navigation Bar */}
-      <div className="fixed top-0 left-0 right-0 glass-navbar z-50 mobile-safe-area">
+      <div 
+        className="fixed top-0 left-0 right-0 glass-navbar z-50 mobile-safe-area"
+        style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 9999 }}
+      >
         <div className="flex items-center justify-between px-4 py-1.5">
           {/* Left: Logo + Title */}
           <div className="flex items-center space-x-3">
@@ -42,7 +45,10 @@ export function MobileNavbar({ className = '', activeTab, setActiveTab }: Mobile
 
 
       {/* Mobile Bottom Navigation Bar */}
-      <div className="fixed bottom-0 left-0 right-0 glass-bottom-nav z-50 mobile-safe-area">
+      <div 
+        className="fixed bottom-0 left-0 right-0 glass-bottom-nav z-50 mobile-safe-area"
+        style={{ position: 'fixed', bottom: 0, left: 0, right: 0, zIndex: 9999 }}
+      >
         <div className="flex items-center justify-around py-1">
           <button 
             onClick={() => handleTabClick('dashboard')}
