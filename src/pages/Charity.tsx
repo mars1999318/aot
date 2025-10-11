@@ -84,7 +84,7 @@ export function Charity() {
 
   return (
     <PageTransition className="min-h-screen">
-      <div className="max-w-6xl mx-auto px-4 py-8 pb-20">
+      <div className="max-w-6xl mx-auto px-4 pt-12 pb-8 pb-20">
         {/* Top Banner Area */}
         <FadeIn delay={0}>
           <div className="text-center mb-6">

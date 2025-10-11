@@ -107,7 +107,7 @@ export function Layout() {
       {/* Mobile Layout */}
       <div className="lg:hidden h-screen flex flex-col">
         <MobileNavbar activeTab={activeTab} setActiveTab={handleTabChange} />
-        <main className="flex-1 overflow-y-auto pt-16 pb-16">
+        <main className="flex-1 overflow-y-auto pt-20 pb-16">
           <PullToRefresh onRefresh={handleRefresh}>
             {renderContent()}
           </PullToRefresh>
