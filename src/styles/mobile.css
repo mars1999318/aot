@@ -344,6 +344,32 @@
   position: fixed !important;
 }
 
+/* 移动端布局修复 */
+@media (max-width: 768px) {
+  /* 确保移动端容器高度正确 */
+  .mobile-layout {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* 确保主内容区域可滚动 */
+  .mobile-main {
+    flex: 1;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* 确保导航栏在最顶层 */
+  .glass-navbar {
+    z-index: 1000 !important;
+  }
+  
+  .glass-bottom-nav {
+    z-index: 1000 !important;
+  }
+}
+
 /* 移动端弹性布局 */
 .mobile-flex-col {
   display: flex;
