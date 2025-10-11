@@ -443,41 +443,61 @@ export function Charity() {
                 <p className="text-gray-700 leading-relaxed mb-4">
                   {t('charity.conclusionIntro')}
                 </p>
-                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-6">
-                  <div className="text-center">
-                    <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-1">
-                      <span className="text-blue-600 font-bold text-sm">{t('charity.transparencyChar')}</span>
+                {/* 五个化特色展示 - 重新设计布局 */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-6">
+                  {/* 透明化 */}
+                  <div className="bg-white/60 rounded-lg p-4 border border-blue-200 hover:shadow-md transition-shadow">
+                    <div className="text-center">
+                      <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-3">
+                        <span className="text-blue-600 font-bold text-lg">{t('charity.transparencyChar')}</span>
+                      </div>
+                      <h4 className="text-sm font-bold text-gray-800 mb-2">{t('charity.transparencyText')}</h4>
+                      <p className="text-xs text-gray-600 leading-relaxed">{t('charity.transparencyDesc')}</p>
                     </div>
-                    <p className="text-xs font-semibold text-gray-700">{t('charity.transparencyText')}</p>
-                    <p className="text-xs text-gray-500">{t('charity.transparencyDesc')}</p>
                   </div>
-                  <div className="text-center">
-                    <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-1">
-                      <span className="text-green-600 font-bold text-sm">{t('charity.globalizationChar')}</span>
+                  
+                  {/* 全球化 */}
+                  <div className="bg-white/60 rounded-lg p-4 border border-green-200 hover:shadow-md transition-shadow">
+                    <div className="text-center">
+                      <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-3">
+                        <span className="text-green-600 font-bold text-lg">{t('charity.globalizationChar')}</span>
+                      </div>
+                      <h4 className="text-sm font-bold text-gray-800 mb-2">{t('charity.globalizationText')}</h4>
+                      <p className="text-xs text-gray-600 leading-relaxed">{t('charity.globalizationDesc')}</p>
                     </div>
-                    <p className="text-xs font-semibold text-gray-700">{t('charity.globalizationText')}</p>
-                    <p className="text-xs text-gray-500">{t('charity.globalizationDesc')}</p>
                   </div>
-                  <div className="text-center">
-                    <div className="w-10 h-10 rounded-full bg-yellow-100 flex items-center justify-center mx-auto mb-1">
-                      <span className="text-yellow-600 font-bold text-sm">{t('charity.financializationChar')}</span>
+                  
+                  {/* 金融化 */}
+                  <div className="bg-white/60 rounded-lg p-4 border border-yellow-200 hover:shadow-md transition-shadow">
+                    <div className="text-center">
+                      <div className="w-12 h-12 rounded-full bg-yellow-100 flex items-center justify-center mx-auto mb-3">
+                        <span className="text-yellow-600 font-bold text-lg">{t('charity.financializationChar')}</span>
+                      </div>
+                      <h4 className="text-sm font-bold text-gray-800 mb-2">{t('charity.financializationText')}</h4>
+                      <p className="text-xs text-gray-600 leading-relaxed">{t('charity.financializationDesc')}</p>
                     </div>
-                    <p className="text-xs font-semibold text-gray-700">{t('charity.financializationText')}</p>
-                    <p className="text-xs text-gray-500">{t('charity.financializationDesc')}</p>
                   </div>
-                  <div className="text-center">
-                    <div className="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center mx-auto mb-1">
-                      <span className="text-purple-600 font-bold text-sm">{t('charity.autonomyChar')}</span>
+                  
+                  {/* 自主化 */}
+                  <div className="bg-white/60 rounded-lg p-4 border border-purple-200 hover:shadow-md transition-shadow">
+                    <div className="text-center">
+                      <div className="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center mx-auto mb-3">
+                        <span className="text-purple-600 font-bold text-lg">{t('charity.autonomyChar')}</span>
+                      </div>
+                      <h4 className="text-sm font-bold text-gray-800 mb-2">{t('charity.autonomyText')}</h4>
+                      <p className="text-xs text-gray-600 leading-relaxed">{t('charity.autonomyDesc')}</p>
                     </div>
-                    <p className="text-xs font-semibold text-gray-700">{t('charity.autonomyText')}</p>
-                    <p className="text-xs text-gray-500">{t('charity.autonomyDesc')}</p>
                   </div>
-                  <div className="text-center">
-                    <div className="w-10 h-10 rounded-full bg-pink-100 flex items-center justify-center mx-auto mb-1">
-                      <span className="text-pink-600 font-bold text-sm">{t('charity.youthChar')}</span>
+                  
+                  {/* 年轻化 */}
+                  <div className="bg-white/60 rounded-lg p-4 border border-pink-200 hover:shadow-md transition-shadow">
+                    <div className="text-center">
+                      <div className="w-12 h-12 rounded-full bg-pink-100 flex items-center justify-center mx-auto mb-3">
+                        <span className="text-pink-600 font-bold text-lg">{t('charity.youthChar')}</span>
+                      </div>
+                      <h4 className="text-sm font-bold text-gray-800 mb-2">{t('charity.youthText')}</h4>
+                      <p className="text-xs text-gray-600 leading-relaxed">{t('charity.youthDesc')}</p>
                     </div>
-                    <p className="text-xs font-semibold text-gray-700">{t('charity.youthText')}</p>
-                    <p className="text-xs text-gray-500">{t('charity.youthDesc')}</p>
                   </div>
                 </div>
                 <p className="text-gray-700 leading-relaxed font-bold">

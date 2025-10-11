@@ -69,12 +69,21 @@ export function ReferralStatsComponent({ stats, className = '' }: ReferralStatsP
           
           return (
             <div key={index} className={`glass-stats-card ${gradientColors[index % gradientColors.length]} p-4`}>
-              <div className="flex items-center mb-2">
-                <stat.icon className="w-5 h-5 text-gray-600 mr-2 flex-shrink-0" />
-                <h3 className="text-xs font-medium glass-text-blue-light truncate">{stat.title}</h3>
+              {/* 图标和标题行 */}
+              <div className="flex items-center justify-between mb-3">
+                <div className="flex items-center">
+                  <stat.icon className="w-6 h-6 text-gray-600 mr-2 flex-shrink-0" />
+                  <h3 className="text-sm font-semibold glass-text-blue-light">{stat.title}</h3>
+                </div>
               </div>
-              <div className="text-xl sm:text-2xl font-bold mb-1 glass-text-red text-left">{stat.value}</div>
-              <div className="text-xs glass-text-gold-light text-left break-words">{stat.change}</div>
+              
+              {/* 数值显示 */}
+              <div className="mb-2">
+                <div className="text-2xl sm:text-3xl font-bold glass-text-red text-left leading-tight">{stat.value}</div>
+              </div>
+              
+              {/* 描述信息 */}
+              <div className="text-xs glass-text-gold-light text-left leading-relaxed">{stat.change}</div>
             </div>
           )
         })}
