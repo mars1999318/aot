@@ -1,3 +1,4 @@
+import React from 'react'
 import { Home, Coins, Users, Heart } from 'lucide-react'
 import { WalletConnect } from './WalletConnect'
 import { LanguageSwitcher } from './LanguageSwitcher'
