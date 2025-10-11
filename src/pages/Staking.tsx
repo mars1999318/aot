@@ -321,7 +321,7 @@ export function Staking() {
 
   return (
     <PageTransition className="min-h-screen">
-      <div className="max-w-6xl mx-auto px-4 pt-12 pb-8 pb-20">
+      <div className="max-w-6xl mx-auto px-4 pt-12 pb-20">
         <FadeIn delay={0}>
           <div className="text-center mb-6">
             <h1 className="text-2xl font-bold glass-text-red mb-2">{t('staking.title')}</h1>
