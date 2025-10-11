@@ -146,11 +146,13 @@ export function Referral() {
           
           {/* Referral History */}
           <FadeIn delay={300}>
-            <ReferralHistory 
-              records={referralRecords} 
-              isLoading={isLoading}
-              dataVersion={dataVersion}
-            />
+            <div className="mt-8">
+              <ReferralHistory 
+                records={referralRecords} 
+                isLoading={isLoading}
+                dataVersion={dataVersion}
+              />
+            </div>
           </FadeIn>
         </div>
       </div>

@@ -99,10 +99,10 @@ export function Charity() {
 
         {/* Traditional vs Blockchain Charity Comparison */}
         <FadeIn delay={150}>
-          <div className="max-w-6xl mx-auto py-12">
+          <div className="max-w-6xl mx-auto py-8">
             {/* Module Title */}
-            <div className="text-center mb-12">
-              <h2 className="text-2xl md:text-3xl font-bold mb-4" style={{ color: '#1E5AA8' }}>
+            <div className="text-center mb-8">
+              <h2 className="text-2xl md:text-3xl font-bold mb-3" style={{ color: '#1E5AA8' }}>
                 {t('charity.comparisonTitle')}
               </h2>
               <div className="w-15 h-1 mx-auto" style={{ backgroundColor: '#D4AF37' }}></div>
@@ -111,66 +111,66 @@ export function Charity() {
             {/* Comparison Content */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
               {/* Traditional Charity */}
-              <div className="space-y-4">
-                <div className="text-center mb-4">
-                  <h3 className="text-xl font-semibold mb-2" style={{ color: '#1E5AA8' }}>
+              <div className="space-y-3">
+                <div className="text-center mb-3">
+                  <h3 className="text-xl font-semibold mb-1" style={{ color: '#1E5AA8' }}>
                     {t('charity.traditionalCharity')}
                   </h3>
                 </div>
                 
                 {/* Trust Mechanism */}
-                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
-                  <h4 className="text-lg font-semibold mb-2 text-gray-800">{t('charity.trustMechanism')}</h4>
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/20">
+                  <h4 className="text-base font-semibold mb-1 text-gray-800">{t('charity.trustMechanism')}</h4>
+                  <p className="text-gray-600 text-xs leading-relaxed">
                     {t('charity.traditionalTrustDesc')}
                   </p>
                 </div>
 
                 {/* Participation Mode */}
-                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
-                  <h4 className="text-lg font-semibold mb-2 text-gray-800">{t('charity.participationMode')}</h4>
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/20">
+                  <h4 className="text-base font-semibold mb-1 text-gray-800">{t('charity.participationMode')}</h4>
+                  <p className="text-gray-600 text-xs leading-relaxed">
                     {t('charity.traditionalParticipationDesc')}
                   </p>
                 </div>
 
                 {/* Limitations and Challenges */}
-                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
-                  <h4 className="text-lg font-semibold mb-2 text-gray-800">{t('charity.limitationsChallenges')}</h4>
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/20">
+                  <h4 className="text-base font-semibold mb-1 text-gray-800">{t('charity.limitationsChallenges')}</h4>
+                  <p className="text-gray-600 text-xs leading-relaxed">
                     {t('charity.traditionalLimitationsDesc')}
                   </p>
                 </div>
               </div>
 
               {/* Blockchain Charity */}
-              <div className="space-y-4">
-                <div className="text-center mb-4">
-                  <h3 className="text-xl font-semibold mb-2" style={{ color: '#1E5AA8' }}>
+              <div className="space-y-3">
+                <div className="text-center mb-3">
+                  <h3 className="text-xl font-semibold mb-1" style={{ color: '#1E5AA8' }}>
                     {t('charity.blockchainCharity')}
-              </h3>
+                  </h3>
                 </div>
                 
                 {/* Trust Mechanism */}
-                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
-                  <h4 className="text-lg font-semibold mb-2 text-gray-800">{t('charity.trustMechanism')}</h4>
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/20">
+                  <h4 className="text-base font-semibold mb-1 text-gray-800">{t('charity.trustMechanism')}</h4>
+                  <p className="text-gray-600 text-xs leading-relaxed">
                     {t('charity.blockchainTrustDesc')}
                   </p>
                 </div>
 
                 {/* Participation Mode */}
-                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
-                  <h4 className="text-lg font-semibold mb-2 text-gray-800">{t('charity.participationMode')}</h4>
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/20">
+                  <h4 className="text-base font-semibold mb-1 text-gray-800">{t('charity.participationMode')}</h4>
+                  <p className="text-gray-600 text-xs leading-relaxed">
                     {t('charity.blockchainParticipationDesc')}
                   </p>
                 </div>
 
                 {/* Limitations and Challenges */}
-                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
-                  <h4 className="text-lg font-semibold mb-2 text-gray-800">{t('charity.limitationsChallenges')}</h4>
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-3 border border-white/20">
+                  <h4 className="text-base font-semibold mb-1 text-gray-800">{t('charity.limitationsChallenges')}</h4>
+                  <p className="text-gray-600 text-xs leading-relaxed">
                     {t('charity.blockchainLimitationsDesc')}
                   </p>
                 </div>
