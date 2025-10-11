@@ -28,7 +28,7 @@ export function MobileNavbar({ className = '', activeTab, setActiveTab }: Mobile
           {/* Left: Logo + Title */}
           <div className="flex items-center space-x-3">
             <img 
-              src="/aot/logo.png?v=3" 
+                src="/logo.png?v=3"
               alt="ArriveOnTime Logo" 
               className="w-8 h-8 rounded-full flex-shrink-0 border-2 border-white/30"
             />
