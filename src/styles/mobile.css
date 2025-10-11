@@ -348,7 +348,7 @@
 @media (max-width: 768px) {
   /* 确保移动端容器高度正确 */
   .mobile-layout {
-    min-height: 100vh;
+    height: 100vh;
     display: flex;
     flex-direction: column;
   }
@@ -358,8 +358,6 @@
     flex: 1;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    padding: 0 1rem;
-    min-height: 0;
   }
   
   /* 确保导航栏在最顶层 */
@@ -369,30 +367,6 @@
   
   .glass-bottom-nav {
     z-index: 1000 !important;
-  }
-  
-  /* 修复卡片居中问题 */
-  .glass-card, .glass-stats-card {
-    margin: 0 auto;
-    max-width: 100%;
-  }
-  
-  /* 确保页面内容有足够的底部空间 */
-  .mobile-main {
-    padding-bottom: 6rem;
-  }
-  
-  /* 修复页面容器在移动端的对齐 */
-  .max-w-6xl {
-    max-width: 100% !important;
-    margin: 0 !important;
-    padding: 0 1rem !important;
-  }
-  
-  /* 确保卡片在移动端正确居中 */
-  .space-y-6 > * {
-    margin-left: auto;
-    margin-right: auto;
   }
 }
 
