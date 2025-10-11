@@ -18,9 +18,12 @@ export function PullToRefresh({ onRefresh, children, className = '' }: PullToRef
   const containerRef = useRef<HTMLDivElement>(null)
 
   const handleTouchStart = (e: TouchEvent) => {
-    // 只有在页面顶部时才允许下拉刷新
+    // 只有在页面绝对顶部时才允许下拉刷新
     const isAtTop = window.scrollY <= 0
-    if (isAtTop) {
+    const container = containerRef.current
+    const isContainerAtTop = container ? container.scrollTop <= 0 : true
+    
+    if (isAtTop && isContainerAtTop) {
       startY.current = e.touches[0].clientY
       setIsPulling(true)
     }
@@ -29,12 +32,16 @@ export function PullToRefresh({ onRefresh, children, className = '' }: PullToRef
   const handleTouchMove = (e: TouchEvent) => {
     // 只有在页面顶部且正在下拉时才处理
     const isAtTop = window.scrollY <= 0
-    if (!isPulling || !isAtTop) return
+    const container = containerRef.current
+    const isContainerAtTop = container ? container.scrollTop <= 0 : true
+    
+    if (!isPulling || !isAtTop || !isContainerAtTop) return
 
     currentY.current = e.touches[0].clientY
     const distance = Math.max(0, currentY.current - startY.current)
     
-    if (distance > 0) {
+    // 只有在向下拉且距离足够时才处理
+    if (distance > 10) {
       e.preventDefault()
       setPullDistance(Math.min(distance, 80))
     }
@@ -76,6 +83,7 @@ export function PullToRefresh({ onRefresh, children, className = '' }: PullToRef
     <div 
       ref={containerRef}
       className={`relative ${className}`}
+      data-pull-refresh="true"
       style={{
         transform: `translateY(${pullDistance}px)`,
         transition: isPulling ? 'none' : 'transform 0.3s ease-out'
