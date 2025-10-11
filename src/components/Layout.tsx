@@ -3,7 +3,6 @@ import { Sidebar } from './Sidebar'
 import { MobileNavbar } from './MobileNavbar'
 import { NetworkDebug } from './NetworkDebug'
 import { MobileDetector } from './MobileDetector'
-import { PullToRefresh } from './PullToRefresh'
 import { MobileDebug } from './MobileDebug'
 import { TokenPocketFix } from './TokenPocketFix'
 import { Dashboard } from '../pages/Dashboard'
@@ -71,11 +70,6 @@ export function Layout() {
     return () => clearTimeout(timeoutId)
   }, [activeTab])
 
-  const handleRefresh = () => {
-    setRefreshKey(prev => prev + 1)
-    // Trigger page re-render and data refresh without full page reload
-    // The refreshKey change will trigger component re-renders and data refetch
-  }
 
   const renderContent = () => {
     switch (activeTab) {
@@ -98,9 +92,7 @@ export function Layout() {
       <div className="hidden lg:flex">
         <Sidebar activeTab={activeTab} setActiveTab={handleTabChange} />
         <main className="flex-1 ml-64">
-          <PullToRefresh onRefresh={handleRefresh}>
-            {renderContent()}
-          </PullToRefresh>
+          {renderContent()}
         </main>
       </div>
 
@@ -108,9 +100,7 @@ export function Layout() {
       <div className="lg:hidden h-screen flex flex-col">
         <MobileNavbar activeTab={activeTab} setActiveTab={handleTabChange} />
         <main className="flex-1 overflow-y-auto pt-20 pb-16">
-          <PullToRefresh onRefresh={handleRefresh}>
-            {renderContent()}
-          </PullToRefresh>
+          {renderContent()}
         </main>
       </div>
       

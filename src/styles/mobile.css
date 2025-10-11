@@ -417,8 +417,8 @@
     gap: 1rem !important;
   }
   
-  /* 修复flex布局的居中问题 - 但不影响导航栏、记录列表和PullToRefresh */
-  .flex:not(.glass-navbar .flex):not(.glass-bottom-nav .flex):not(.space-y-4 .flex):not(.space-y-6 .flex):not([data-pull-refresh]) {
+  /* 修复flex布局的居中问题 - 但不影响导航栏和记录列表 */
+  .flex:not(.glass-navbar .flex):not(.glass-bottom-nav .flex):not(.space-y-4 .flex):not(.space-y-6 .flex) {
     justify-content: center !important;
   }
 }
