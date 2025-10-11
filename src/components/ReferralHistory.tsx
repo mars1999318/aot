@@ -168,9 +168,9 @@ export function ReferralHistory({ records, isLoading = false, className = '', da
         </div>
       </div>
       <div>
-        <div className="space-y-4">
+        <div className="space-y-3">
           {sortedRecords.map((record) => (
-            <div key={record.id} className="flex flex-col sm:flex-row sm:items-center sm:justify-between p-3 sm:p-4 bg-white/20 rounded-lg hover:bg-white/30 transition-colors gap-3">
+            <div key={record.id} className="flex flex-col sm:flex-row sm:items-center sm:justify-between p-4 bg-white/20 rounded-lg hover:bg-white/30 transition-colors gap-3 border border-white/10">
               <div className="flex items-center space-x-3">
                 <div className="w-8 h-8 sm:w-10 sm:h-10 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
                   <User className="h-4 w-4 sm:h-5 sm:w-5 text-blue-600" />

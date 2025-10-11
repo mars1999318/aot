@@ -24,21 +24,24 @@ export function Layout() {
 
   // Handle page switching, ensure scrolling to top
   const handleTabChange = (tab: string) => {
-    // 先切换页面
+    // 立即滚动到顶部
+    window.scrollTo({ top: 0, behavior: 'instant' })
+    document.documentElement.scrollTop = 0
+    document.body.scrollTop = 0
+    
+    // 切换页面
     setActiveTab(tab)
     
-    // 然后滚动到顶部
+    // 再次确保滚动到顶部
     setTimeout(() => {
-      // 滚动主内容区域到顶部
       const mainElement = document.querySelector('main')
       if (mainElement) {
         mainElement.scrollTo({ top: 0, behavior: 'instant' })
       }
-      // 也滚动window到顶部
       window.scrollTo({ top: 0, behavior: 'instant' })
       document.documentElement.scrollTop = 0
       document.body.scrollTop = 0
-    }, 10)
+    }, 50)
     
     // Force re-render
     setRefreshKey(prev => prev + 1)
@@ -104,7 +107,7 @@ export function Layout() {
       {/* Mobile Layout */}
       <div className="lg:hidden h-screen flex flex-col">
         <MobileNavbar activeTab={activeTab} setActiveTab={handleTabChange} />
-        <main className="flex-1 overflow-y-auto pt-20 pb-20">
+        <main className="flex-1 overflow-y-auto pt-16 pb-16">
           <PullToRefresh onRefresh={handleRefresh}>
             {renderContent()}
           </PullToRefresh>

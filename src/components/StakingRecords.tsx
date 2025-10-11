@@ -373,7 +373,7 @@ export function StakingRecords({ onWithdraw }: StakingRecordsProps) {
         </h3>
       </div>
 
-      <div className="space-y-2">
+      <div className="space-y-4">
         {activeStakingRecords
           .sort((a, b) => b.timestamp - a.timestamp) // Sort by timestamp descending, newest first
           .map((record) => (

@@ -408,8 +408,17 @@
     margin-right: auto !important;
   }
   
-  /* 修复flex布局的居中问题 - 但不影响导航栏 */
-  .flex:not(.glass-navbar .flex):not(.glass-bottom-nav .flex) {
+  /* 增加卡片间距 */
+  .space-y-6 {
+    gap: 1.5rem !important;
+  }
+  
+  .space-y-4 {
+    gap: 1rem !important;
+  }
+  
+  /* 修复flex布局的居中问题 - 但不影响导航栏和记录列表 */
+  .flex:not(.glass-navbar .flex):not(.glass-bottom-nav .flex):not(.space-y-4 .flex):not(.space-y-6 .flex) {
     justify-content: center !important;
   }
 }

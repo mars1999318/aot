@@ -24,15 +24,15 @@ export function MobileNavbar({ className = '', activeTab, setActiveTab }: Mobile
         className="fixed top-0 left-0 right-0 glass-navbar z-50 mobile-safe-area"
         style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 9999 }}
       >
-        <div className="flex items-center justify-between px-4 py-1.5">
+        <div className="flex items-center justify-between px-3 py-1">
           {/* Left: Logo + Title */}
           <div className="flex items-center space-x-3">
             <img 
               src="/aot/logo.png?v=3" 
               alt="ArriveOnTime Logo" 
-              className="w-10 h-10 rounded-full flex-shrink-0 border-2 border-white/30"
+              className="w-8 h-8 rounded-full flex-shrink-0 border-2 border-white/30"
             />
-                <span className="text-xl font-bold glass-text-blue">ArriveOnTime</span>
+                <span className="text-lg font-bold glass-text-blue">ArriveOnTime</span>
           </div>
 
           {/* Right Actions */}
@@ -49,10 +49,10 @@ export function MobileNavbar({ className = '', activeTab, setActiveTab }: Mobile
         className="fixed bottom-0 left-0 right-0 glass-bottom-nav z-50 mobile-safe-area"
         style={{ position: 'fixed', bottom: 0, left: 0, right: 0, zIndex: 9999 }}
       >
-        <div className="flex items-center justify-around py-1">
+        <div className="flex items-center justify-around py-0.5">
           <button 
             onClick={() => handleTabClick('dashboard')}
-            className={`flex flex-col items-center py-0.5 px-1 rounded-lg transition-smooth ${
+            className={`flex flex-col items-center py-0.5 px-0.5 rounded-lg transition-smooth ${
               activeTab === 'dashboard' 
                 ? 'bg-gradient-to-r from-blue-500/80 to-blue-600/80 text-white font-bold shadow-lg border border-blue-400/50' 
                 : 'text-gray-700 hover:bg-white/40 hover:text-gray-900 hover:shadow-md'
@@ -63,7 +63,7 @@ export function MobileNavbar({ className = '', activeTab, setActiveTab }: Mobile
           </button>
           <button 
             onClick={() => handleTabClick('staking')}
-            className={`flex flex-col items-center py-0.5 px-1 rounded-lg transition-smooth ${
+            className={`flex flex-col items-center py-0.5 px-0.5 rounded-lg transition-smooth ${
               activeTab === 'staking' 
                 ? 'bg-gradient-to-r from-blue-500/80 to-blue-600/80 text-white font-bold shadow-lg border border-blue-400/50' 
                 : 'text-gray-700 hover:bg-white/40 hover:text-gray-900 hover:shadow-md'
@@ -74,7 +74,7 @@ export function MobileNavbar({ className = '', activeTab, setActiveTab }: Mobile
           </button>
           <button 
             onClick={() => handleTabClick('referral')}
-            className={`flex flex-col items-center py-0.5 px-1 rounded-lg transition-smooth ${
+            className={`flex flex-col items-center py-0.5 px-0.5 rounded-lg transition-smooth ${
               activeTab === 'referral' 
                 ? 'bg-gradient-to-r from-blue-500/80 to-blue-600/80 text-white font-bold shadow-lg border border-blue-400/50' 
                 : 'text-gray-700 hover:bg-white/40 hover:text-gray-900 hover:shadow-md'
@@ -85,7 +85,7 @@ export function MobileNavbar({ className = '', activeTab, setActiveTab }: Mobile
           </button>
           <button 
             onClick={() => handleTabClick('charity')}
-            className={`flex flex-col items-center py-0.5 px-1 rounded-lg transition-smooth ${
+            className={`flex flex-col items-center py-0.5 px-0.5 rounded-lg transition-smooth ${
               activeTab === 'charity' 
                 ? 'bg-gradient-to-r from-blue-500/80 to-blue-600/80 text-white font-bold shadow-lg border border-blue-400/50' 
                 : 'text-gray-700 hover:bg-white/40 hover:text-gray-900 hover:shadow-md'
