@@ -73,8 +73,8 @@ export function ReferralStatsComponent({ stats, className = '' }: ReferralStatsP
                 <stat.icon className="w-6 h-6 text-gray-700 mr-2" />
                 <h3 className="text-xs font-medium glass-text-blue-light">{stat.title}</h3>
               </div>
-              <div className="text-xl font-bold mb-1 glass-text-red">{stat.value}</div>
-              <div className="text-xs glass-text-gold-light">{stat.change}</div>
+              <div className="text-xl font-bold mb-1 glass-text-red text-left">{stat.value}</div>
+              <div className="text-xs glass-text-gold-light text-left">{stat.change}</div>
             </div>
           )
         })}

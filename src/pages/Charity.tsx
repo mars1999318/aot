@@ -107,36 +107,36 @@ export function Charity() {
               </h2>
               <div className="w-15 h-1 mx-auto" style={{ backgroundColor: '#D4AF37' }}></div>
             </div>
-
+            
             {/* Comparison Content */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
               {/* Traditional Charity */}
-              <div className="space-y-6">
-                <div className="text-center mb-6">
+              <div className="space-y-4">
+                <div className="text-center mb-4">
                   <h3 className="text-xl font-semibold mb-2" style={{ color: '#1E5AA8' }}>
                     {t('charity.traditionalCharity')}
                   </h3>
                 </div>
                 
                 {/* Trust Mechanism */}
-                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
-                  <h4 className="text-lg font-semibold mb-3 text-gray-800">{t('charity.trustMechanism')}</h4>
+                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
+                  <h4 className="text-lg font-semibold mb-2 text-gray-800">{t('charity.trustMechanism')}</h4>
                   <p className="text-gray-600 text-sm leading-relaxed">
                     {t('charity.traditionalTrustDesc')}
                   </p>
                 </div>
 
                 {/* Participation Mode */}
-                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
-                  <h4 className="text-lg font-semibold mb-3 text-gray-800">{t('charity.participationMode')}</h4>
+                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
+                  <h4 className="text-lg font-semibold mb-2 text-gray-800">{t('charity.participationMode')}</h4>
                   <p className="text-gray-600 text-sm leading-relaxed">
                     {t('charity.traditionalParticipationDesc')}
                   </p>
                 </div>
 
                 {/* Limitations and Challenges */}
-                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
-                  <h4 className="text-lg font-semibold mb-3 text-gray-800">{t('charity.limitationsChallenges')}</h4>
+                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
+                  <h4 className="text-lg font-semibold mb-2 text-gray-800">{t('charity.limitationsChallenges')}</h4>
                   <p className="text-gray-600 text-sm leading-relaxed">
                     {t('charity.traditionalLimitationsDesc')}
                   </p>
@@ -144,39 +144,39 @@ export function Charity() {
               </div>
 
               {/* Blockchain Charity */}
-              <div className="space-y-6">
-                <div className="text-center mb-6">
+              <div className="space-y-4">
+                <div className="text-center mb-4">
                   <h3 className="text-xl font-semibold mb-2" style={{ color: '#1E5AA8' }}>
                     {t('charity.blockchainCharity')}
-                  </h3>
+              </h3>
                 </div>
                 
                 {/* Trust Mechanism */}
-                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
-                  <h4 className="text-lg font-semibold mb-3 text-gray-800">{t('charity.trustMechanism')}</h4>
+                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
+                  <h4 className="text-lg font-semibold mb-2 text-gray-800">{t('charity.trustMechanism')}</h4>
                   <p className="text-gray-600 text-sm leading-relaxed">
                     {t('charity.blockchainTrustDesc')}
                   </p>
                 </div>
 
                 {/* Participation Mode */}
-                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
-                  <h4 className="text-lg font-semibold mb-3 text-gray-800">{t('charity.participationMode')}</h4>
+                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
+                  <h4 className="text-lg font-semibold mb-2 text-gray-800">{t('charity.participationMode')}</h4>
                   <p className="text-gray-600 text-sm leading-relaxed">
                     {t('charity.blockchainParticipationDesc')}
                   </p>
                 </div>
 
                 {/* Limitations and Challenges */}
-                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
-                  <h4 className="text-lg font-semibold mb-3 text-gray-800">{t('charity.limitationsChallenges')}</h4>
+                <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
+                  <h4 className="text-lg font-semibold mb-2 text-gray-800">{t('charity.limitationsChallenges')}</h4>
                   <p className="text-gray-600 text-sm leading-relaxed">
                     {t('charity.blockchainLimitationsDesc')}
                   </p>
                 </div>
               </div>
             </div>
-
+            
             {/* Summary Section */}
             <div className="max-w-4xl mx-auto text-center">
               <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-8 border border-blue-200">
@@ -247,8 +247,8 @@ export function Charity() {
                       {t('charity.step2Desc')}
                     </p>
                   </div>
-                </div>
-
+                  </div>
+                  
                 {/* Step 3 */}
                 <div className="relative flex items-start">
                   <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center bg-white border-4 shadow-lg" style={{ borderColor: '#D4AF37' }}>
@@ -262,8 +262,8 @@ export function Charity() {
                       {t('charity.step3Desc')}
                     </p>
                   </div>
-                </div>
-
+                  </div>
+                  
                 {/* Step 4 */}
                 <div className="relative flex items-start">
                   <div className="flex-shrink-0 w-12 h-12 rounded-full flex items-center justify-center bg-white border-4 shadow-lg" style={{ borderColor: '#D4AF37' }}>
@@ -272,12 +272,12 @@ export function Charity() {
                   <div className="ml-6 flex-1">
                     <h3 className="text-lg font-semibold mb-2" style={{ color: '#1E5AA8' }}>
                       {t('charity.step4Title')}
-                    </h3>
+                      </h3>
                     <p className="text-gray-600 text-sm leading-relaxed">
                       {t('charity.step4Desc')}
-                    </p>
-                  </div>
-                </div>
+                      </p>
+                      </div>
+                    </div>
 
                 {/* Step 5 */}
                 <div className="relative flex items-start">
@@ -308,17 +308,17 @@ export function Charity() {
               </h2>
               <div className="w-15 h-1 mx-auto" style={{ backgroundColor: '#D4AF37' }}></div>
             </div>
-
+            
             {/* Development Points */}
-            <div className="space-y-8 mb-12">
+            <div className="space-y-4 mb-8">
               {/* Point 1 */}
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
                 <div className="flex items-start">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center mr-4 mt-1">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center mr-3 mt-1">
                     <span className="text-white text-sm font-bold">1</span>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-semibold mb-3 text-gray-800">{t('charity.point1Title')}</h3>
+                    <h3 className="text-lg font-semibold mb-2 text-gray-800">{t('charity.point1Title')}</h3>
                     <p className="text-gray-600 leading-relaxed">
                       {t('charity.point1Desc')}
                     </p>
@@ -327,13 +327,13 @@ export function Charity() {
               </div>
 
               {/* Point 2 */}
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
                 <div className="flex items-start">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center mr-4 mt-1">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center mr-3 mt-1">
                     <span className="text-white text-sm font-bold">2</span>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-semibold mb-3 text-gray-800">{t('charity.point2Title')}</h3>
+                    <h3 className="text-lg font-semibold mb-2 text-gray-800">{t('charity.point2Title')}</h3>
                     <p className="text-gray-600 leading-relaxed">
                       {t('charity.point2Desc')}
                     </p>
@@ -350,13 +350,13 @@ export function Charity() {
               </div>
 
               {/* Point 3 */}
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
                 <div className="flex items-start">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center mr-4 mt-1">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center mr-3 mt-1">
                     <span className="text-white text-sm font-bold">3</span>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-semibold mb-3 text-gray-800">{t('charity.point3Title')}</h3>
+                    <h3 className="text-lg font-semibold mb-2 text-gray-800">{t('charity.point3Title')}</h3>
                     <p className="text-gray-600 leading-relaxed">
                       {t('charity.point3Desc')}
                     </p>
@@ -370,13 +370,13 @@ export function Charity() {
               </div>
 
               {/* Point 4 */}
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
                 <div className="flex items-start">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center mr-4 mt-1">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center mr-3 mt-1">
                     <span className="text-white text-sm font-bold">4</span>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-semibold mb-3 text-gray-800">{t('charity.point4Title')}</h3>
+                    <h3 className="text-lg font-semibold mb-2 text-gray-800">{t('charity.point4Title')}</h3>
                     <p className="text-gray-600 leading-relaxed">
                       {t('charity.point4Desc')}
                     </p>
@@ -393,13 +393,13 @@ export function Charity() {
               </div>
 
               {/* Point 5 */}
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
                 <div className="flex items-start">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center mr-4 mt-1">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center mr-3 mt-1">
                     <span className="text-white text-sm font-bold">5</span>
-                  </div>
+                        </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-semibold mb-3 text-gray-800">{t('charity.point5Title')}</h3>
+                    <h3 className="text-lg font-semibold mb-2 text-gray-800">{t('charity.point5Title')}</h3>
                     <p className="text-gray-600 leading-relaxed">
                       {t('charity.point5Desc')}
                     </p>
@@ -416,13 +416,13 @@ export function Charity() {
               </div>
 
               {/* Point 6 */}
-              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
+              <div className="bg-white/10 backdrop-blur-sm rounded-lg p-4 border border-white/20">
                 <div className="flex items-start">
-                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center mr-4 mt-1">
+                  <div className="flex-shrink-0 w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center mr-3 mt-1">
                     <span className="text-white text-sm font-bold">6</span>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-lg font-semibold mb-3 text-gray-800">{t('charity.point6Title')}</h3>
+                    <h3 className="text-lg font-semibold mb-2 text-gray-800">{t('charity.point6Title')}</h3>
                     <p className="text-gray-600 leading-relaxed">
                       {t('charity.point6Desc')}
                     </p>
@@ -433,9 +433,9 @@ export function Charity() {
                     </ul>
                   </div>
                 </div>
-              </div>
-            </div>
-
+                        </div>
+                      </div>
+                      
             {/* Conclusion Section */}
             <div className="max-w-4xl mx-auto text-center">
               <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-8 border border-blue-200">
@@ -471,7 +471,7 @@ export function Charity() {
                     </div>
                     <p className="text-sm font-semibold text-gray-700">{t('charity.autonomyText')}</p>
                     <p className="text-xs text-gray-500">{t('charity.autonomyDesc')}</p>
-                  </div>
+                      </div>
                   <div className="text-center">
                     <div className="w-12 h-12 rounded-full bg-pink-100 flex items-center justify-center mx-auto mb-2">
                       <span className="text-pink-600 font-bold">{t('charity.youthChar')}</span>

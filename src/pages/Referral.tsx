@@ -137,7 +137,7 @@ export function Referral() {
             <ReferralProgressCard 
               totalReferredStaked={parseFloat(referralStats.totalReferredStaked || '0')}
               currentReferralRate={referralStats.currentReferralRate || 0}
-              className="mb-8"
+              className="mb-12"
             />
           )}
         </FadeIn>

@@ -73,14 +73,16 @@ export function ReferralProgressCard({
       <div className="space-y-3">
         {/* 当前推荐率 */}
         <div>
-          <div className="flex items-center mb-1">
-            <TrendingUp className="h-3 w-3 text-green-600 mr-1" />
-            <span className="text-xs font-semibold glass-text-blue-light">
-              {t('referral.currentReferralRate')}
-            </span>
-          </div>
-          <div className="text-xl font-bold glass-text-red">
-            {displayRate}%
+          <div className="flex items-center justify-between mb-1">
+            <div className="flex items-center">
+              <TrendingUp className="h-3 w-3 text-green-600 mr-1" />
+              <span className="text-xs font-semibold glass-text-blue-light">
+                {t('referral.currentReferralRate')}
+              </span>
+            </div>
+            <div className="text-xl font-bold glass-text-red">
+              {displayRate}%
+            </div>
           </div>
         </div>
 
