@@ -443,40 +443,40 @@ export function Charity() {
                 <p className="text-gray-700 leading-relaxed mb-4">
                   {t('charity.conclusionIntro')}
                 </p>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-6">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 mb-6">
                   <div className="text-center">
-                    <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-2">
-                      <span className="text-blue-600 font-bold">{t('charity.transparencyChar')}</span>
+                    <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-1">
+                      <span className="text-blue-600 font-bold text-sm">{t('charity.transparencyChar')}</span>
                     </div>
-                    <p className="text-sm font-semibold text-gray-700">{t('charity.transparencyText')}</p>
+                    <p className="text-xs font-semibold text-gray-700">{t('charity.transparencyText')}</p>
                     <p className="text-xs text-gray-500">{t('charity.transparencyDesc')}</p>
                   </div>
                   <div className="text-center">
-                    <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-2">
-                      <span className="text-green-600 font-bold">{t('charity.globalizationChar')}</span>
+                    <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-1">
+                      <span className="text-green-600 font-bold text-sm">{t('charity.globalizationChar')}</span>
                     </div>
-                    <p className="text-sm font-semibold text-gray-700">{t('charity.globalizationText')}</p>
+                    <p className="text-xs font-semibold text-gray-700">{t('charity.globalizationText')}</p>
                     <p className="text-xs text-gray-500">{t('charity.globalizationDesc')}</p>
                   </div>
                   <div className="text-center">
-                    <div className="w-12 h-12 rounded-full bg-yellow-100 flex items-center justify-center mx-auto mb-2">
-                      <span className="text-yellow-600 font-bold">{t('charity.financializationChar')}</span>
+                    <div className="w-10 h-10 rounded-full bg-yellow-100 flex items-center justify-center mx-auto mb-1">
+                      <span className="text-yellow-600 font-bold text-sm">{t('charity.financializationChar')}</span>
                     </div>
-                    <p className="text-sm font-semibold text-gray-700">{t('charity.financializationText')}</p>
+                    <p className="text-xs font-semibold text-gray-700">{t('charity.financializationText')}</p>
                     <p className="text-xs text-gray-500">{t('charity.financializationDesc')}</p>
                   </div>
                   <div className="text-center">
-                    <div className="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center mx-auto mb-2">
-                      <span className="text-purple-600 font-bold">{t('charity.autonomyChar')}</span>
+                    <div className="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center mx-auto mb-1">
+                      <span className="text-purple-600 font-bold text-sm">{t('charity.autonomyChar')}</span>
                     </div>
-                    <p className="text-sm font-semibold text-gray-700">{t('charity.autonomyText')}</p>
+                    <p className="text-xs font-semibold text-gray-700">{t('charity.autonomyText')}</p>
                     <p className="text-xs text-gray-500">{t('charity.autonomyDesc')}</p>
-                      </div>
+                  </div>
                   <div className="text-center">
-                    <div className="w-12 h-12 rounded-full bg-pink-100 flex items-center justify-center mx-auto mb-2">
-                      <span className="text-pink-600 font-bold">{t('charity.youthChar')}</span>
+                    <div className="w-10 h-10 rounded-full bg-pink-100 flex items-center justify-center mx-auto mb-1">
+                      <span className="text-pink-600 font-bold text-sm">{t('charity.youthChar')}</span>
                     </div>
-                    <p className="text-sm font-semibold text-gray-700">{t('charity.youthText')}</p>
+                    <p className="text-xs font-semibold text-gray-700">{t('charity.youthText')}</p>
                     <p className="text-xs text-gray-500">{t('charity.youthDesc')}</p>
                   </div>
                 </div>
@@ -490,7 +490,7 @@ export function Charity() {
 
         {/* Bottom Description */}
         <FadeIn delay={400}>
-          <div className="text-center text-gray-600">
+          <div className="text-center text-gray-600 mt-8">
             <p className="mb-2">
               💝 {t('charity.blockchainTransparency')}
             </p>
