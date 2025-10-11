@@ -36,9 +36,8 @@ export function MobileDebug() {
   }, [])
 
   // 只在开发环境、OPPO设备或TokenPocket钱包上显示
-  const shouldShow = process.env.NODE_ENV === 'development' || debugInfo.isOPPO || debugInfo.isTokenPocket
-
-  if (!shouldShow) return null
+  // 只在开发环境显示调试信息
+  if (process.env.NODE_ENV !== 'development') return null
 
   return (
     <div className="fixed bottom-4 right-4 z-50">

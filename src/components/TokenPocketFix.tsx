@@ -45,13 +45,5 @@ export function TokenPocketFix() {
     checkTokenPocket()
   }, [])
 
-  if (!isTokenPocket || isLoading) {
-    return null
-  }
-
-  return (
-    <div className="fixed top-4 left-4 z-50 bg-yellow-500 text-black px-2 py-1 rounded text-xs">
-      TokenPocket修复已激活
-    </div>
-  )
+  return null
 }
