@@ -86,9 +86,9 @@ function ExpandableRecord({
             </div>
             <div className="flex items-center space-x-2">
               {isExpanded ? (
-                <ChevronUp className="h-4 w-4 text-gray-400" />
+                <ChevronUp className="h-4 w-4 text-blue-500" />
               ) : (
-                <ChevronDown className="h-4 w-4 text-gray-400" />
+                <ChevronDown className="h-4 w-4 text-blue-500" />
               )}
             </div>
           </div>
@@ -373,7 +373,7 @@ export function StakingRecords({ onWithdraw }: StakingRecordsProps) {
         </h3>
       </div>
 
-      <div className="space-y-6">
+      <div className="space-y-8">
         {activeStakingRecords
           .sort((a, b) => b.timestamp - a.timestamp) // Sort by timestamp descending, newest first
           .map((record) => (
