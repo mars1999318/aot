@@ -387,6 +387,19 @@
   .glass-bottom-nav {
     z-index: 1000 !important;
   }
+  
+  /* 修复移动端页面容器对齐 */
+  .max-w-6xl {
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 1rem !important;
+  }
+  
+  /* 确保卡片在移动端居中 */
+  .glass-card, .glass-stats-card {
+    margin: 0 auto;
+    max-width: 100%;
+  }
 }
 
 /* 移动端弹性布局 */

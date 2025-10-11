@@ -18,14 +18,18 @@ export function PullToRefresh({ onRefresh, children, className = '' }: PullToRef
   const containerRef = useRef<HTMLDivElement>(null)
 
   const handleTouchStart = (e: TouchEvent) => {
-    if (window.scrollY === 0) {
+    // 只有在页面顶部时才允许下拉刷新
+    const isAtTop = window.scrollY <= 0
+    if (isAtTop) {
       startY.current = e.touches[0].clientY
       setIsPulling(true)
     }
   }
 
   const handleTouchMove = (e: TouchEvent) => {
-    if (!isPulling || window.scrollY > 0) return
+    // 只有在页面顶部且正在下拉时才处理
+    const isAtTop = window.scrollY <= 0
+    if (!isPulling || !isAtTop) return
 
     currentY.current = e.touches[0].clientY
     const distance = Math.max(0, currentY.current - startY.current)
