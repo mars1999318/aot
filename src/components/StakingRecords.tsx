@@ -61,7 +61,7 @@ function ExpandableRecord({
             {getStatusIcon(record.isActive)}
             <div className="min-w-0 flex-1">
               <div className="flex items-center space-x-2">
-                <h4 className="text-sm font-medium glass-text-blue">
+                <h4 className="text-sm font-semibold glass-text-blue">
                   {t('staking.stake')}
                 </h4>
                 {getStatusBadge(record.isActive)}
@@ -74,13 +74,13 @@ function ExpandableRecord({
           
           <div className="flex items-center justify-between sm:justify-end sm:space-x-3">
             <div className="text-left sm:text-right">
-              <div className="text-sm font-semibold glass-text-red">
+              <div className="text-base font-bold glass-text-red">
                 {formatStakingAmount(record.amount)} AOT
               </div>
-              <div className="text-xs glass-text-blue">
+              <div className="text-xs glass-text-blue mt-1">
                 {t('staking.yieldRate')}: {formatStakingRate(record.stakingRate)}%
               </div>
-              <div className="text-xs glass-text-gold">
+              <div className="text-xs glass-text-gold mt-1">
                 {t('staking.rewards')}: {formatAmount(record.pendingRewards)} AOT
               </div>
             </div>

@@ -176,16 +176,16 @@ export function ReferralHistory({ records, isLoading = false, className = '', da
                   <User className="h-4 w-4 sm:h-5 sm:w-5 text-blue-600" />
                 </div>
                 <div className="min-w-0 flex-1">
-                  <p className="font-medium glass-text-red text-sm sm:text-base truncate">{formatAddress(record.address)}</p>
-                  <p className="text-xs sm:text-sm glass-text-blue-light">{formatDate(record.timestamp)}</p>
-                  <p className="text-xs glass-text-gold-light hidden sm:block">{t('data.firstStakeViaReferral')}</p>
+                  <p className="font-semibold glass-text-red text-sm sm:text-base truncate">{formatAddress(record.address)}</p>
+                  <p className="text-xs sm:text-sm glass-text-blue-light mt-1">{formatDate(record.timestamp)}</p>
+                  <p className="text-xs glass-text-gold-light hidden sm:block mt-1">{t('data.firstStakeViaReferral')}</p>
                 </div>
               </div>
               
               <div className="flex items-center justify-between sm:justify-end sm:space-x-4">
                 <div className="text-left sm:text-right">
-                  <p className="font-medium glass-text-gold text-sm sm:text-base">{t('data.staked')} {formatStakeAmount(record.stakedAmount)} AOT</p>
-                  <p className="text-xs glass-text-blue-light sm:hidden">{formatDate(record.timestamp)}</p>
+                  <p className="font-bold glass-text-gold text-sm sm:text-base">{t('data.staked')} {formatStakeAmount(record.stakedAmount)} AOT</p>
+                  <p className="text-xs glass-text-blue-light sm:hidden mt-1">{formatDate(record.timestamp)}</p>
                 </div>
                 <div className="flex items-center space-x-2">
                   {getStatusBadge(record.status)}
