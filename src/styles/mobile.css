@@ -260,6 +260,37 @@
   display: none;
 }
 
+/* OPPO手机兼容性修复 */
+@media screen and (-webkit-min-device-pixel-ratio: 1) {
+  /* OPPO手机特定修复 */
+  body {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  /* 修复OPPO浏览器渲染问题 */
+  .mobile-container {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+  
+  /* 修复OPPO手机触摸问题 */
+  .mobile-btn {
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+  }
+}
+
+/* OPPO ColorOS浏览器兼容性 */
+@supports (-webkit-appearance: none) {
+  .mobile-card {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+}
+
 /* 移动端弹性布局 */
 .mobile-flex-col {
   display: flex;

@@ -4,6 +4,7 @@ import { MobileNavbar } from './MobileNavbar'
 import { NetworkDebug } from './NetworkDebug'
 import { MobileDetector } from './MobileDetector'
 import { PullToRefresh } from './PullToRefresh'
+import { MobileDebug } from './MobileDebug'
 import { Dashboard } from '../pages/Dashboard'
 import { Staking } from '../pages/Staking'
 import { Referral } from '../pages/Referral'
@@ -93,6 +94,9 @@ export function Layout() {
           </PullToRefresh>
         </main>
       </div>
+      
+      {/* Mobile Debug Component */}
+      <MobileDebug />
     </div>
   )
 }
