@@ -24,13 +24,22 @@ export function Layout() {
 
   // Handle page switching, ensure scrolling to top
   const handleTabChange = (tab: string) => {
-    // Immediately scroll to top without animation
-    window.scrollTo({ top: 0, behavior: 'instant' })
-    // Force set scrollTop to 0
-    document.documentElement.scrollTop = 0
-    document.body.scrollTop = 0
-    // Then switch page
+    // 先切换页面
     setActiveTab(tab)
+    
+    // 然后滚动到顶部
+    setTimeout(() => {
+      // 滚动主内容区域到顶部
+      const mainElement = document.querySelector('main')
+      if (mainElement) {
+        mainElement.scrollTo({ top: 0, behavior: 'instant' })
+      }
+      // 也滚动window到顶部
+      window.scrollTo({ top: 0, behavior: 'instant' })
+      document.documentElement.scrollTop = 0
+      document.body.scrollTop = 0
+    }, 10)
+    
     // Force re-render
     setRefreshKey(prev => prev + 1)
   }
@@ -39,6 +48,12 @@ export function Layout() {
   useEffect(() => {
     // Use setTimeout to ensure scrolling after DOM updates
     const scrollToTop = () => {
+      // 滚动主内容区域到顶部
+      const mainElement = document.querySelector('main')
+      if (mainElement) {
+        mainElement.scrollTo({ top: 0, behavior: 'instant' })
+      }
+      // 也滚动window到顶部
       window.scrollTo({ top: 0, behavior: 'instant' })
       document.documentElement.scrollTop = 0
       document.body.scrollTop = 0
