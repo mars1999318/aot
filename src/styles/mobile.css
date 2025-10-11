@@ -344,6 +344,25 @@
   position: fixed !important;
 }
 
+/* 强制移动端导航栏固定 */
+@media (max-width: 768px) {
+  .glass-navbar {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 9999 !important;
+  }
+  
+  .glass-bottom-nav {
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    z-index: 9999 !important;
+  }
+}
+
 /* 移动端布局修复 */
 @media (max-width: 768px) {
   /* 确保移动端容器高度正确 */
