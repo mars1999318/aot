@@ -326,15 +326,27 @@
   }
 }
 
-/* 强制固定导航栏位置 */
+/* 简化OPPO设备修复 */
+@media screen and (-webkit-min-device-pixel-ratio: 1) {
+  /* OPPO设备基础修复 */
+  body {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+  
+  #root {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+  }
+}
+
+/* 确保导航栏正确显示 */
 .glass-navbar {
   position: fixed !important;
   top: 0 !important;
   left: 0 !important;
   right: 0 !important;
-  z-index: 9999 !important;
-  transform: translateZ(0) !important;
-  -webkit-transform: translateZ(0) !important;
+  z-index: 50 !important;
 }
 
 .glass-bottom-nav {
@@ -342,39 +354,7 @@
   bottom: 0 !important;
   left: 0 !important;
   right: 0 !important;
-  z-index: 9999 !important;
-  transform: translateZ(0) !important;
-  -webkit-transform: translateZ(0) !important;
-}
-
-/* OPPO设备强制修复 */
-@media screen and (-webkit-min-device-pixel-ratio: 1) {
-  /* 强制OPPO设备显示内容 */
-  body, #root, .mobile-container {
-    -webkit-transform: translateZ(0) !important;
-    transform: translateZ(0) !important;
-    -webkit-backface-visibility: hidden !important;
-    backface-visibility: hidden !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-  }
-  
-  /* 强制OPPO设备显示所有元素 */
-  body *, #root *, .mobile-container * {
-    opacity: 1 !important;
-    visibility: visible !important;
-    -webkit-transform: translateZ(0) !important;
-    transform: translateZ(0) !important;
-  }
-  
-  /* 强制OPPO设备导航栏显示 */
-  .glass-navbar, .glass-bottom-nav {
-    opacity: 1 !important;
-    visibility: visible !important;
-    display: flex !important;
-    -webkit-transform: translateZ(0) !important;
-    transform: translateZ(0) !important;
-  }
+  z-index: 50 !important;
 }
 
 /* 移动端弹性布局 */

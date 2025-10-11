@@ -79,7 +79,7 @@ export function PullToRefresh({ onRefresh, children, className = '' }: PullToRef
     >
       {/* Pull to refresh indicator */}
       <div 
-        className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-center bg-white/90 backdrop-blur-sm transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-40 flex items-center justify-center bg-white/90 backdrop-blur-sm transition-all duration-300 ${
           pullDistance > 0 ? 'opacity-100' : 'opacity-0'
         }`}
         style={{ height: `${Math.min(pullDistance, 80)}px` }}
