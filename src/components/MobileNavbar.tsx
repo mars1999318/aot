@@ -16,6 +16,11 @@ export function MobileNavbar({ className = '', activeTab, setActiveTab }: Mobile
     setActiveTab(tab)
   }
 
+  // 调试信息
+  React.useEffect(() => {
+    console.log('MobileNavbar rendered, activeTab:', activeTab)
+  }, [activeTab])
+
   return (
     <div className={`lg:hidden ${className}`}>
       {/* Mobile Top Navigation Bar */}
