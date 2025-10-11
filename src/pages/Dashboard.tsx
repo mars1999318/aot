@@ -199,7 +199,7 @@ export function Dashboard() {
 
         {/* 统计卡片 - 玻璃拟态设计 */}
         <FadeIn delay={100}>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-8">
             {stats.map((stat, index) => {
               const gradientColors = [
                 'gradient-bg-primary',
@@ -211,8 +211,8 @@ export function Dashboard() {
               return (
                 <FadeIn key={index} delay={200 + index * 50}>
                   <div className={`glass-stats-card ${gradientColors[index % gradientColors.length]} p-4`}>
-                    <div className="flex items-center justify-between mb-3">
-                      <stat.icon className="w-6 h-6 text-gray-700" />
+                    <div className="flex items-center mb-3">
+                      <stat.icon className="w-6 h-6 text-gray-700 mr-2" />
                       <h3 className="text-xs font-medium glass-text-blue-light">{stat.title}</h3>
                     </div>
                     <div className="text-xl font-bold mb-1 glass-text-red">{stat.value}</div>

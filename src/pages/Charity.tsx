@@ -443,7 +443,7 @@ export function Charity() {
                 <p className="text-gray-700 leading-relaxed mb-4">
                   {t('charity.conclusionIntro')}
                 </p>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4 mb-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-6">
                   <div className="text-center">
                     <div className="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center mx-auto mb-2">
                       <span className="text-blue-600 font-bold">{t('charity.transparencyChar')}</span>
