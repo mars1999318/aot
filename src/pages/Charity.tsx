@@ -202,7 +202,7 @@ export function Charity() {
 
         {/* DAO Global Aid Process Timeline */}
         <FadeIn delay={200}>
-          <div className="max-w-4xl mx-auto mb-8">
+          <div className="max-w-4xl mx-auto mb-8 mt-12">
             <div className="text-center mb-8">
               <h2 className="text-2xl font-bold mb-3" style={{ color: '#1E5AA8' }}>
                 🌍 {t('charity.daoAidProcess')}

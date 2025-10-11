@@ -70,7 +70,7 @@ export function ReferralStatsComponent({ stats, className = '' }: ReferralStatsP
           return (
             <div key={index} className={`glass-stats-card ${gradientColors[index % gradientColors.length]} p-4`}>
               <div className="flex items-center mb-3">
-                <stat.icon className="w-6 h-6 text-gray-700 mr-2" />
+                <stat.icon className="w-6 h-6 text-gray-700 mr-2 flex-shrink-0" />
                 <h3 className="text-xs font-medium glass-text-blue-light">{stat.title}</h3>
               </div>
               <div className="text-xl font-bold mb-1 glass-text-red text-left">{stat.value}</div>
