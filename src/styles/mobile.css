@@ -402,6 +402,21 @@
     display: block !important;
   }
   
+  /* 优化卡片内部布局 */
+  .glass-stats-card {
+    min-height: auto !important;
+  }
+  
+  .glass-stats-card .flex {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+  
+  .glass-stats-card .flex.items-center {
+    flex-direction: row !important;
+    align-items: center !important;
+  }
+  
   /* 确保页面内容区域居中 */
   .space-y-6 > * {
     margin-left: auto !important;

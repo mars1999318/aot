@@ -71,10 +71,10 @@ export function ReferralStatsComponent({ stats, className = '' }: ReferralStatsP
             <div key={index} className={`glass-stats-card ${gradientColors[index % gradientColors.length]} p-4`}>
               <div className="flex items-center mb-2">
                 <stat.icon className="w-5 h-5 text-gray-600 mr-2 flex-shrink-0" />
-                <h3 className="text-xs font-medium glass-text-blue-light">{stat.title}</h3>
+                <h3 className="text-xs font-medium glass-text-blue-light truncate">{stat.title}</h3>
               </div>
-              <div className="text-2xl font-bold mb-1 glass-text-red text-left">{stat.value}</div>
-              <div className="text-xs glass-text-gold-light text-left">{stat.change}</div>
+              <div className="text-xl sm:text-2xl font-bold mb-1 glass-text-red text-left">{stat.value}</div>
+              <div className="text-xs glass-text-gold-light text-left break-words">{stat.change}</div>
             </div>
           )
         })}
