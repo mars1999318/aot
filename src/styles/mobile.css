@@ -397,8 +397,20 @@
   
   /* 确保卡片在移动端居中 */
   .glass-card, .glass-stats-card {
-    margin: 0 auto;
-    max-width: 100%;
+    margin: 0 auto !important;
+    max-width: 100% !important;
+    display: block !important;
+  }
+  
+  /* 确保页面内容区域居中 */
+  .space-y-6 > * {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  
+  /* 修复flex布局的居中问题 */
+  .flex {
+    justify-content: center !important;
   }
 }
 
